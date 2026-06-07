@@ -1,0 +1,4 @@
+@custom-media --bp-mobile (max-width: 32.5rem);
+@custom-media --bp-tablet-up (min-width: 48rem);
+@custom-media --bp-scorecard-desktop-up (min-width: 53.8125rem);
+@custom-media --bp-print-compact (max-width: 61.25rem);
