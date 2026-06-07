@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { WorldCupScheduleOverview } from "@/features/world-cup/schedule-overview";
+import { WorldCupScheduleContainer } from "@/features/world-cup";
 import { getBestAvailableWorldCupSchedulePayload } from "@/server/world-cup";
 import {
   buildWebsiteJsonLd,
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function WCSchedulePage() {
+export default async function WorldCupSchedulePage() {
   const schedule = await getBestAvailableWorldCupSchedulePayload();
 
   return (
-    <WorldCupScheduleOverview
+    <WorldCupScheduleContainer
       schedule={schedule}
       websiteJsonLd={buildWebsiteJsonLd()}
     />

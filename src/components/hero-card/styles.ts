@@ -1,9 +1,12 @@
+import { breakpoints } from "@/styles/breakpoints";
 import styled from "styled-components";
 
 export const StyledHeroCard = styled.section`
   position: relative;
   overflow: hidden;
-  padding: 0.95rem 0.875rem 1.05rem;
+  @media (min-width: ${breakpoints.desktop}) {
+    padding: 1rem 1rem 2.5rem;
+  }
   border-radius: 1.5rem;
   background: ${({ theme }) => theme.palette.cardSurfaceGradient};
   box-shadow: ${({ theme }) => theme.palette.cardSurfaceShadow};
@@ -14,7 +17,7 @@ export const StyledHeroBadge = styled.span`
   align-items: center;
   gap: 0.45rem;
   width: fit-content;
-  padding: 0.45rem 0.72rem;
+  padding: 0.65rem 0.72rem;
   border-radius: 999rem;
   color: ${({ theme }) => theme.palette.textSecondary};
   background: ${({ theme }) => theme.palette.fieldSurfaceGradient};

@@ -204,6 +204,7 @@ export const darkPalette: Palette = {
 export type AppTheme = {
   mode: "light" | "dark";
   palette: Palette;
+  
 };
 
 export const appTheme: AppTheme = {

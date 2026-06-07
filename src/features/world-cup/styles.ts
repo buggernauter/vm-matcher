@@ -1,9 +1,14 @@
+import { breakpoints } from "@/styles/breakpoints";
 import styled from "styled-components";
 
-export const StyledPage = styled.main`
+export const StyledMain = styled.main`
   box-sizing: border-box;
   min-height: 100vh;
-  padding: 1rem 0.75rem 2.5rem;
+
+  @media (min-width: ${breakpoints.desktop}) {
+    padding: 1rem 0.75rem 2.5rem;
+  }
+
   color: ${({ theme }) => theme.palette.textPrimary};
   font-family:
     Inter,
@@ -14,17 +19,11 @@ export const StyledPage = styled.main`
     "Segoe UI",
     sans-serif;
 `;
-export const StyledDivider = styled.div`
-  width: 100%;
-  height: 0.75rem;
-  background: ${({ theme }) => theme.palette.transparent};
-`;
+
 export const StyledStack = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  width: min(100%, 54rem);
-  margin: 0 auto;
+  background: ${({ theme }) => theme.palette.fail};
 `;
 
 export const StyledActionButton = styled.button`
@@ -39,7 +38,6 @@ export const StyledActionButton = styled.button`
   border-radius: 999rem;
   background: ${({ theme }) => theme.palette.shadowDark};
   font: inherit;
-
   font-size: 0.85rem;
   font-weight: 650;
   transition:
@@ -48,7 +46,8 @@ export const StyledActionButton = styled.button`
     opacity 180ms ease;
 
   &:active:not(:disabled) {
-    transform: scale(0.98);
+    transform: scale(1.1);
+    background: ${({ theme }) => theme.palette.cardSurfaceGradient};
   }
 
   &:disabled {
@@ -59,6 +58,7 @@ export const StyledActionButton = styled.button`
 
 export const StyledScheduleCard = styled.section`
   border-radius: 1.5rem;
+
   background: ${({ theme }) => theme.palette.cardSurfaceGradient};
   box-shadow: ${({ theme }) => theme.palette.cardSurfaceShadow};
   padding: 0.8rem 0.7rem 0.85rem;
@@ -70,4 +70,9 @@ export const StyledMatches = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
+`;
+export const StyledDivider = styled.div`
+  width: 100%;
+  height: 0.75rem;
+  background: ${({ theme }) => theme.palette.transparent};
 `;
