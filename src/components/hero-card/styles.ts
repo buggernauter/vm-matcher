@@ -44,7 +44,12 @@ export const StyledHeroText = styled.p`
 
 export const StyledHeroActions = styled.div`
   display: flex;
+
+  justify-content: center;
+
   align-items: center;
-  gap: 0.75rem;
+
   margin-top: 2rem;
+
+  text-align: center;
 `;

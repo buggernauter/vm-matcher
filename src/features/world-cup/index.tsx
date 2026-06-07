@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { HeroCard } from "@/components/hero-card";
 import { WorldCupSchedule } from "@/features/world-cup/world-cup-schedule";
 import type { WorldCupSchedulePayload } from "@/types/wc-match";
+import { Countdown } from "@/components/count-down";
 
 type Props = {
   schedule: WorldCupSchedulePayload;
@@ -28,6 +29,7 @@ export const WorldCupScheduleContainer = ({
       }
       title="Fotbolls-VM 2026 spelschema – matcher och tider"
       description="Se hela spelschemat för Fotbolls-VM 2026 med svenska tider"
+      action={<Countdown />}
     />
 
     <AppProviders>
