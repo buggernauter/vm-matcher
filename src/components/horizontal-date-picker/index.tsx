@@ -59,9 +59,9 @@ export const HorizontalDatePicker = ({
       return;
     }
 
-    const chipElement = (event.target as HTMLElement).closest<HTMLButtonElement>(
-      "[data-date-index]",
-    );
+    const chipElement = (
+      event.target as HTMLElement
+    ).closest<HTMLButtonElement>("[data-date-index]");
     const chipIndex = chipElement?.dataset.dateIndex;
 
     pendingSelectIndexRef.current =
@@ -125,7 +125,11 @@ export const HorizontalDatePicker = ({
         <StyledDateChipContainer key={item.id}>
           {item.flagCode ? (
             <StyledDateChipFlag>
-              <Flag code={item.flagCode} height="10" />
+              <Flag
+                code={item.flagCode}
+                height="10"
+                alt={item.flagLabel ?? ""}
+              />{" "}
             </StyledDateChipFlag>
           ) : null}
           <StyledDateChip

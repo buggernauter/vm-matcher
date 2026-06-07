@@ -1,12 +1,11 @@
-import { breakpoints } from "@/styles/breakpoints";
 import styled from "styled-components";
 
 export const StyledHeroCard = styled.section`
   position: relative;
   overflow: hidden;
-  /* @media (min-width: ${breakpoints.desktop}) { */
+
   padding: 1rem 1rem 2.5rem;
-  /* } */
+
   border-radius: 1.5rem;
   background: ${({ theme }) => theme.palette.cardSurfaceGradient};
   box-shadow: ${({ theme }) => theme.palette.cardSurfaceShadow};

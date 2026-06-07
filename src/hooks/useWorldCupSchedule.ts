@@ -32,4 +32,5 @@ export const useWorldCupSchedule = (initialData?: WorldCupSchedulePayload) =>
     queryFn: fetchWorldCupScheduleWithFallback,
     initialData,
     placeholderData: FALLBACK_SCHEDULE,
+    staleTime: Infinity,
   });
