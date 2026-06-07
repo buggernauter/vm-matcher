@@ -1,3 +1,5 @@
+"use client";
+
 import { Trophy } from "lucide-react";
 
 import { AppProviders } from "@/components/providers/app-providers";
