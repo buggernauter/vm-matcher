@@ -1,27 +1,32 @@
 "use client";
 
-import { Trophy } from "lucide-react";
 import { useCallback, useState } from "react";
 
 import { DayNavigation } from "../../components/day-navigation";
 import { EmptyStateCard } from "../../components/empty-state-card";
 import { HorizontalDatePicker } from "../../components/horizontal-date-picker";
-import { HeroCard } from "../../components/hero-card";
+
 import { MatchCard } from "../../components/match-card";
 import {
   useWorldCupSchedule,
   worldCupFallbackSchedule,
 } from "../../hooks/useWorldCupSchedule";
-import { clampValue, getSwedishDateKey } from "../../lib/helper";
+import {
+  clampValue,
+  getSwedishDateKey,
+  normalizeTeamName,
+} from "../../lib/helper";
 import { getGroupLabel } from "../../lib/wc-match";
 import type { MatchParticipant } from "../../types/wc-match";
 import {
   StyledActionButton,
+  StyledDivider,
   StyledMatches,
   StyledPage,
   StyledScheduleCard,
   StyledStack,
 } from "./styles";
+import type { WorldCupSchedulePayload } from "../../types/wc-match";
 
 const getInitialDayIndex = (dayList: Array<{ date: string }>) => {
   const today = getSwedishDateKey();
@@ -36,22 +41,20 @@ const getInitialDayIndex = (dayList: Array<{ date: string }>) => {
   return nextMatchDayIndex === -1 ? dayList.length - 1 : nextMatchDayIndex;
 };
 
-const normalizeTeamName = (value: string) =>
-  value
-    .normalize("NFKD")
-    .replace(/\p{Diacritic}/gu, "")
-    .toLowerCase()
-    .trim();
-
 const SWEDEN_TEAM_ALIASES = new Set(["sverige", "sweden"]);
 
 const isSwedenSide = (side: MatchParticipant) =>
   side.kind === "team" &&
   SWEDEN_TEAM_ALIASES.has(normalizeTeamName(side.teamName));
 
-export const WCGamesPage = () => {
-  const { data } = useWorldCupSchedule();
-  const schedule = data ?? worldCupFallbackSchedule;
+type Props = {
+  heroTitleTag?: "h1" | "h2" | "h3";
+  initialSchedule?: WorldCupSchedulePayload;
+};
+
+export const WCGamesPage = ({ initialSchedule }: Props) => {
+  const { data } = useWorldCupSchedule(initialSchedule);
+  const schedule = data ?? initialSchedule ?? worldCupFallbackSchedule;
   const { groupTeamsByLabel, matchDays } = schedule;
 
   const [selectedMatchDay, setSelectedMatchDay] = useState(() =>
@@ -88,21 +91,11 @@ export const WCGamesPage = () => {
   return (
     <StyledPage>
       <StyledStack>
-        <HeroCard
-          badge={
-            <>
-              <Trophy aria-hidden="true" color="gold" />
-              Fotbolls-VM 2026
-            </>
-          }
-          title="Dagens matcher"
-          description="VM matcher med svenska tider."
-        />
-
         <StyledScheduleCard>
           <StyledActionButton type="button" onClick={goToToday}>
             Idag
           </StyledActionButton>
+          <StyledDivider />
           <DayNavigation
             isOnFirst={isFirstDay}
             isOnLast={isLastDay}

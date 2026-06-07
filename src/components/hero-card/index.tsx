@@ -13,13 +13,20 @@ type Props = {
   badge: ReactNode;
   description: string;
   title: string;
+  titleTag?: "h1" | "h2" | "h3";
 };
 
-export const HeroCard = ({ action, badge, description, title }: Props) => {
+export const HeroCard = ({
+  action,
+  badge,
+  description,
+  title,
+  titleTag = "h1",
+}: Props) => {
   return (
     <StyledHeroCard>
       <StyledHeroBadge>{badge}</StyledHeroBadge>
-      <StyledHeroTitle>{title}</StyledHeroTitle>
+      <StyledHeroTitle as={titleTag}>{title}</StyledHeroTitle>
       <StyledHeroText>{description}</StyledHeroText>
       {action ? <StyledHeroActions>{action}</StyledHeroActions> : null}
     </StyledHeroCard>

@@ -10,3 +10,10 @@ export const getSwedishDateKey = () =>
     month: "2-digit",
     day: "2-digit",
   }).format(new Date());
+
+export const normalizeTeamName = (value: string) =>
+  value
+    .normalize("NFKD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .trim();

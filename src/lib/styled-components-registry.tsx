@@ -1,8 +1,14 @@
 "use client";
 
+import { StyledGlobalStyle } from "@/global-style";
+import { darkTheme } from "@/styles/palette";
 import { useServerInsertedHTML } from "next/navigation";
 import { useState, type PropsWithChildren } from "react";
-import { ServerStyleSheet, StyleSheetManager } from "styled-components";
+import {
+  ServerStyleSheet,
+  StyleSheetManager,
+  ThemeProvider,
+} from "styled-components";
 
 export const StyledComponentsRegistry = ({
   children,
@@ -18,12 +24,20 @@ export const StyledComponentsRegistry = ({
   });
 
   if (typeof window !== "undefined") {
-    return children;
+    return (
+      <ThemeProvider theme={darkTheme}>
+        <StyledGlobalStyle />
+        {children}
+      </ThemeProvider>
+    );
   }
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      {children}
+      <ThemeProvider theme={darkTheme}>
+        <StyledGlobalStyle />
+        {children}
+      </ThemeProvider>
     </StyleSheetManager>
   );
 };

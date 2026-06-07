@@ -1,5 +1,5 @@
-import { WCGamesPage } from "@/features/world-cup";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <WCGamesPage />;
+  redirect("/fotbolls-vm-2026");
 }

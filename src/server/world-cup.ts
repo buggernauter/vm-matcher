@@ -1,8 +1,12 @@
+import { cache } from "react";
+
 import {
   staticWcGroupTeamsByLabel,
   staticWcMatchDays,
 } from "../dev-api/dev-wc";
 import type {
+  WCMatchDay,
+  WorldCupMatchEntry,
   WorldCupResultSyncPayload,
   WorldCupSchedulePayload,
 } from "../types/wc-match";
@@ -58,3 +62,59 @@ export const getStaticWorldCupSchedulePayload =
     source: "static",
     syncedAt: new Date().toISOString(),
   });
+
+export const getBestAvailableWorldCupSchedulePayload = cache(
+  async (): Promise<WorldCupSchedulePayload> => {
+    try {
+      return await getWorldCupSchedulePayload();
+    } catch {
+      return getStaticWorldCupSchedulePayload();
+    }
+  },
+);
+
+export const getWorldCupMatchEntries = (
+  schedule: WorldCupSchedulePayload,
+): WorldCupMatchEntry[] =>
+  schedule.matchDays.flatMap((day, dayIndex) =>
+    day.matches.map((match, matchIndex) => ({
+      day,
+      dayIndex,
+      match,
+      matchIndex,
+    })),
+  );
+
+export const findWorldCupDayByDate = (
+  schedule: WorldCupSchedulePayload,
+  date: string,
+): WCMatchDay | undefined =>
+  schedule.matchDays.find((matchDay) => matchDay.date === date);
+
+export const findWorldCupDayIndexByDate = (
+  schedule: WorldCupSchedulePayload,
+  date: string,
+): number =>
+  schedule.matchDays.findIndex((matchDay) => matchDay.date === date);
+
+export const findWorldCupMatchEntryById = (
+  schedule: WorldCupSchedulePayload,
+  matchId: string,
+): WorldCupMatchEntry | undefined =>
+  getWorldCupMatchEntries(schedule).find((entry) => entry.match.id === matchId);
+
+export const findAdjacentWorldCupDays = (
+  schedule: WorldCupSchedulePayload,
+  currentDate: string,
+) => {
+  const currentIndex = findWorldCupDayIndexByDate(schedule, currentDate);
+
+  if (currentIndex === -1) {
+    return {};
+  }
+
+  return {
+    nextDay: schedule.matchDays[currentIndex + 1],
+    previousDay: schedule.matchDays[currentIndex - 1],
+  };
+};

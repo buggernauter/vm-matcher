@@ -80,3 +80,10 @@ export type WorldCupSchedulePayload = {
 export type WorldCupResultSyncPayload = WorldCupSchedulePayload & {
   updatedMatchesCount: number;
 };
+
+export type WorldCupMatchEntry = {
+  day: WCMatchDay;
+  dayIndex: number;
+  match: WCMatch;
+  matchIndex: number;
+};

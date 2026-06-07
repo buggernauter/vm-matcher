@@ -26,9 +26,10 @@ const fetchWorldCupScheduleWithFallback = async () => {
   }
 };
 
-export const useWorldCupSchedule = () =>
+export const useWorldCupSchedule = (initialData?: WorldCupSchedulePayload) =>
   useQuery({
     queryKey: worldCupScheduleQueryKey,
     queryFn: fetchWorldCupScheduleWithFallback,
+    initialData,
     placeholderData: FALLBACK_SCHEDULE,
   });

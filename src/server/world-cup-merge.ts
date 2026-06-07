@@ -1,8 +1,5 @@
-import type {
-  MatchParticipant,
-  WCMatch,
-  WCMatchDay,
-} from "../types/wc-match";
+import { normalizeTeamName } from "@/lib/helper";
+import type { MatchParticipant, WCMatch, WCMatchDay } from "../types/wc-match";
 
 import type { MappedFixture } from "./world-cup-mapper";
 
@@ -12,14 +9,6 @@ type MatchCandidate = {
   match: WCMatch;
   matchIndex: number;
 };
-
-const normalizeTeamName = (value: string) =>
-  value
-    .normalize("NFKD")
-    .replace(/\p{Diacritic}/gu, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
 
 const getTeamName = (side: MatchParticipant) =>
   side.kind === "team" ? side.teamName : undefined;

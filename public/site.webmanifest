@@ -1,0 +1,21 @@
+{
+  "name": "WC Games",
+  "short_name": "WC Games",
+  "description": "Fotbolls-VM 2026 med spelschema, matcher och resultat i svenska tider.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#061426",
+  "theme_color": "#061426",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
