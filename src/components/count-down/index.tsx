@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { StyledCounter, StyledLabel, StyledWrapper } from "./styles";
 
 const WORLD_CUP_START = new Date("2026-06-11T21:00:00+02:00").getTime();
 
@@ -50,12 +51,13 @@ export const Countdown = () => {
     return null;
   }
   return (
-    <div style={{ textAlign: "center" }}>
-      <br />
-      <strong>
+    <StyledWrapper>
+      <StyledLabel>VM startar om</StyledLabel>
+
+      <StyledCounter>
         {timeRemaining.totalHours}h {timeRemaining.minutes}m{" "}
         {timeRemaining.seconds}s
-      </strong>
-    </div>
+      </StyledCounter>
+    </StyledWrapper>
   );
 };
