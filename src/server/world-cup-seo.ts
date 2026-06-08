@@ -19,7 +19,7 @@ export const formatLongSwedishDate = (date: string) =>
   SWEDISH_LONG_DATE_FORMATTER.format(new Date(`${date}T12:00:00`));
 
 export const getMatchTeamsLabel = (match: WCMatch) =>
-  `${resolveMatchSideDisplayName(match.homeSide)} - ${resolveMatchSideDisplayName(match.awaySide)}`;
+  `${resolveMatchSideDisplayName(match.homeTeam)} - ${resolveMatchSideDisplayName(match.awayTeam)}`;
 
 export const getMatchResultLabel = (match: WCMatch) =>
   resolveMatchResultDisplay(match.result);

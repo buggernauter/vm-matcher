@@ -37,3 +37,6 @@ export const getInitialDayIndex = (dayList: Array<{ date: string }>) => {
 export const isSwedenPlaying = (side: MatchParticipant) =>
   side.kind === "team" &&
   SWEDEN_TEAM_ALIASES.has(normalizeTeamName(side.teamName));
+
+export const normalizeMatchTime = (time: string) =>
+  time.replace(".", ":").trim();

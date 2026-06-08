@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import {
-  getStaticWorldCupSchedulePayload,
+  getStaticWCPayload,
   getWorldCupSchedulePayload,
 } from "@/server/world-cup";
 
@@ -11,6 +11,6 @@ export async function GET() {
   try {
     return NextResponse.json(await getWorldCupSchedulePayload());
   } catch {
-    return NextResponse.json(getStaticWorldCupSchedulePayload());
+    return NextResponse.json(getStaticWCPayload());
   }
 }

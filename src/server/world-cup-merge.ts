@@ -1,4 +1,4 @@
-import { normalizeTeamName } from "@/lib/helper";
+import { normalizeMatchTime, normalizeTeamName } from "@/lib/helper";
 import type { MatchParticipant, WCMatch, WCMatchDay } from "../types/wc-match";
 
 import type { MappedFixture } from "./world-cup-mapper";
@@ -10,19 +10,19 @@ type MatchCandidate = {
   matchIndex: number;
 };
 
-const getTeamName = (side: MatchParticipant) =>
+export const getTeamName = (side: MatchParticipant) =>
   side.kind === "team" ? side.teamName : undefined;
 
 const getTeamMatchScore = (candidate: WCMatch, fixture: MappedFixture) => {
   let score = 0;
 
-  const staticHomeTeamName = getTeamName(candidate.homeSide);
-  const staticAwayTeamName = getTeamName(candidate.awaySide);
-  const apiHomeTeamName = fixture.homeSide
-    ? getTeamName(fixture.homeSide)
+  const staticHomeTeamName = getTeamName(candidate.homeTeam);
+  const staticAwayTeamName = getTeamName(candidate.awayTeam);
+  const apiHomeTeamName = fixture.homeTeam
+    ? getTeamName(fixture.homeTeam)
     : undefined;
-  const apiAwayTeamName = fixture.awaySide
-    ? getTeamName(fixture.awaySide)
+  const apiAwayTeamName = fixture.awayTeam
+    ? getTeamName(fixture.awayTeam)
     : undefined;
 
   if (staticHomeTeamName && apiHomeTeamName) {
@@ -52,7 +52,8 @@ const findBestMatchingCandidate = (
   const matchingDateAndTime = candidates.filter(
     (candidate) =>
       candidate.date === fixture.date &&
-      candidate.match.time === fixture.time &&
+      normalizeMatchTime(candidate.match.time) ===
+        normalizeMatchTime(fixture.time) &&
       !usedCandidates.has(candidate.match.id),
   );
 
@@ -76,13 +77,13 @@ const findBestMatchingCandidate = (
   return bestCandidate.candidate;
 };
 
-const mergeFixtureDataIntoMatch = (
+const applyFixtureToMatch = (
   match: WCMatch,
   fixture: MappedFixture,
 ): WCMatch => ({
   ...match,
-  awaySide: fixture.awaySide ?? match.awaySide,
-  homeSide: fixture.homeSide ?? match.homeSide,
+  awayTeam: fixture.awayTeam ?? match.awayTeam,
+  homeTeam: fixture.homeTeam ?? match.homeTeam,
   result: fixture.result ?? match.result,
 });
 
@@ -102,29 +103,32 @@ export const mergeFixturesIntoMatchDays = (
       matchIndex,
     })),
   );
-  const usedCandidates = new Set<string>();
+  const usedMatchIds = new Set<string>();
+  const usedFixtureIds = new Set<string>();
   let updatedMatchesCount = 0;
 
   for (const fixture of fixtures) {
+    if (usedFixtureIds.has(fixture.id)) {
+      continue;
+    }
+
     const matchingCandidate = findBestMatchingCandidate(
       candidates,
       fixture,
-      usedCandidates,
+      usedMatchIds,
     );
 
     if (!matchingCandidate) {
       continue;
     }
-
-    const nextMatch = mergeFixtureDataIntoMatch(
-      matchingCandidate.match,
-      fixture,
-    );
+    const nextMatch = applyFixtureToMatch(matchingCandidate.match, fixture);
 
     nextMatchDays[matchingCandidate.dayIndex].matches[
       matchingCandidate.matchIndex
     ] = nextMatch;
-    usedCandidates.add(matchingCandidate.match.id);
+
+    usedMatchIds.add(matchingCandidate.match.id);
+    usedFixtureIds.add(fixture.id);
 
     if (fixture.result) {
       updatedMatchesCount += 1;

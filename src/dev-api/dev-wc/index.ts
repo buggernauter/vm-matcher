@@ -10,22 +10,23 @@ import type {
   WCMatchDay,
 } from "../../types/wc-match";
 
-type RawWCMatch = {
+type WorldCupGame = {
   awayTeam: string;
   broadcaster?: string;
   groupOrRound: string;
   homeTeam: string;
   result?: MatchResult;
   time: string;
+  venue?: string;
 };
 
-type RawWCMatchDay = {
+type WorldCup = {
   date: string;
   label: string;
-  matches: RawWCMatch[];
+  matches: WorldCupGame[];
 };
 
-const rawWcMatchDays: RawWCMatchDay[] = [
+const worldCupData: WorldCup[] = [
   {
     date: "2026-06-11",
     label: "Torsdag 11 juni",
@@ -36,6 +37,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Sydafrika",
         groupOrRound: "Grupp A",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Mexico City",
       },
     ],
   },
@@ -49,6 +51,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Tjeckien",
         groupOrRound: "Grupp A",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Guadalajara",
       },
       {
         time: "21.00",
@@ -56,6 +59,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Bosnien och Hercegovina",
         groupOrRound: "Grupp B",
         broadcaster: "SVT och SVT Play",
+        venue: "Toronto",
       },
     ],
   },
@@ -69,6 +73,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Paraguay",
         groupOrRound: "Grupp D",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Los Angeles",
       },
       {
         time: "21.00",
@@ -76,6 +81,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Schweiz",
         groupOrRound: "Grupp B",
         broadcaster: "TV4 och TV4 Play",
+        venue: "San Francisco",
       },
     ],
   },
@@ -88,7 +94,8 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         homeTeam: "Brasilien",
         awayTeam: "Marocko",
         groupOrRound: "Grupp C",
-        broadcaster: "TV4 och TV4 Play",
+        broadcaster: "SVT och SVT Play",
+        venue: "New Jersey",
       },
       {
         time: "03.00",
@@ -96,6 +103,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Skottland",
         groupOrRound: "Grupp C",
         broadcaster: "SVT och SVT Play",
+        venue: "Boston",
       },
       {
         time: "06.00",
@@ -103,13 +111,15 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Turkiet",
         groupOrRound: "Grupp D",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Vancouver",
       },
       {
         time: "19.00",
         homeTeam: "Tyskland",
-        awayTeam: "Curaçao",
+        awayTeam: "Curacao",
         groupOrRound: "Grupp E",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Houston",
       },
       {
         time: "22.00",
@@ -117,6 +127,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Japan",
         groupOrRound: "Grupp F",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Dallas",
       },
     ],
   },
@@ -126,16 +137,19 @@ const rawWcMatchDays: RawWCMatchDay[] = [
     matches: [
       {
         time: "01.00",
-        homeTeam: "Elfenbenskusten",
+        homeTeam: "Elfbenskusten",
         awayTeam: "Ecuador",
         groupOrRound: "Grupp E",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Philadelphia",
       },
       {
         time: "04.00",
         homeTeam: "Sverige",
         awayTeam: "Tunisien",
         groupOrRound: "Grupp F",
+        broadcaster: "SVT och SVT Play",
+        venue: "Monterrey",
       },
       {
         time: "18.00",
@@ -143,6 +157,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Kap Verde",
         groupOrRound: "Grupp H",
         broadcaster: "SVT och SVT Play",
+        venue: "Atlanta",
       },
       {
         time: "21.00",
@@ -150,6 +165,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Egypten",
         groupOrRound: "Grupp G",
         broadcaster: "SVT och SVT Play",
+        venue: "Seattle",
       },
     ],
   },
@@ -163,6 +179,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Uruguay",
         groupOrRound: "Grupp H",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Miami",
       },
       {
         time: "03.00",
@@ -170,6 +187,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Nya Zeeland",
         groupOrRound: "Grupp G",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Los Angeles",
       },
       {
         time: "21.00",
@@ -177,6 +195,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Senegal",
         groupOrRound: "Grupp I",
         broadcaster: "SVT och SVT Play",
+        venue: "New Jersey",
       },
     ],
   },
@@ -190,6 +209,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Norge",
         groupOrRound: "Grupp I",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Boston",
       },
       {
         time: "03.00",
@@ -197,6 +217,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Algeriet",
         groupOrRound: "Grupp J",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Kansas City",
       },
       {
         time: "06.00",
@@ -204,6 +225,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Jordanien",
         groupOrRound: "Grupp J",
         broadcaster: "TV4 och TV4 Play",
+        venue: "San Francisco",
       },
       {
         time: "19.00",
@@ -211,6 +233,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "DR Kongo",
         groupOrRound: "Grupp K",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Houston",
       },
       {
         time: "22.00",
@@ -218,6 +241,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Kroatien",
         groupOrRound: "Grupp L",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Dallas",
       },
     ],
   },
@@ -231,6 +255,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Panama",
         groupOrRound: "Grupp L",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Toronto",
       },
       {
         time: "04.00",
@@ -238,6 +263,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Colombia",
         groupOrRound: "Grupp K",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Mexico City",
       },
       {
         time: "18.00",
@@ -245,6 +271,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Sydafrika",
         groupOrRound: "Grupp A",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Atlanta",
       },
       {
         time: "21.00",
@@ -252,6 +279,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Bosnien och Hercegovina",
         groupOrRound: "Grupp B",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Los Angeles",
       },
     ],
   },
@@ -265,6 +293,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Qatar",
         groupOrRound: "Grupp B",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Vancouver",
       },
       {
         time: "03.00",
@@ -272,6 +301,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Sydkorea",
         groupOrRound: "Grupp A",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Guadalajara",
       },
       {
         time: "21.00",
@@ -279,6 +309,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Australien",
         groupOrRound: "Grupp D",
         broadcaster: "SVT och SVT Play",
+        venue: "Seattle",
       },
     ],
   },
@@ -292,6 +323,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Marocko",
         groupOrRound: "Grupp C",
         broadcaster: "SVT och SVT Play",
+        venue: "Boston",
       },
       {
         time: "03.00",
@@ -299,6 +331,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Haiti",
         groupOrRound: "Grupp C",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Philadelphia",
       },
       {
         time: "06.00",
@@ -306,6 +339,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Paraguay",
         groupOrRound: "Grupp D",
         broadcaster: "TV4 och TV4 Play",
+        venue: "San Francisco",
       },
       {
         time: "19.00",
@@ -313,13 +347,15 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Sverige",
         groupOrRound: "Grupp F",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Houston",
       },
       {
         time: "22.00",
         homeTeam: "Tyskland",
-        awayTeam: "Elfenbenskusten",
+        awayTeam: "Elfbenskusten",
         groupOrRound: "Grupp E",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Toronto",
       },
     ],
   },
@@ -333,6 +369,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Curaçao",
         groupOrRound: "Grupp E",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Kansas City",
       },
       {
         time: "06.00",
@@ -340,6 +377,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Japan",
         groupOrRound: "Grupp F",
         broadcaster: "SVT och SVT Play",
+        venue: "Monterrey",
       },
       {
         time: "18.00",
@@ -347,6 +385,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Saudiarabien",
         groupOrRound: "Grupp H",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Atlanta",
       },
       {
         time: "21.00",
@@ -354,6 +393,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Iran",
         groupOrRound: "Grupp G",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Los Angeles",
       },
     ],
   },
@@ -367,6 +407,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Kap Verde",
         groupOrRound: "Grupp H",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Miami",
       },
       {
         time: "03.00",
@@ -374,6 +415,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Egypten",
         groupOrRound: "Grupp G",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Vancouver",
       },
       {
         time: "19.00",
@@ -381,6 +423,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Österrike",
         groupOrRound: "Grupp J",
         broadcaster: "SVT och SVT Play",
+        venue: "Dallas",
       },
       {
         time: "23.00",
@@ -388,6 +431,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Irak",
         groupOrRound: "Grupp I",
         broadcaster: "SVT och SVT Play",
+        venue: "Philadelphia",
       },
     ],
   },
@@ -401,6 +445,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Senegal",
         groupOrRound: "Grupp I",
         broadcaster: "SVT och SVT Play",
+        venue: "New Jersey",
       },
       {
         time: "05.00",
@@ -408,6 +453,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Algeriet",
         groupOrRound: "Grupp J",
         broadcaster: "TV4 och TV4 Play",
+        venue: "San Francisco",
       },
       {
         time: "19.00",
@@ -415,6 +461,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Uzbekistan",
         groupOrRound: "Grupp K",
         broadcaster: "SVT och SVT Play",
+        venue: "Houston",
       },
       {
         time: "22.00",
@@ -422,6 +469,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Ghana",
         groupOrRound: "Grupp L",
         broadcaster: "SVT och SVT Play",
+        venue: "Boston",
       },
     ],
   },
@@ -435,13 +483,15 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Kroatien",
         groupOrRound: "Grupp L",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Toronto",
       },
       {
         time: "04.00",
         homeTeam: "Colombia",
         awayTeam: "DR Kongo",
         groupOrRound: "Grupp K",
-        broadcaster: "SVT och SVT Play",
+        broadcaster: "TV4 och TV4 Play",
+        venue: "Guadalajara",
       },
       {
         time: "21.00",
@@ -449,6 +499,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Kanada",
         groupOrRound: "Grupp B",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Vancouver",
       },
       {
         time: "21.00",
@@ -456,6 +507,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Qatar",
         groupOrRound: "Grupp B",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Seattle",
       },
     ],
   },
@@ -465,24 +517,19 @@ const rawWcMatchDays: RawWCMatchDay[] = [
     matches: [
       {
         time: "00.00",
-        homeTeam: "Skottland",
-        awayTeam: "Brasilien",
-        groupOrRound: "Grupp C",
-        broadcaster: "TV4 och TV4 Play",
-      },
-      {
-        time: "00.00",
         homeTeam: "Marocko",
         awayTeam: "Haiti",
         groupOrRound: "Grupp C",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Atlanta",
       },
       {
-        time: "03.00",
-        homeTeam: "Tjeckien",
-        awayTeam: "Mexiko",
-        groupOrRound: "Grupp A",
-        broadcaster: "SVT och SVT Play",
+        time: "00.00",
+        homeTeam: "Skottland",
+        awayTeam: "Brasilien",
+        groupOrRound: "Grupp C",
+        broadcaster: "TV4 och TV4 Play",
+        venue: "Miami",
       },
       {
         time: "03.00",
@@ -490,13 +537,23 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Sydkorea",
         groupOrRound: "Grupp A",
         broadcaster: "SVT och SVT Play",
+        venue: "Monterrey",
+      },
+      {
+        time: "03.00",
+        homeTeam: "Tjeckien",
+        awayTeam: "Mexiko",
+        groupOrRound: "Grupp A",
+        broadcaster: "SVT och SVT Play",
+        venue: "Mexico City",
       },
       {
         time: "22.00",
-        homeTeam: "Curaçao",
+        homeTeam: "Curacao",
         awayTeam: "Elfenbenskusten",
         groupOrRound: "Grupp E",
         broadcaster: "SVT och SVT Play",
+        venue: "Philadelphia",
       },
       {
         time: "22.00",
@@ -504,6 +561,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Tyskland",
         groupOrRound: "Grupp E",
         broadcaster: "SVT och SVT Play",
+        venue: "New Jersey",
       },
     ],
   },
@@ -513,17 +571,19 @@ const rawWcMatchDays: RawWCMatchDay[] = [
     matches: [
       {
         time: "01.00",
-        homeTeam: "Japan",
-        awayTeam: "Sverige",
-        groupOrRound: "Grupp F",
-        broadcaster: "SVT och SVT Play",
-      },
-      {
-        time: "01.00",
         homeTeam: "Tunisien",
         awayTeam: "Nederländerna",
         groupOrRound: "Grupp F",
         broadcaster: "SVT och SVT Play",
+        venue: "Kansas City",
+      },
+      {
+        time: "01.00",
+        homeTeam: "Japan",
+        awayTeam: "Sverige",
+        groupOrRound: "Grupp F",
+        broadcaster: "SVT och SVT Play",
+        venue: "Dallas",
       },
       {
         time: "04.00",
@@ -531,6 +591,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "USA",
         groupOrRound: "Grupp D",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Los Angeles",
       },
       {
         time: "04.00",
@@ -538,6 +599,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Australien",
         groupOrRound: "Grupp D",
         broadcaster: "TV4 och TV4 Play",
+        venue: "San Francisco",
       },
       {
         time: "21.00",
@@ -545,6 +607,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Frankrike",
         groupOrRound: "Grupp I",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Boston",
       },
       {
         time: "21.00",
@@ -552,6 +615,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Irak",
         groupOrRound: "Grupp I",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Toronto",
       },
     ],
   },
@@ -565,6 +629,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Saudiarabien",
         groupOrRound: "Grupp H",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Houston",
       },
       {
         time: "02.00",
@@ -572,13 +637,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Spanien",
         groupOrRound: "Grupp H",
         broadcaster: "TV4 och TV4 Play",
-      },
-      {
-        time: "05.00",
-        homeTeam: "Egypten",
-        awayTeam: "Iran",
-        groupOrRound: "Grupp G",
-        broadcaster: "TV4 och TV4 Play",
+        venue: "Guadalajara",
       },
       {
         time: "05.00",
@@ -586,6 +645,15 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Belgien",
         groupOrRound: "Grupp G",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Vancouver",
+      },
+      {
+        time: "05.00",
+        homeTeam: "Egypten",
+        awayTeam: "Iran",
+        groupOrRound: "Grupp G",
+        broadcaster: "TV4 och TV4 Play",
+        venue: "Seattle",
       },
       {
         time: "23.00",
@@ -593,6 +661,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "England",
         groupOrRound: "Grupp L",
         broadcaster: "SVT och SVT Play",
+        venue: "New Jersey",
       },
       {
         time: "23.00",
@@ -600,6 +669,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Ghana",
         groupOrRound: "Grupp L",
         broadcaster: "SVT och SVT Play",
+        venue: "Philadelphia",
       },
     ],
   },
@@ -609,17 +679,19 @@ const rawWcMatchDays: RawWCMatchDay[] = [
     matches: [
       {
         time: "01.30",
+        homeTeam: "Demokratiska republiken Kongo",
+        awayTeam: "Uzbekistan",
+        groupOrRound: "Grupp K",
+        broadcaster: "TV4 och TV4 Play",
+        venue: "Atlanta",
+      },
+      {
+        time: "01.30",
         homeTeam: "Colombia",
         awayTeam: "Portugal",
         groupOrRound: "Grupp K",
         broadcaster: "TV4 och TV4 Play",
-      },
-      {
-        time: "01.30",
-        homeTeam: "DR Kongo",
-        awayTeam: "Uzbekistan",
-        groupOrRound: "Grupp K",
-        broadcaster: "TV4 och TV4 Play",
+        venue: "Miami",
       },
       {
         time: "04.00",
@@ -627,6 +699,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Österrike",
         groupOrRound: "Grupp J",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Kansas City",
       },
       {
         time: "04.00",
@@ -634,6 +707,7 @@ const rawWcMatchDays: RawWCMatchDay[] = [
         awayTeam: "Argentina",
         groupOrRound: "Grupp J",
         broadcaster: "TV4 och TV4 Play",
+        venue: "Dallas",
       },
       {
         time: "21.00",
@@ -943,8 +1017,8 @@ const rawWcMatchDays: RawWCMatchDay[] = [
     matches: [
       {
         time: "23.00",
-        homeTeam: "Förlorare match 93",
-        awayTeam: "Förlorare match 94",
+        homeTeam: "L101",
+        awayTeam: "L102",
         groupOrRound: "Match 95, bronsmatch",
         broadcaster: "SVT och SVT Play",
       },
@@ -965,27 +1039,27 @@ const rawWcMatchDays: RawWCMatchDay[] = [
   },
 ];
 
-export const staticWcMatchDays: WCMatchDay[] = rawWcMatchDays.map((day) => ({
+export const staticGameDays: WCMatchDay[] = worldCupData.map((day) => ({
   ...day,
   matches: day.matches.map((match, index) => {
-    const homeSide = createMatchSide(match.homeTeam);
-    const awaySide = createMatchSide(match.awayTeam);
+    const homeTeam = createMatchSide(match.homeTeam);
+    const awayTeam = createMatchSide(match.awayTeam);
 
     return {
-      awaySide,
+      awayTeam,
       broadcaster: match.broadcaster,
       groupOrRound: match.groupOrRound,
-      homeSide,
-      id: `${day.date}-${match.time}-${getMatchSideStableLabel(homeSide)}-${getMatchSideStableLabel(awaySide)}-${index}`,
+      homeTeam,
+      id: `${day.date}-${match.time}-${getMatchSideStableLabel(homeTeam)}-${getMatchSideStableLabel(awayTeam)}-${index}`,
       matchNumber: extractMatchNumber(match.groupOrRound),
       result: match.result,
       time: match.time,
+      venue: match.venue,
     };
   }),
 }));
 
-export const staticWcGroupTeamsByLabel: GroupTeamsByLabel =
-  buildGroupTeamsByLabel(staticWcMatchDays);
+export const staticGroupTeamsByLabel: GroupTeamsByLabel =
+  buildGroupTeamsByLabel(staticGameDays);
 
-export const wcMatchDays = staticWcMatchDays;
-export const wcGroupTeamsByLabel = staticWcGroupTeamsByLabel;
+export const wcGroupTeamsByLabel = staticGroupTeamsByLabel;

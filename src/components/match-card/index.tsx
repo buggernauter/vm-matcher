@@ -37,29 +37,32 @@ type Props = {
   resolutionContext?: MatchParticipantResolutionContext;
   groupOrRound: string;
   groupTeams?: string[];
-  homeSide: MatchParticipant;
-  awaySide: MatchParticipant;
+  homeTeam: MatchParticipant;
+  awayTeam: MatchParticipant;
   result?: MatchResult;
   time: string;
+  dayLabel?: string;
 };
 
 export const MatchCard = ({
   broadcaster,
   groupOrRound,
   groupTeams,
-  homeSide,
-  awaySide,
+  homeTeam,
+  awayTeam,
   resolutionContext,
   result,
   time,
+
+  dayLabel,
 }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const homeSideLabel = resolveMatchSideDisplayName(
-    homeSide,
+  const homeTeamLabel = resolveMatchSideDisplayName(
+    homeTeam,
     resolutionContext,
   );
-  const awaySideLabel = resolveMatchSideDisplayName(
-    awaySide,
+  const awayTeamLabel = resolveMatchSideDisplayName(
+    awayTeam,
     resolutionContext,
   );
   const resultLabel = resolveMatchResultDisplay(result);
@@ -76,7 +79,7 @@ export const MatchCard = ({
         <StyledInfo>
           <StyledMatchRow>
             <StyledTeams>
-              {homeSideLabel} - {awaySideLabel}
+              {homeTeamLabel} - {awayTeamLabel}
             </StyledTeams>
             {resultLabel ? <StyledResult>{resultLabel}</StyledResult> : null}
           </StyledMatchRow>
@@ -112,6 +115,7 @@ export const MatchCard = ({
 
       {shouldRenderFooter ? (
         <StyledFooter>
+          {dayLabel ? <StyledChip>{`${dayLabel}`}</StyledChip> : null}
           {broadcaster ? <StyledChip>{broadcaster}</StyledChip> : null}
         </StyledFooter>
       ) : null}

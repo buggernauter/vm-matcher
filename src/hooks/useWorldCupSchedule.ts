@@ -1,15 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 
-import {
-  staticWcGroupTeamsByLabel,
-  staticWcMatchDays,
-} from "../dev-api/dev-wc";
+import { staticGroupTeamsByLabel, staticGameDays } from "../dev-api/dev-wc";
 import { fetchWorldCupSchedule } from "../lib/world-cup-api";
 import type { WorldCupSchedulePayload } from "../types/wc-match";
 
 const FALLBACK_SCHEDULE: WorldCupSchedulePayload = {
-  groupTeamsByLabel: staticWcGroupTeamsByLabel,
-  matchDays: staticWcMatchDays,
+  groupTeamsByLabel: staticGroupTeamsByLabel,
+  matchDays: staticGameDays,
   source: "static",
   syncedAt: "",
 };

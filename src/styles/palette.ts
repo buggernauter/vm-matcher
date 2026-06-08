@@ -1,4 +1,4 @@
-import type { Palette, PrintPalette } from "./type";
+import type { Palette } from "./type";
 
 const lightColors = {
   backgroundDefault: "#f7fafc",
@@ -44,28 +44,6 @@ const darkColors = {
   transparent: "transparent",
 } as const;
 
-const printColors = {
-  actionText: "#393838",
-  border: "#d8cfc2",
-  borderSoft: "#ece4d9",
-  borderStrong: "#000000",
-  borderSubtle: "#ddd5c9",
-  card: "#f4ede2",
-  line: "#8d8d8d",
-  muted: "#f8f3eb",
-  pageGradientEnd: "#ddd6c8",
-  pageGradientMid: "#f5f2ea",
-  pageGradientStart: "#ebe7de",
-  panelTint: "rgba(250, 247, 241, 0.9)",
-  paper: "#ffffff",
-  paperOverlay: "rgba(255, 255, 255, 0.96)",
-  shadow: "rgba(43, 33, 24, 0.14)",
-  surface: "#fcfaf6",
-  tableHeader: "#fbf7f0",
-  text: "#1f1a17",
-  textMuted: "#655b51",
-} as const;
-
 export const gradients = {
   light: {
     cardSurface: `linear-gradient(180deg, ${lightColors.backgroundPaper} 0%, ${lightColors.surfacePrimary} 100%)`,
@@ -101,10 +79,6 @@ export const gradients = {
       "linear-gradient(180deg, rgba(38, 38, 38, 0.94) 0%, rgba(24, 24, 24, 0.96) 100%)",
     summaryCard: `linear-gradient(180deg, ${darkColors.surfacePrimary} 0%, ${darkColors.backgroundDefault} 100%)`,
   },
-  print: {
-    page: `linear-gradient(135deg, ${printColors.pageGradientStart} 0%, ${printColors.pageGradientMid} 45%, ${printColors.pageGradientEnd} 100%)`,
-    sheet: `linear-gradient(180deg, ${printColors.paperOverlay} 0%, ${printColors.surface} 100%)`,
-  },
 } as const;
 
 export const shadows = {
@@ -139,9 +113,6 @@ export const shadows = {
     stepperControl: `0 0.875rem 1.75rem rgba(0, 0, 0, 0.18), inset 0 0.0625rem 0 rgba(255, 255, 255, 0.04)`,
     toggleButtonDanger: `0 0.75rem 1.5rem ${darkColors.shadowDark}`,
     toggleButtonSuccess: `0 0.75rem 1.5rem ${darkColors.shadowPrimary}`,
-  },
-  print: {
-    sheet: `0 1.5rem 3.75rem ${printColors.shadow}`,
   },
 } as const;
 
@@ -204,7 +175,6 @@ export const darkPalette: Palette = {
 export type AppTheme = {
   mode: "light" | "dark";
   palette: Palette;
-  
 };
 
 export const appTheme: AppTheme = {
@@ -215,25 +185,4 @@ export const appTheme: AppTheme = {
 export const darkTheme: AppTheme = {
   mode: "dark",
   palette: darkPalette,
-};
-
-export const printPalette: PrintPalette = {
-  actionText: printColors.actionText,
-  border: printColors.border,
-  borderSoft: printColors.borderSoft,
-  borderStrong: printColors.borderStrong,
-  borderSubtle: printColors.borderSubtle,
-  card: printColors.card,
-  line: printColors.line,
-  muted: printColors.muted,
-  pageGradient: gradients.print.page,
-  panelTint: printColors.panelTint,
-  paper: printColors.paper,
-  paperOverlay: printColors.paperOverlay,
-  sheetGradient: gradients.print.sheet,
-  sheetShadow: shadows.print.sheet,
-  surface: printColors.surface,
-  tableHeader: printColors.tableHeader,
-  text: printColors.text,
-  textMuted: printColors.textMuted,
 };

@@ -26,6 +26,8 @@ import {
   StyledScheduleCard,
 } from "./styles";
 import type { WorldCupSchedulePayload } from "../../types/wc-match";
+import { SearchBar } from "@/components/search-bar";
+import { getTeamName } from "@/server/world-cup-merge";
 
 type Props = {
   heroTitleTag?: "h1" | "h2" | "h3";
@@ -40,6 +42,7 @@ export const WorldCupSchedule = ({ initialSchedule }: Props) => {
   const [selectedMatchDay, setSelectedMatchDay] = useState(() =>
     getInitialDayIndex(matchDays),
   );
+  const [searchTerm, setSearchTerm] = useState("");
 
   const safeSelectedMatchDay = clampValue(
     selectedMatchDay,
@@ -68,65 +71,130 @@ export const WorldCupSchedule = ({ initialSchedule }: Props) => {
     setSelectedMatchDay(getInitialDayIndex(matchDays));
   }, [matchDays]);
 
+  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+
+  const filteredMatches = normalizedSearchTerm
+    ? matchDays.flatMap((day) =>
+        day.matches
+          .filter((match) => {
+            const homeTeamName =
+              getTeamName(match.homeTeam)?.toLowerCase() ?? "";
+            const awayTeamName =
+              getTeamName(match.awayTeam)?.toLowerCase() ?? "";
+            return (
+              homeTeamName.includes(normalizedSearchTerm) ||
+              awayTeamName.includes(normalizedSearchTerm)
+            );
+          })
+          .map((match) => ({
+            ...match,
+            date: day.date,
+            dayLabel: day.label,
+          })),
+      )
+    : [];
+
   return (
     <StyledMain>
       <StyledScheduleCard>
-        <StyledActionButton type="button" onClick={goToToday}>
+        <StyledActionButton
+          type="button"
+          onClick={() => {
+            goToToday();
+            setSearchTerm("");
+          }}
+        >
           Idag
         </StyledActionButton>
         <StyledDivider />
-        <DayNavigation
-          isOnFirst={isFirstDay}
-          isOnLast={isLastDay}
-          label={selectedDay.label}
-          meta={totalMatchesText}
-          onNext={goToNextDay}
-          onPrevious={goToPreviousDay}
-        />
-
-        <HorizontalDatePicker
-          ariaLabel="Matchdagar"
-          items={matchDays.map((day) => {
-            const hasSwedenMatch = day.matches.some(
-              (match) =>
-                isSwedenPlaying(match.homeSide) ||
-                isSwedenPlaying(match.awaySide),
-            );
-
-            return {
-              id: day.date,
-              date: day.date,
-              flagCode: hasSwedenMatch ? "SE" : undefined,
-              flagLabel: hasSwedenMatch ? "Sverige spelar" : undefined,
-              label: day.label,
-              meta: `${day.matches.length} matcher`,
-            };
-          })}
-          selectedIndex={safeSelectedMatchDay}
-          onSelect={(_, index) => {
-            setSelectedMatchDay(index);
+        <StyledDivider />
+        <SearchBar
+          key={searchTerm}
+          loading={false}
+          handleSubmit={(value) => {
+            setSearchTerm(value);
           }}
+          onClear={() => {
+            setSearchTerm("");
+          }}
+          value={searchTerm}
         />
-
-        {selectedDay.matches.length > 0 ? (
+        <StyledDivider />
+        <StyledDivider />
+        {searchTerm ? (
           <StyledMatches>
-            {selectedDay.matches.map((match) => (
+            {filteredMatches.map((match) => (
               <MatchCard
                 key={match.id}
-                awaySide={match.awaySide}
+                awayTeam={match.awayTeam}
                 broadcaster={match.broadcaster}
                 groupOrRound={match.groupOrRound}
                 groupTeams={
                   groupTeamsByLabel[getGroupLabel(match.groupOrRound) ?? ""]
                 }
-                homeSide={match.homeSide}
+                homeTeam={match.homeTeam}
                 result={match.result}
+                dayLabel={match.dayLabel}
                 time={match.time}
               />
             ))}
           </StyledMatches>
         ) : (
-          <EmptyStateCard message="Inga matcher den här dagen." />
+          <>
+            <DayNavigation
+              isOnFirst={isFirstDay}
+              isOnLast={isLastDay}
+              label={selectedDay.label}
+              meta={totalMatchesText}
+              onNext={goToNextDay}
+              onPrevious={goToPreviousDay}
+            />
+
+            <HorizontalDatePicker
+              ariaLabel="Matchdagar"
+              items={matchDays.map((day) => {
+                const hasSwedenMatch = day.matches.some(
+                  (match) =>
+                    isSwedenPlaying(match.homeTeam) ||
+                    isSwedenPlaying(match.awayTeam),
+                );
+
+                return {
+                  id: day.date,
+                  date: day.date,
+                  flagCode: hasSwedenMatch ? "SE" : undefined,
+                  flagLabel: hasSwedenMatch ? "Sverige spelar" : undefined,
+                  label: day.label,
+                  meta: `${day.matches.length} matcher`,
+                };
+              })}
+              selectedIndex={safeSelectedMatchDay}
+              onSelect={(_, index) => {
+                setSelectedMatchDay(index);
+              }}
+            />
+
+            {selectedDay.matches.length > 0 ? (
+              <StyledMatches>
+                {selectedDay.matches.map((match) => (
+                  <MatchCard
+                    key={match.id}
+                    awayTeam={match.awayTeam}
+                    broadcaster={match.broadcaster}
+                    groupOrRound={match.groupOrRound}
+                    groupTeams={
+                      groupTeamsByLabel[getGroupLabel(match.groupOrRound) ?? ""]
+                    }
+                    homeTeam={match.homeTeam}
+                    result={match.result}
+                    time={match.time}
+                  />
+                ))}
+              </StyledMatches>
+            ) : (
+              <EmptyStateCard message="Inga matcher den här dagen." />
+            )}
+          </>
         )}
       </StyledScheduleCard>
     </StyledMain>

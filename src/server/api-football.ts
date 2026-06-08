@@ -1,13 +1,10 @@
-import type { ApiFootballFixturesResponse } from "../types/api-football";
+import type { ApiFixturesResponse } from "../types/api-football";
 
 const API_FOOTBALL_BASE_URL = "https://v3.football.api-sports.io";
 const WORLD_CUP_TIMEZONE = "Europe/Stockholm";
 
 type ApiFootballPrimitive = boolean | number | string;
-type ApiFootballQueryParams = Record<
-  string,
-  ApiFootballPrimitive | undefined
->;
+type ApiFootballQueryParams = Record<string, ApiFootballPrimitive | undefined>;
 
 // Add API_FOOTBALL_KEY to your local `.env` file.
 // Add API_FOOTBALL_KEY in Vercel Project Settings > Environment Variables.
@@ -60,7 +57,7 @@ const requestApiFootball = async <TResponse>(
 };
 
 export const fetchApiFootballFixturesByDate = async (date: string) =>
-  requestApiFootball<ApiFootballFixturesResponse>("/fixtures", {
+  requestApiFootball<ApiFixturesResponse>("/fixtures", {
     date,
     timezone: WORLD_CUP_TIMEZONE,
   });
@@ -75,7 +72,7 @@ export const fetchApiFootballFixturesByCompetition = async (
     to?: string;
   },
 ) =>
-  requestApiFootball<ApiFootballFixturesResponse>("/fixtures", {
+  requestApiFootball<ApiFixturesResponse>("/fixtures", {
     date: options?.date,
     from: options?.from,
     league,

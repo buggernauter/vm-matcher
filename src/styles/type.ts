@@ -81,38 +81,3 @@ export type Palette = {
   borderDefault: string;
   transparent: string;
 };
-
-export type PrintPalette = {
-  actionText: string;
-
-  card: string;
-
-  border: string;
-
-  borderStrong: string;
-
-  borderSubtle: string;
-
-  borderSoft: string;
-
-  pageGradient: string;
-
-  paper: string;
-
-  paperOverlay: string;
-
-  sheetGradient: string;
-
-  sheetShadow: string;
-
-  tableHeader: string;
-
-  text: string;
-
-  textMuted: string;
-
-  line: string;
-  muted: string;
-  panelTint: string;
-  surface: string;
-};

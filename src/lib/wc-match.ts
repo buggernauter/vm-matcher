@@ -4,7 +4,7 @@ import type {
   MatchParticipantResolutionContext,
   MatchResult,
   TeamParticipant,
-  WCMatchDay,
+  WCMatchDay as MatchDay,
 } from "../types/wc-match";
 
 const GROUP_ROUND_PATTERN = /^Grupp ([A-Z])$/;
@@ -135,7 +135,7 @@ export const resolveMatchResultDisplay = (result?: MatchResult) =>
   result ? formatMatchScore(result) : undefined;
 
 export const buildGroupTeamsByLabel = (
-  matchDays: WCMatchDay[],
+  matchDays: MatchDay[],
 ): GroupTeamsByLabel => {
   const groupTeamsByLabel: GroupTeamsByLabel = {};
 
@@ -150,17 +150,17 @@ export const buildGroupTeamsByLabel = (
       const groupTeams = groupTeamsByLabel[groupLabel] ?? [];
 
       if (
-        match.homeSide.kind === "team" &&
-        !groupTeams.includes(match.homeSide.teamName)
+        match.homeTeam.kind === "team" &&
+        !groupTeams.includes(match.homeTeam.teamName)
       ) {
-        groupTeams.push(match.homeSide.teamName);
+        groupTeams.push(match.homeTeam.teamName);
       }
 
       if (
-        match.awaySide.kind === "team" &&
-        !groupTeams.includes(match.awaySide.teamName)
+        match.awayTeam.kind === "team" &&
+        !groupTeams.includes(match.awayTeam.teamName)
       ) {
-        groupTeams.push(match.awaySide.teamName);
+        groupTeams.push(match.awayTeam.teamName);
       }
 
       groupTeamsByLabel[groupLabel] = groupTeams;

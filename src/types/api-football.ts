@@ -1,12 +1,12 @@
-export type ApiFootballFixtureStatus = {
+export type ApiFixtureStatus = {
   short: string;
 };
 
-export type ApiFootballFixtureResponseItem = {
+export type ApiFixtureResponseItem = {
   fixture: {
     date: string;
     id: number;
-    status: ApiFootballFixtureStatus;
+    status: ApiFixtureStatus;
   };
   goals: {
     away: number | null;
@@ -30,6 +30,6 @@ export type ApiFootballFixtureResponseItem = {
   };
 };
 
-export type ApiFootballFixturesResponse = {
-  response: ApiFootballFixtureResponseItem[];
+export type ApiFixturesResponse = {
+  response: ApiFixtureResponseItem[];
 };

@@ -50,10 +50,10 @@ export type MatchResult = {
 };
 
 export type WCMatch = {
-  awaySide: MatchParticipant;
+  awayTeam: MatchParticipant;
   broadcaster?: string;
   groupOrRound: string;
-  homeSide: MatchParticipant;
+  homeTeam: MatchParticipant;
   id: string;
   matchNumber?: number;
   result?: MatchResult;
@@ -75,10 +75,6 @@ export type WorldCupSchedulePayload = {
   matchDays: WCMatchDay[];
   source: WorldCupScheduleSource;
   syncedAt: string;
-};
-
-export type WorldCupResultSyncPayload = WorldCupSchedulePayload & {
-  updatedMatchesCount: number;
 };
 
 export type WorldCupMatchEntry = {
