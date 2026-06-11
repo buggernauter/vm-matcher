@@ -1,63 +1,76 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { StyledCounter, StyledLabel, StyledWrapper } from "./styles";
+import { useEffect, useState } from 'react';
+import { StyledCounter, StyledLabel, StyledWrapper } from './styles';
+import { WORLD_CUP_START } from '@/server/constants';
 
-const WORLD_CUP_START = new Date("2026-06-11T21:00:00+02:00").getTime();
+type TimeRemaining = {
+	totalHours: number;
+	minutes: number;
+	seconds: number;
+};
 
-const getTimeRemaining = () => {
-  const difference = WORLD_CUP_START - Date.now();
+const getTimeRemaining = (now: number): TimeRemaining | null => {
+	const difference = WORLD_CUP_START - now;
 
-  if (difference <= 0) {
-    return null;
-  }
+	if (difference <= 0) {
+		return null;
+	}
 
-  const totalHours = Math.floor(difference / (1000 * 60 * 60));
+	const totalHours = Math.floor(difference / (1000 * 60 * 60));
 
-  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+	const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
 
-  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+	const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-  return {
-    totalHours,
+	return {
+		totalHours,
 
-    minutes,
+		minutes,
 
-    seconds,
-  };
+		seconds,
+	};
 };
 
 export const Countdown = () => {
-  const [timeRemaining, setTimeRemaining] = useState(() => getTimeRemaining());
+	const [timeRemaining, setTimeRemaining] = useState<TimeRemaining | null>(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const remaining = getTimeRemaining();
+	useEffect(() => {
+		const updateTimeRemaining = () => {
+			const remaining = getTimeRemaining(Date.now());
 
-      if (!remaining) {
-        clearInterval(interval);
+			setTimeRemaining(remaining);
 
-        setTimeRemaining(null);
+			return remaining;
+		};
 
-        return;
-      }
+		const initialRemaining = updateTimeRemaining();
 
-      setTimeRemaining(remaining);
-    }, 1000);
+		if (!initialRemaining) {
+			return;
+		}
 
-    return () => clearInterval(interval);
-  }, []);
-  if (!timeRemaining) {
-    return null;
-  }
-  return (
-    <StyledWrapper>
-      <StyledLabel>VM startar om</StyledLabel>
+		const interval = setInterval(() => {
+			const remaining = updateTimeRemaining();
 
-      <StyledCounter>
-        {timeRemaining.totalHours}h {timeRemaining.minutes}m{" "}
-        {timeRemaining.seconds}s
-      </StyledCounter>
-    </StyledWrapper>
-  );
+			if (!remaining) {
+				clearInterval(interval);
+				return;
+			}
+		}, 1000);
+
+		return () => clearInterval(interval);
+	}, []);
+	if (!timeRemaining) {
+		return null;
+	}
+	return (
+		<StyledWrapper>
+			<StyledLabel>VM startar om</StyledLabel>
+
+			<StyledCounter>
+				{timeRemaining.totalHours}h {timeRemaining.minutes}m {timeRemaining.seconds}s
+			</StyledCounter>
+		</StyledWrapper>
+	);
 };

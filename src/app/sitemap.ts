@@ -1,16 +1,11 @@
 import type { MetadataRoute } from "next";
 
-import { getBestAvailableWorldCupSchedulePayload } from "@/server/world-cup";
-import { getScheduleCanonicalUrl } from "@/server/world-cup-seo";
+import { getScheduleCanonicalUrl } from "@/server/seo";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const schedule = await getBestAvailableWorldCupSchedulePayload();
-
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      changeFrequency: "hourly",
-
-      lastModified: new Date(schedule.syncedAt),
+      changeFrequency: "daily",
 
       priority: 1,
 

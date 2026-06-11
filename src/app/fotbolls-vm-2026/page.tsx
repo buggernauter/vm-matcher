@@ -1,38 +1,60 @@
-import type { Metadata } from "next";
-import { WorldCupScheduleContainer } from "@/features/world-cup";
-import { getBestAvailableWorldCupSchedulePayload } from "@/server/world-cup";
+import type { Metadata } from 'next';
+
 import {
-  buildWebsiteJsonLd,
-  getScheduleCanonicalUrl,
-} from "@/server/world-cup-seo";
+	buildSchedulePageJsonLd,
+	getScheduleCanonicalUrl,
+	SCHEDULE_HERO_DESCRIPTION,
+	SCHEDULE_HERO_TITLE,
+	SCHEDULE_PAGE_DESCRIPTION,
+	SCHEDULE_PAGE_TITLE,
+} from '@/server/seo';
+import { Countdown } from '@/components/count-down';
+import { HeroCard } from '@/components/hero-card';
+import { JsonLd } from '@/components/json-ld';
+import { AppProviders } from '@/components/providers/app-providers';
+import { WorldCupSchedule } from '@/features/world-cup/world-cup-schedule';
+import { Trophy } from 'lucide-react';
+
+import { StyledWorldCupPageShell } from './styles';
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: "/fotbolls-vm-2026",
-  },
-  description:
-    "Se hela spelschemat för Fotbolls-VM 2026 med svenska tider, dagens matcher, resultat, gruppspel och slutspel.",
-  openGraph: {
-    description:
-      "Se hela spelschemat för Fotbolls-VM 2026 med svenska tider, dagens matcher, resultat, gruppspel och slutspel.",
-    title: "Fotbolls-VM 2026 spelschema – matcher, tider och resultat",
-    url: getScheduleCanonicalUrl(),
-  },
-  title: "Fotbolls-VM 2026 spelschema – matcher, tider och resultat",
-  twitter: {
-    description:
-      "Se hela spelschemat för Fotbolls-VM 2026 med svenska tider, dagens matcher, resultat, gruppspel och slutspel.",
-    title: "Fotbolls-VM 2026 spelschema – matcher, tider och resultat",
-  },
+	alternates: {
+		canonical: '/fotbolls-vm-2026',
+	},
+	description: SCHEDULE_PAGE_DESCRIPTION,
+	openGraph: {
+		description: SCHEDULE_PAGE_DESCRIPTION,
+		title: SCHEDULE_PAGE_TITLE,
+		url: getScheduleCanonicalUrl(),
+	},
+	title: SCHEDULE_PAGE_TITLE,
+	twitter: {
+		description: SCHEDULE_PAGE_DESCRIPTION,
+		title: SCHEDULE_PAGE_TITLE,
+	},
 };
 
 export default async function WorldCupSchedulePage() {
-  const schedule = await getBestAvailableWorldCupSchedulePayload();
+	return (
+		<>
+			<JsonLd data={buildSchedulePageJsonLd()} />
+			<StyledWorldCupPageShell>
+				<HeroCard
+					badge={
+						<>
+							<Trophy aria-hidden="true" color="gold" />
+							Fotbolls-VM 2026
+						</>
+					}
+					title={SCHEDULE_HERO_TITLE}
+					description={SCHEDULE_HERO_DESCRIPTION}
+					action={<Countdown />}
+				/>
 
-  return (
-    <WorldCupScheduleContainer
-      schedule={schedule}
-      websiteJsonLd={buildWebsiteJsonLd()}
-    />
-  );
+				<AppProviders>
+					<WorldCupSchedule />
+				</AppProviders>
+			</StyledWorldCupPageShell>
+		</>
+	);
 }
