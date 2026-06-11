@@ -79,6 +79,7 @@ export type GroupTableRow = {
 	goalDifference: number;
 	goalsAgainst: number;
 	goalsFor: number;
+	playedGames: number;
 	points: number;
 	position: number;
 	teamName: string;

@@ -24,7 +24,7 @@ import {
 	StyledTimeBadge,
 	StyledResult,
 } from './styles';
-import { StandingsTable } from '../standing-table';
+import { GroupStandings } from '../group-standings';
 import { BroadcasterChip } from '../broadcaster-chip';
 
 type Props = {
@@ -87,7 +87,7 @@ export const MatchCard = ({
 				</StyledInfo>
 			</StyledCardHeader>
 
-			{canExpandGroup && isExpanded ? <StandingsTable groupTable={groupTable} /> : null}
+			{canExpandGroup && isExpanded ? <GroupStandings groupTable={groupTable} /> : null}
 
 			{shouldRenderFooter ? (
 				<StyledFooter>

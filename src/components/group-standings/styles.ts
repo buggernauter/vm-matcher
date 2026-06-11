@@ -6,8 +6,8 @@ export const StyledGroupPanel = styled.div`
 
 export const StyledGroupTable = styled.div`
 	width: auto;
-	min-width: 18rem;
-	max-width: 24rem;
+	min-width: 21rem;
+	max-width: 27rem;
 	background: ${({ theme }) => theme.palette.surfacePrimary};
 	border: 0.0625rem solid ${({ theme }) => theme.palette.outline};
 	border-radius: 0.75rem;
@@ -15,7 +15,7 @@ export const StyledGroupTable = styled.div`
 `;
 export const StyledGroupTableHeader = styled.div`
 	display: grid;
-	grid-template-columns: 2.5rem minmax(0, 1fr) 4rem 2.5rem;
+	grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem 4rem 2.5rem;
 	align-items: center;
 	background: ${({ theme }) => theme.palette.backgroundPaper};
 	border-bottom: 0.0625rem solid ${({ theme }) => theme.palette.outline};
@@ -55,7 +55,7 @@ export const StyledGroupList = styled.div`
 
 export const StyledGroupRow = styled.div`
 	display: grid;
-	grid-template-columns: 2.5rem minmax(0, 1fr) 4rem 2.5rem;
+	grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem 4rem 2.5rem;
 	align-items: center;
 
 	&:not(:last-child) {

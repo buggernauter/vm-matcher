@@ -107,6 +107,7 @@ const ensureGroupTableRow = (
 		goalDifference: 0,
 		goalsAgainst: 0,
 		goalsFor: 0,
+		playedGames: 0,
 		points: 0,
 		seedIndex,
 		teamName,
@@ -143,6 +144,9 @@ export const buildGroupTablesByLabel = (matchDays: TournamentGamesData[]): Group
 			const awayTeamRow = groupTableRows[match.awayTeam.teamName];
 			const { homeScore, awayScore } = match.result;
 
+			homeTeamRow.playedGames += 1;
+			awayTeamRow.playedGames += 1;
+
 			homeTeamRow.goalsFor += homeScore;
 			homeTeamRow.goalsAgainst += awayScore;
 			homeTeamRow.goalDifference = homeTeamRow.goalsFor - homeTeamRow.goalsAgainst;
@@ -169,6 +173,7 @@ export const buildGroupTablesByLabel = (matchDays: TournamentGamesData[]): Group
 				goalDifference: groupTableRow.goalDifference,
 				goalsAgainst: groupTableRow.goalsAgainst,
 				goalsFor: groupTableRow.goalsFor,
+				playedGames: groupTableRow.playedGames,
 				points: groupTableRow.points,
 				position: index + 1,
 				teamName: groupTableRow.teamName,

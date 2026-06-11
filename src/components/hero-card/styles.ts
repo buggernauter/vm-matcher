@@ -4,11 +4,9 @@ export const StyledHeroCard = styled.section`
 	position: relative;
 	overflow: hidden;
 
-	padding: 1rem 1rem 2.5rem;
+	padding: 0.75rem;
 
-	border-radius: 1.5rem;
-	background: ${({ theme }) => theme.palette.cardSurfaceGradient};
-	box-shadow: ${({ theme }) => theme.palette.cardSurfaceShadow};
+	background: ${({ theme }) => theme.palette.transparent};
 `;
 
 export const StyledHeroBadge = styled.span`
