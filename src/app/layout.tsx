@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { StyledComponentsRegistry } from '@/lib/styled-components-registry';
 import { SITE_DESCRIPTION, SITE_NAME } from '@/server/seo';
 import { getMetadataBase } from '@/server/site';
-import { ReactNode } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -74,6 +75,7 @@ export default function RootLayout({
 	return (
 		<html lang="sv" className={`${geistSans.variable} ${geistMono.variable}`}>
 			<body>
+				<SpeedInsights />
 				<StyledComponentsRegistry>{children}</StyledComponentsRegistry>
 			</body>
 		</html>

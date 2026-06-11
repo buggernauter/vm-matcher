@@ -11,7 +11,6 @@ import {
 import { Countdown } from '@/components/count-down';
 import { HeroCard } from '@/components/hero-card';
 import { JsonLd } from '@/components/json-ld';
-import { AppProviders } from '@/components/providers/app-providers';
 import { WorldCupSchedule } from '@/features/world-cup/world-cup-schedule';
 import { Trophy } from 'lucide-react';
 
@@ -51,9 +50,7 @@ export default async function WorldCupSchedulePage() {
 					action={<Countdown />}
 				/>
 
-				<AppProviders>
-					<WorldCupSchedule />
-				</AppProviders>
+				<WorldCupSchedule />
 			</StyledWorldCupPageShell>
 		</>
 	);
