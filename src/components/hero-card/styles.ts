@@ -3,9 +3,7 @@ import styled from 'styled-components';
 export const StyledHeroCard = styled.section`
 	position: relative;
 	overflow: hidden;
-
-	padding: 0.75rem;
-
+	padding: 0.8rem 1rem 0.85rem;
 	background: ${({ theme }) => theme.palette.transparent};
 `;
 

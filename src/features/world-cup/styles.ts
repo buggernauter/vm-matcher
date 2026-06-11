@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledMain = styled.main`
-	box-sizing: border-box;
-	height: '100%';
+export const StyledContainer = styled.section`
+	display: flex;
+	flex-direction: column;
+	padding: 0.8rem 1rem 0.85rem;
 	background: ${({ theme }) => theme.palette.transparent};
-
 	color: ${({ theme }) => theme.palette.textPrimary};
 	font-family:
 		Inter,
@@ -14,11 +14,6 @@ export const StyledMain = styled.main`
 		BlinkMacSystemFont,
 		'Segoe UI',
 		sans-serif;
-`;
-
-export const StyledStack = styled.section`
-	display: flex;
-	flex-direction: column;
 `;
 
 export const StyledActionButton = styled.button`
@@ -50,12 +45,6 @@ export const StyledActionButton = styled.button`
 		opacity: 0.4;
 		box-shadow: none;
 	}
-`;
-
-export const StyledScheduleCard = styled.section`
-	padding: 0.8rem 0.7rem 0.85rem;
-	display: flex;
-	flex-direction: column;
 `;
 
 export const StyledMatches = styled.div`

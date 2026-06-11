@@ -2,11 +2,13 @@
 
 import styled from 'styled-components';
 
-import { breakpoints } from '@/styles/breakpoints';
-
 export const StyledWorldCupPageShell = styled.main`
 	position: relative;
-	isolation: isolate;
+	/* isolation: isolate; */
+	width: 100%;
+	max-width: 96rem;
+	min-height: 70vh;
+	/* margin-inline: auto; */
 
 	overflow: hidden;
 	background: ${({ theme }) => theme.palette.cardSurfaceGradient};
@@ -28,7 +30,5 @@ export const StyledWorldCupPageShell = styled.main`
 		z-index: 1;
 	}
 
-	@media (min-width: ${breakpoints.desktop}) {
-		margin: 1.25rem auto 2rem;
-	}
+	margin: 0 auto 2rem;
 `;
