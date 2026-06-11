@@ -5,8 +5,18 @@ import { StyledCounter, StyledLabel, StyledWrapper } from "./styles";
 
 const WORLD_CUP_START = new Date("2026-06-11T21:00:00+02:00").getTime();
 
-const getTimeRemaining = () => {
-  const difference = WORLD_CUP_START - Date.now();
+type TimeRemaining = {
+  totalHours: number;
+  minutes: number;
+  seconds: number;
+};
+
+type Props = {
+  serverNow: number;
+};
+
+const getTimeRemaining = (now: number): TimeRemaining | null => {
+  const difference = WORLD_CUP_START - now;
 
   if (difference <= 0) {
     return null;
@@ -27,22 +37,33 @@ const getTimeRemaining = () => {
   };
 };
 
-export const Countdown = () => {
-  const [timeRemaining, setTimeRemaining] = useState(() => getTimeRemaining());
+export const Countdown = ({ serverNow }: Props) => {
+  const [timeRemaining, setTimeRemaining] = useState<TimeRemaining | null>(() =>
+    getTimeRemaining(serverNow),
+  );
 
   useEffect(() => {
+    const updateTimeRemaining = () => {
+      const remaining = getTimeRemaining(Date.now());
+
+      setTimeRemaining(remaining);
+
+      return remaining;
+    };
+
+    const initialRemaining = updateTimeRemaining();
+
+    if (!initialRemaining) {
+      return;
+    }
+
     const interval = setInterval(() => {
-      const remaining = getTimeRemaining();
+      const remaining = updateTimeRemaining();
 
       if (!remaining) {
         clearInterval(interval);
-
-        setTimeRemaining(null);
-
         return;
       }
-
-      setTimeRemaining(remaining);
     }, 1000);
 
     return () => clearInterval(interval);

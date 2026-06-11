@@ -1,6 +1,6 @@
 {
-  "name": "WC Games",
-  "short_name": "WC Games",
+  "name": "VM Matcher",
+  "short_name": "VM Matcher",
   "description": "Fotbolls-VM 2026 med spelschema, matcher och resultat i svenska tider.",
   "start_url": "/",
   "display": "standalone",

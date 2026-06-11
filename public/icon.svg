@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <!-- Source icon geometry based on @lucide/lab soccerBall, ISC licensed. -->
-  <title id="title">WC Games Lucide soccer ball icon</title>
+  <title id="title">VM Matcher Lucide soccer ball icon</title>
   <desc id="desc">Generic soccer ball icon on a dark navy background, based on Lucide Lab soccerBall.</desc>
   <defs>
     <linearGradient id="bg" x1="54" y1="44" x2="456" y2="468" gradientUnits="userSpaceOnUse">

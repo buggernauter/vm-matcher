@@ -1,4 +1,5 @@
 const DEFAULT_SITE_URL = "http://localhost:3000";
+const DEFAULT_PRODUCTION_SITE_URL = "https://www.vmmatcher.se";
 
 const trimTrailingSlash = (value: string) => value.replace(/\/+$/, "");
 
@@ -24,8 +25,23 @@ const normalizeSiteUrl = (value?: string) => {
   }
 };
 
-export const getSiteUrl = () =>
-  normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
+const resolveSiteUrl = () => {
+  const configuredSiteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    process.env.SITE_URL ??
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ??
+    process.env.VERCEL_URL;
+
+  if (!configuredSiteUrl) {
+    return process.env.NODE_ENV === "production"
+      ? DEFAULT_PRODUCTION_SITE_URL
+      : DEFAULT_SITE_URL;
+  }
+
+  return normalizeSiteUrl(configuredSiteUrl);
+};
+
+export const getSiteUrl = () => resolveSiteUrl();
 
 export const getMetadataBase = () => new URL(getSiteUrl());
 
