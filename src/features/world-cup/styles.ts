@@ -6,8 +6,14 @@ export const StyledContainer = styled.section`
 	padding: 0.8rem 1rem 0.85rem;
 	background: ${({ theme }) => theme.palette.transparent};
 	color: ${({ theme }) => theme.palette.textPrimary};
-	font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-		'Segoe UI', sans-serif;
+	font-family:
+		var(--font-geist-sans),
+		ui-sans-serif,
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		sans-serif;
 `;
 
 export const StyledActionButton = styled.button`
@@ -20,7 +26,7 @@ export const StyledActionButton = styled.button`
 	padding: 0 0.875rem;
 	border: 0;
 	border-radius: 999rem;
-	background: ${({ theme }) => theme.palette.shadowDark};
+	background: ${({ theme }) => theme.palette.stepperButtonGradient};
 	color: ${({ theme }) => theme.palette.textPrimary};
 	font: inherit;
 	font-size: 0.85rem;

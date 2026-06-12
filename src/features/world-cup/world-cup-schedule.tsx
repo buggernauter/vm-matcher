@@ -51,6 +51,19 @@ export const WorldCupSchedule = () => {
 	const goToToday = useCallback(() => {
 		setSelectedMatchDay(getInitialDayIndex(displayMatchDays));
 	}, [displayMatchDays]);
+	const goToMatchDay = useCallback(
+		(date: string) => {
+			const nextIndex = displayMatchDays.findIndex((day) => day.date === date);
+
+			if (nextIndex === -1) {
+				return;
+			}
+
+			setSelectedMatchDay(nextIndex);
+			setSearchTerm('');
+		},
+		[displayMatchDays],
+	);
 
 	const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 
@@ -112,7 +125,10 @@ export const WorldCupSchedule = () => {
 							isTopRankedMatch={match.isTopRankedMatch}
 							result={match.result}
 							dayLabel={match.dayLabel}
-							time={match.time}
+							onDayLabelClick={() => {
+								goToMatchDay(match.date);
+							}}
+							startTime={match.time}
 						/>
 					))}
 				</StyledMatches>
@@ -162,7 +178,7 @@ export const WorldCupSchedule = () => {
 									homeTeam={match.homeTeam}
 									isTopRankedMatch={match.isTopRankedMatch}
 									result={match.result}
-									time={match.time}
+									startTime={match.time}
 								/>
 							))}
 						</StyledMatches>

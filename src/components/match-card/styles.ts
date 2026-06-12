@@ -27,14 +27,12 @@ export const StyledCardHeader = styled.div`
 `;
 
 export const StyledTimeBadge = styled.div`
-	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 3.75rem;
-	min-height: 3rem;
+
 	padding: 0.4rem 0.7rem;
-	border-radius: 1rem;
-	background: ${({ theme }) => theme.palette.stepperControlGradient};
+	/* border-radius: 1rem; */
+	/* background: ${({ theme }) => theme.palette.stepperControlGradient}; */
 	color: ${({ theme }) => theme.palette.textPrimary};
 	font-size: 1rem;
 	font-weight: 700;
@@ -111,11 +109,11 @@ export const StyledMetaButton = styled.button`
 	}
 `;
 
-export const StyledFooter = styled.div`
+export const StyledFooter = styled.div<{ $hasDayLabel: boolean }>`
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
-	gap: 6rem;
+	justify-content: ${({ $hasDayLabel }) => ($hasDayLabel ? 'space-between' : 'flex-end')};
+	gap: 1rem;
 `;
 
 export const StyledChip = styled.span`
@@ -124,9 +122,14 @@ export const StyledChip = styled.span`
 	min-height: 2rem;
 	padding: 0.35rem 0.7rem;
 	border-radius: 999rem;
-	background: ${({ theme }) => theme.palette.fieldSurfaceGradient};
+	background: ${({ theme }) => theme.palette.stepperButtonGradient};
 	box-shadow: ${({ theme }) => theme.palette.fieldSurfaceShadow};
-	color: ${({ theme }) => theme.palette.textSecondary};
+	color: ${({ theme }) => theme.palette.textPrimary};
 	font-size: 0.75rem;
 	font-weight: 650;
+
+	&:is(button) {
+		border: 0;
+		cursor: pointer;
+	}
 `;

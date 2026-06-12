@@ -37,7 +37,8 @@ type Props = {
 	awayTeam: GameParticipant;
 	isTopRankedMatch?: boolean;
 	result?: GameResult;
-	time: string;
+	startTime: string;
+	onDayLabelClick?: () => void;
 	dayLabel?: string;
 };
 
@@ -49,21 +50,22 @@ export const MatchCard = ({
 	awayTeam,
 	isTopRankedMatch,
 	result,
-	time,
+	startTime,
+	onDayLabelClick,
 	dayLabel,
 }: Props) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const homeTeamLabel = resolveMatchSideDisplayName(homeTeam);
 	const awayTeamLabel = resolveMatchSideDisplayName(awayTeam);
 
-	const shouldRenderFooter = Boolean(broadcaster);
+	const shouldRenderFooter = Boolean(broadcaster || dayLabel);
 	const groupLabel = getGroupLabel(groupOrRound);
 	const canExpandGroup = Boolean(groupLabel && groupTable && groupTable.length > 0);
 	return (
 		<StyledCard>
 			<StyledCardHeader>
 				<StyledTimeBadgeWrapper>
-					<StyledTimeBadge>{time}</StyledTimeBadge>
+					<StyledTimeBadge>{startTime}</StyledTimeBadge>
 				</StyledTimeBadgeWrapper>
 				<StyledInfo>
 					<StyledTeams as="h3">
@@ -112,8 +114,16 @@ export const MatchCard = ({
 			{canExpandGroup && isExpanded ? <GroupStandings groupTable={groupTable} /> : null}
 
 			{shouldRenderFooter ? (
-				<StyledFooter>
-					{dayLabel ? <StyledChip>{`${dayLabel}`}</StyledChip> : null}
+				<StyledFooter $hasDayLabel={Boolean(dayLabel)}>
+					{dayLabel ? (
+						<StyledChip
+							as={onDayLabelClick ? 'button' : 'span'}
+							type={onDayLabelClick ? 'button' : undefined}
+							onClick={onDayLabelClick}
+						>
+							{dayLabel}
+						</StyledChip>
+					) : null}
 					<BroadcasterChip broadcaster={broadcaster} />
 				</StyledFooter>
 			) : null}
