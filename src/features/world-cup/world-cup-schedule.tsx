@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { StyledActionButton, StyledDivider, StyledMatches, StyledContainer } from './styles';
 
@@ -10,34 +10,24 @@ import { EmptyStateCard } from '@/components/empty-state-card';
 import { HorizontalDatePicker } from '@/components/horizontal-date-picker';
 import { MatchCard } from '@/components/match-card';
 
-import { getInitialDayIndex, clampValue, isSwedenPlaying, getTeamName } from '@/lib/helper';
+import { getInitialDayIndex, clampValue, getTeamName, isSwedenPlaying } from '@/lib/helper';
 import { getGroupLabel } from '@/lib/tournument';
 import { buildGroupTablesByLabel } from '@/server/data/helper';
 
 import { useWorldCupSchedule } from '@/hooks/useWorldCupSchedule';
-import { useGamesResult } from '@/hooks/useGamesResult';
-import { getMatchStatus } from './match-status';
 
 export const WorldCupSchedule = () => {
 	const { data: schedule } = useWorldCupSchedule();
-	const { result, checkResult } = useGamesResult();
 
 	const { matchDays } = schedule;
 
-	const displayMatchDays = matchDays.map((day) => ({
-		...day,
-		matches: day.matches.map((match) => ({
-			...match,
-			result: result[match.id] ?? match.result,
-		})),
-	}));
+	const displayMatchDays = matchDays;
 	const groupTablesByLabel = buildGroupTablesByLabel(displayMatchDays);
 
 	const [selectedMatchDay, setSelectedMatchDay] = useState(() =>
 		getInitialDayIndex(displayMatchDays),
 	);
 	const [searchTerm, setSearchTerm] = useState('');
-	const [now, setNow] = useState<number>(() => Date.now());
 
 	const safeSelectedMatchDay = clampValue(selectedMatchDay, displayMatchDays.length - 1);
 	const selectedDay = displayMatchDays[safeSelectedMatchDay];
@@ -83,41 +73,6 @@ export const WorldCupSchedule = () => {
 			)
 		: [];
 
-	useEffect(() => {
-		const readyMatches = selectedDay.matches.filter(
-			(match) =>
-				getMatchStatus({ date: selectedDay.date, time: match.time, now }) ===
-				'ready-for-result-check',
-		);
-		readyMatches.forEach((match) => {
-			const homeTeam = getTeamName(match.homeTeam);
-			const awayTeam = getTeamName(match.awayTeam);
-			if (!homeTeam || !awayTeam) {
-				return;
-			}
-			if (result[match.id] !== undefined) {
-				return;
-			}
-			void checkResult({
-				id: match.id,
-				date: selectedDay.date,
-				time: match.time,
-				homeTeam,
-				awayTeam,
-			});
-		});
-	}, [selectedDay, checkResult, result, now]);
-	useEffect(() => {
-		const interval = setInterval(
-			() => {
-				setNow(Date.now());
-			},
-			10 * 60 * 1000,
-		);
-		return () => {
-			clearInterval(interval);
-		};
-	}, []);
 	return (
 		<StyledContainer>
 			<StyledActionButton
@@ -154,6 +109,7 @@ export const WorldCupSchedule = () => {
 							groupOrRound={match.groupOrRound}
 							groupTable={groupTablesByLabel[getGroupLabel(match.groupOrRound) ?? '']}
 							homeTeam={match.homeTeam}
+							isTopRankedMatch={match.isTopRankedMatch}
 							result={match.result}
 							dayLabel={match.dayLabel}
 							time={match.time}
@@ -183,6 +139,7 @@ export const WorldCupSchedule = () => {
 								date: day.date,
 								flagCode: hasSwedenMatch ? 'SE' : undefined,
 								flagLabel: hasSwedenMatch ? 'Sverige spelar' : undefined,
+								hasTopRankedMatch: day.matches.some((match) => match.isTopRankedMatch),
 								label: day.label,
 								meta: `${day.matches.length} matcher`,
 							};
@@ -203,6 +160,7 @@ export const WorldCupSchedule = () => {
 									groupOrRound={match.groupOrRound}
 									groupTable={groupTablesByLabel[getGroupLabel(match.groupOrRound) ?? '']}
 									homeTeam={match.homeTeam}
+									isTopRankedMatch={match.isTopRankedMatch}
 									result={match.result}
 									time={match.time}
 								/>

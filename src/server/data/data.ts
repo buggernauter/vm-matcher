@@ -1,12 +1,66 @@
-import { WorldCup } from '@/types/tournament';
+import type { WorldCup } from '@/types/tournament';
 
-export const worldCupData: WorldCup[] = [
+const teamRankingsByName: Record<string, number> = {
+	Algeriet: 28,
+	Argentina: 1,
+	Australien: 27,
+	Belgien: 9,
+	'Bosnien och Hercegovina': 64,
+	Brasilien: 6,
+	Colombia: 13,
+	Curacao: 82,
+	'Curaçao': 82,
+	'Demokratiska republiken Kongo': 46,
+	'DR Kongo': 46,
+	Ecuador: 23,
+	Egypten: 29,
+	Elfbenskusten: 33,
+	Elfenbenskusten: 33,
+	England: 4,
+	Frankrike: 3,
+	Ghana: 73,
+	Haiti: 83,
+	Irak: 57,
+	Iran: 20,
+	Japan: 18,
+	Jordanien: 63,
+	Kanada: 30,
+	'Kap Verde': 67,
+	Kroatien: 11,
+	Marocko: 7,
+	Mexiko: 14,
+	Nederländerna: 8,
+	Norge: 31,
+	'Nya Zeeland': 85,
+	Panama: 34,
+	Paraguay: 41,
+	Portugal: 5,
+	Qatar: 56,
+	Saudiarabien: 61,
+	Schweiz: 19,
+	Senegal: 15,
+	Skottland: 42,
+	Spanien: 2,
+	Sydafrika: 60,
+	Sydkorea: 25,
+	Sverige: 38,
+	Tjeckien: 40,
+	Tunisien: 45,
+	Turkiet: 22,
+	Tyskland: 10,
+	USA: 17,
+	Uruguay: 16,
+	Uzbekistan: 50,
+	Österrike: 24,
+};
+
+const rawWorldCupData: WorldCup[] = [
 	{
 		date: '2026-06-11',
 		label: 'Torsdag 11 juni',
 		matches: [
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Mexiko',
 				awayTeam: 'Sydafrika',
 				groupOrRound: 'Grupp A',
@@ -20,7 +74,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Fredag 12 juni',
 		matches: [
 			{
-				time: '04.00',
+				startTime: '04.00',
 				homeTeam: 'Sydkorea',
 				awayTeam: 'Tjeckien',
 				groupOrRound: 'Grupp A',
@@ -28,7 +82,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Guadalajara',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Kanada',
 				awayTeam: 'Bosnien och Hercegovina',
 				groupOrRound: 'Grupp B',
@@ -42,7 +96,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Lördag 13 juni',
 		matches: [
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'USA',
 				awayTeam: 'Paraguay',
 				groupOrRound: 'Grupp D',
@@ -50,7 +104,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Los Angeles',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Qatar',
 				awayTeam: 'Schweiz',
 				groupOrRound: 'Grupp B',
@@ -64,7 +118,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Söndag 14 juni',
 		matches: [
 			{
-				time: '00.00',
+				startTime: '00.00',
 				homeTeam: 'Brasilien',
 				awayTeam: 'Marocko',
 				groupOrRound: 'Grupp C',
@@ -72,7 +126,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'New Jersey',
 			},
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'Haiti',
 				awayTeam: 'Skottland',
 				groupOrRound: 'Grupp C',
@@ -80,7 +134,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Boston',
 			},
 			{
-				time: '06.00',
+				startTime: '06.00',
 				homeTeam: 'Australien',
 				awayTeam: 'Turkiet',
 				groupOrRound: 'Grupp D',
@@ -88,7 +142,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Vancouver',
 			},
 			{
-				time: '19.00',
+				startTime: '19.00',
 				homeTeam: 'Tyskland',
 				awayTeam: 'Curacao',
 				groupOrRound: 'Grupp E',
@@ -96,7 +150,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Houston',
 			},
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: 'Nederländerna',
 				awayTeam: 'Japan',
 				groupOrRound: 'Grupp F',
@@ -110,7 +164,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Måndag 15 juni',
 		matches: [
 			{
-				time: '01.00',
+				startTime: '01.00',
 				homeTeam: 'Elfbenskusten',
 				awayTeam: 'Ecuador',
 				groupOrRound: 'Grupp E',
@@ -118,7 +172,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Philadelphia',
 			},
 			{
-				time: '04.00',
+				startTime: '04.00',
 				homeTeam: 'Sverige',
 				awayTeam: 'Tunisien',
 				groupOrRound: 'Grupp F',
@@ -126,7 +180,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Monterrey',
 			},
 			{
-				time: '18.00',
+				startTime: '18.00',
 				homeTeam: 'Spanien',
 				awayTeam: 'Kap Verde',
 				groupOrRound: 'Grupp H',
@@ -134,7 +188,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Atlanta',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Belgien',
 				awayTeam: 'Egypten',
 				groupOrRound: 'Grupp G',
@@ -148,7 +202,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Tisdag 16 juni',
 		matches: [
 			{
-				time: '00.00',
+				startTime: '00.00',
 				homeTeam: 'Saudiarabien',
 				awayTeam: 'Uruguay',
 				groupOrRound: 'Grupp H',
@@ -156,7 +210,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Miami',
 			},
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'Iran',
 				awayTeam: 'Nya Zeeland',
 				groupOrRound: 'Grupp G',
@@ -164,7 +218,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Los Angeles',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Frankrike',
 				awayTeam: 'Senegal',
 				groupOrRound: 'Grupp I',
@@ -178,7 +232,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Onsdag 17 juni',
 		matches: [
 			{
-				time: '00.00',
+				startTime: '00.00',
 				homeTeam: 'Irak',
 				awayTeam: 'Norge',
 				groupOrRound: 'Grupp I',
@@ -186,7 +240,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Boston',
 			},
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'Argentina',
 				awayTeam: 'Algeriet',
 				groupOrRound: 'Grupp J',
@@ -194,7 +248,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Kansas City',
 			},
 			{
-				time: '06.00',
+				startTime: '06.00',
 				homeTeam: 'Österrike',
 				awayTeam: 'Jordanien',
 				groupOrRound: 'Grupp J',
@@ -202,7 +256,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'San Francisco',
 			},
 			{
-				time: '19.00',
+				startTime: '19.00',
 				homeTeam: 'Portugal',
 				awayTeam: 'DR Kongo',
 				groupOrRound: 'Grupp K',
@@ -210,7 +264,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Houston',
 			},
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: 'England',
 				awayTeam: 'Kroatien',
 				groupOrRound: 'Grupp L',
@@ -224,7 +278,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Torsdag 18 juni',
 		matches: [
 			{
-				time: '01.00',
+				startTime: '01.00',
 				homeTeam: 'Ghana',
 				awayTeam: 'Panama',
 				groupOrRound: 'Grupp L',
@@ -232,7 +286,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Toronto',
 			},
 			{
-				time: '04.00',
+				startTime: '04.00',
 				homeTeam: 'Uzbekistan',
 				awayTeam: 'Colombia',
 				groupOrRound: 'Grupp K',
@@ -240,7 +294,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Mexico City',
 			},
 			{
-				time: '18.00',
+				startTime: '18.00',
 				homeTeam: 'Tjeckien',
 				awayTeam: 'Sydafrika',
 				groupOrRound: 'Grupp A',
@@ -248,7 +302,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Atlanta',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Schweiz',
 				awayTeam: 'Bosnien och Hercegovina',
 				groupOrRound: 'Grupp B',
@@ -262,7 +316,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Fredag 19 juni',
 		matches: [
 			{
-				time: '00.00',
+				startTime: '00.00',
 				homeTeam: 'Kanada',
 				awayTeam: 'Qatar',
 				groupOrRound: 'Grupp B',
@@ -270,7 +324,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Vancouver',
 			},
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'Mexiko',
 				awayTeam: 'Sydkorea',
 				groupOrRound: 'Grupp A',
@@ -278,7 +332,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Guadalajara',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'USA',
 				awayTeam: 'Australien',
 				groupOrRound: 'Grupp D',
@@ -292,7 +346,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Lördag 20 juni',
 		matches: [
 			{
-				time: '00.00',
+				startTime: '00.00',
 				homeTeam: 'Skottland',
 				awayTeam: 'Marocko',
 				groupOrRound: 'Grupp C',
@@ -300,7 +354,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Boston',
 			},
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'Brasilien',
 				awayTeam: 'Haiti',
 				groupOrRound: 'Grupp C',
@@ -308,7 +362,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Philadelphia',
 			},
 			{
-				time: '06.00',
+				startTime: '06.00',
 				homeTeam: 'Turkiet',
 				awayTeam: 'Paraguay',
 				groupOrRound: 'Grupp D',
@@ -316,7 +370,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'San Francisco',
 			},
 			{
-				time: '19.00',
+				startTime: '19.00',
 				homeTeam: 'Nederländerna',
 				awayTeam: 'Sverige',
 				groupOrRound: 'Grupp F',
@@ -324,7 +378,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Houston',
 			},
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: 'Tyskland',
 				awayTeam: 'Elfbenskusten',
 				groupOrRound: 'Grupp E',
@@ -338,7 +392,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Söndag 21 juni',
 		matches: [
 			{
-				time: '02.00',
+				startTime: '02.00',
 				homeTeam: 'Ecuador',
 				awayTeam: 'Curaçao',
 				groupOrRound: 'Grupp E',
@@ -346,7 +400,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Kansas City',
 			},
 			{
-				time: '06.00',
+				startTime: '06.00',
 				homeTeam: 'Tunisien',
 				awayTeam: 'Japan',
 				groupOrRound: 'Grupp F',
@@ -354,7 +408,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Monterrey',
 			},
 			{
-				time: '18.00',
+				startTime: '18.00',
 				homeTeam: 'Spanien',
 				awayTeam: 'Saudiarabien',
 				groupOrRound: 'Grupp H',
@@ -362,7 +416,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Atlanta',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Belgien',
 				awayTeam: 'Iran',
 				groupOrRound: 'Grupp G',
@@ -376,7 +430,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Måndag 22 juni',
 		matches: [
 			{
-				time: '00.00',
+				startTime: '00.00',
 				homeTeam: 'Uruguay',
 				awayTeam: 'Kap Verde',
 				groupOrRound: 'Grupp H',
@@ -384,7 +438,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Miami',
 			},
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'Nya Zeeland',
 				awayTeam: 'Egypten',
 				groupOrRound: 'Grupp G',
@@ -392,7 +446,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Vancouver',
 			},
 			{
-				time: '19.00',
+				startTime: '19.00',
 				homeTeam: 'Argentina',
 				awayTeam: 'Österrike',
 				groupOrRound: 'Grupp J',
@@ -400,7 +454,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Dallas',
 			},
 			{
-				time: '23.00',
+				startTime: '23.00',
 				homeTeam: 'Frankrike',
 				awayTeam: 'Irak',
 				groupOrRound: 'Grupp I',
@@ -414,7 +468,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Tisdag 23 juni',
 		matches: [
 			{
-				time: '02.00',
+				startTime: '02.00',
 				homeTeam: 'Norge',
 				awayTeam: 'Senegal',
 				groupOrRound: 'Grupp I',
@@ -422,7 +476,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'New Jersey',
 			},
 			{
-				time: '05.00',
+				startTime: '05.00',
 				homeTeam: 'Jordanien',
 				awayTeam: 'Algeriet',
 				groupOrRound: 'Grupp J',
@@ -430,7 +484,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'San Francisco',
 			},
 			{
-				time: '19.00',
+				startTime: '19.00',
 				homeTeam: 'Portugal',
 				awayTeam: 'Uzbekistan',
 				groupOrRound: 'Grupp K',
@@ -438,7 +492,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Houston',
 			},
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: 'England',
 				awayTeam: 'Ghana',
 				groupOrRound: 'Grupp L',
@@ -452,7 +506,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Onsdag 24 juni',
 		matches: [
 			{
-				time: '01.00',
+				startTime: '01.00',
 				homeTeam: 'Panama',
 				awayTeam: 'Kroatien',
 				groupOrRound: 'Grupp L',
@@ -460,7 +514,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Toronto',
 			},
 			{
-				time: '04.00',
+				startTime: '04.00',
 				homeTeam: 'Colombia',
 				awayTeam: 'DR Kongo',
 				groupOrRound: 'Grupp K',
@@ -468,7 +522,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Guadalajara',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Schweiz',
 				awayTeam: 'Kanada',
 				groupOrRound: 'Grupp B',
@@ -476,7 +530,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Vancouver',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Bosnien och Hercegovina',
 				awayTeam: 'Qatar',
 				groupOrRound: 'Grupp B',
@@ -490,7 +544,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Torsdag 25 juni',
 		matches: [
 			{
-				time: '00.00',
+				startTime: '00.00',
 				homeTeam: 'Marocko',
 				awayTeam: 'Haiti',
 				groupOrRound: 'Grupp C',
@@ -498,7 +552,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Atlanta',
 			},
 			{
-				time: '00.00',
+				startTime: '00.00',
 				homeTeam: 'Skottland',
 				awayTeam: 'Brasilien',
 				groupOrRound: 'Grupp C',
@@ -506,7 +560,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Miami',
 			},
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'Sydafrika',
 				awayTeam: 'Sydkorea',
 				groupOrRound: 'Grupp A',
@@ -514,7 +568,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Monterrey',
 			},
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'Tjeckien',
 				awayTeam: 'Mexiko',
 				groupOrRound: 'Grupp A',
@@ -522,7 +576,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Mexico City',
 			},
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: 'Curacao',
 				awayTeam: 'Elfenbenskusten',
 				groupOrRound: 'Grupp E',
@@ -530,7 +584,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Philadelphia',
 			},
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: 'Ecuador',
 				awayTeam: 'Tyskland',
 				groupOrRound: 'Grupp E',
@@ -544,7 +598,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Fredag 26 juni',
 		matches: [
 			{
-				time: '01.00',
+				startTime: '01.00',
 				homeTeam: 'Tunisien',
 				awayTeam: 'Nederländerna',
 				groupOrRound: 'Grupp F',
@@ -552,7 +606,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Kansas City',
 			},
 			{
-				time: '01.00',
+				startTime: '01.00',
 				homeTeam: 'Japan',
 				awayTeam: 'Sverige',
 				groupOrRound: 'Grupp F',
@@ -560,7 +614,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Dallas',
 			},
 			{
-				time: '04.00',
+				startTime: '04.00',
 				homeTeam: 'Turkiet',
 				awayTeam: 'USA',
 				groupOrRound: 'Grupp D',
@@ -568,7 +622,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Los Angeles',
 			},
 			{
-				time: '04.00',
+				startTime: '04.00',
 				homeTeam: 'Paraguay',
 				awayTeam: 'Australien',
 				groupOrRound: 'Grupp D',
@@ -576,7 +630,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'San Francisco',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Norge',
 				awayTeam: 'Frankrike',
 				groupOrRound: 'Grupp I',
@@ -584,7 +638,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Boston',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'Senegal',
 				awayTeam: 'Irak',
 				groupOrRound: 'Grupp I',
@@ -598,7 +652,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Lördag 27 juni',
 		matches: [
 			{
-				time: '02.00',
+				startTime: '02.00',
 				homeTeam: 'Kap Verde',
 				awayTeam: 'Saudiarabien',
 				groupOrRound: 'Grupp H',
@@ -606,7 +660,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Houston',
 			},
 			{
-				time: '02.00',
+				startTime: '02.00',
 				homeTeam: 'Uruguay',
 				awayTeam: 'Spanien',
 				groupOrRound: 'Grupp H',
@@ -614,7 +668,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Guadalajara',
 			},
 			{
-				time: '05.00',
+				startTime: '05.00',
 				homeTeam: 'Nya Zeeland',
 				awayTeam: 'Belgien',
 				groupOrRound: 'Grupp G',
@@ -622,7 +676,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Vancouver',
 			},
 			{
-				time: '05.00',
+				startTime: '05.00',
 				homeTeam: 'Egypten',
 				awayTeam: 'Iran',
 				groupOrRound: 'Grupp G',
@@ -630,7 +684,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Seattle',
 			},
 			{
-				time: '23.00',
+				startTime: '23.00',
 				homeTeam: 'Panama',
 				awayTeam: 'England',
 				groupOrRound: 'Grupp L',
@@ -638,7 +692,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'New Jersey',
 			},
 			{
-				time: '23.00',
+				startTime: '23.00',
 				homeTeam: 'Kroatien',
 				awayTeam: 'Ghana',
 				groupOrRound: 'Grupp L',
@@ -652,7 +706,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Söndag 28 juni',
 		matches: [
 			{
-				time: '01.30',
+				startTime: '01.30',
 				homeTeam: 'Demokratiska republiken Kongo',
 				awayTeam: 'Uzbekistan',
 				groupOrRound: 'Grupp K',
@@ -660,7 +714,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Atlanta',
 			},
 			{
-				time: '01.30',
+				startTime: '01.30',
 				homeTeam: 'Colombia',
 				awayTeam: 'Portugal',
 				groupOrRound: 'Grupp K',
@@ -668,7 +722,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Miami',
 			},
 			{
-				time: '04.00',
+				startTime: '04.00',
 				homeTeam: 'Algeriet',
 				awayTeam: 'Österrike',
 				groupOrRound: 'Grupp J',
@@ -676,7 +730,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Kansas City',
 			},
 			{
-				time: '04.00',
+				startTime: '04.00',
 				homeTeam: 'Jordanien',
 				awayTeam: 'Argentina',
 				groupOrRound: 'Grupp J',
@@ -684,7 +738,7 @@ export const worldCupData: WorldCup[] = [
 				venue: 'Dallas',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: '2A',
 				awayTeam: '2B',
 				groupOrRound: 'Match 65, 16-delsfinal',
@@ -697,14 +751,14 @@ export const worldCupData: WorldCup[] = [
 		label: 'Måndag 29 juni',
 		matches: [
 			{
-				time: '19.00',
+				startTime: '19.00',
 				homeTeam: '1C',
 				awayTeam: '2F',
 				groupOrRound: 'Match 66, 16-delsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '22.30',
+				startTime: '22.30',
 				homeTeam: '1E',
 				awayTeam: '3A/B/C/D/F',
 				groupOrRound: 'Match 67, 16-delsfinal',
@@ -717,21 +771,21 @@ export const worldCupData: WorldCup[] = [
 		label: 'Tisdag 30 juni',
 		matches: [
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: '1F',
 				awayTeam: '2C',
 				groupOrRound: 'Match 68, 16-delsfinal',
 				broadcaster: 'SVT och SVT Play',
 			},
 			{
-				time: '19.00',
+				startTime: '19.00',
 				homeTeam: '2E',
 				awayTeam: '2I',
 				groupOrRound: 'Match 69, 16-delsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '23.00',
+				startTime: '23.00',
 				homeTeam: '1I',
 				awayTeam: '3C/D/F/G/H',
 				groupOrRound: 'Match 70, 16-delsfinal',
@@ -744,21 +798,21 @@ export const worldCupData: WorldCup[] = [
 		label: 'Onsdag 1 juli',
 		matches: [
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: '1A',
 				awayTeam: '3C/E/F/H/I',
 				groupOrRound: 'Match 71, 16-delsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '18.00',
+				startTime: '18.00',
 				homeTeam: '1L',
 				awayTeam: '3E/H/I/J/K',
 				groupOrRound: 'Match 72, 16-delsfinal',
 				broadcaster: 'SVT och SVT Play',
 			},
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: '1G',
 				awayTeam: '3A/E/H/I/J',
 				groupOrRound: 'Match 73, 16-delsfinal',
@@ -771,14 +825,14 @@ export const worldCupData: WorldCup[] = [
 		label: 'Torsdag 2 juli',
 		matches: [
 			{
-				time: '02.00',
+				startTime: '02.00',
 				homeTeam: '1D',
 				awayTeam: '3B/E/F/I/J',
 				groupOrRound: 'Match 74, 16-delsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: '1H',
 				awayTeam: '2J',
 				groupOrRound: 'Match 75, 16-delsfinal',
@@ -791,21 +845,21 @@ export const worldCupData: WorldCup[] = [
 		label: 'Fredag 3 juli',
 		matches: [
 			{
-				time: '01.00',
+				startTime: '01.00',
 				homeTeam: '2K',
 				awayTeam: '2L',
 				groupOrRound: 'Match 76, 16-delsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '05.00',
+				startTime: '05.00',
 				homeTeam: '1B',
 				awayTeam: '3E/F/G/I/J',
 				groupOrRound: 'Match 77, 16-delsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '20.00',
+				startTime: '20.00',
 				homeTeam: '2D',
 				awayTeam: '2G',
 				groupOrRound: 'Match 78, 16-delsfinal',
@@ -818,28 +872,28 @@ export const worldCupData: WorldCup[] = [
 		label: 'Lördag 4 juli',
 		matches: [
 			{
-				time: '00.00',
+				startTime: '00.00',
 				homeTeam: '1J',
 				awayTeam: '2H',
 				groupOrRound: 'Match 79, 16-delsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '03.30',
+				startTime: '03.30',
 				homeTeam: '1K',
 				awayTeam: '3D/E/I/J/L',
 				groupOrRound: 'Match 80, 16-delsfinal',
 				broadcaster: 'SVT och SVT Play',
 			},
 			{
-				time: '19.00',
+				startTime: '19.00',
 				homeTeam: 'W73',
 				awayTeam: 'W75',
 				groupOrRound: 'Match 81, åttondelsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '23.00',
+				startTime: '23.00',
 				homeTeam: 'W74',
 				awayTeam: 'W77',
 				groupOrRound: 'Match 82, åttondelsfinal',
@@ -852,7 +906,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Söndag 5 juli',
 		matches: [
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: 'W76',
 				awayTeam: 'W78',
 				groupOrRound: 'Match 83, åttondelsfinal',
@@ -865,14 +919,14 @@ export const worldCupData: WorldCup[] = [
 		label: 'Måndag 6 juli',
 		matches: [
 			{
-				time: '02.00',
+				startTime: '02.00',
 				homeTeam: 'W79',
 				awayTeam: 'W80',
 				groupOrRound: 'Match 84, åttondelsfinal',
 				broadcaster: 'SVT och SVT Play',
 			},
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'W83',
 				awayTeam: 'W84',
 				groupOrRound: 'Match 85, åttondelsfinal',
@@ -885,21 +939,21 @@ export const worldCupData: WorldCup[] = [
 		label: 'Tisdag 7 juli',
 		matches: [
 			{
-				time: '02.00',
+				startTime: '02.00',
 				homeTeam: 'W81',
 				awayTeam: 'W82',
 				groupOrRound: 'Match 86, åttondelsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '18.00',
+				startTime: '18.00',
 				homeTeam: 'W86',
 				awayTeam: 'W88',
 				groupOrRound: 'Match 87, åttondelsfinal',
 				broadcaster: 'TV4 och TV4 Play',
 			},
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: 'W85',
 				awayTeam: 'W87',
 				groupOrRound: 'Match 88, åttondelsfinal',
@@ -912,7 +966,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Torsdag 9 juli',
 		matches: [
 			{
-				time: '22.00',
+				startTime: '22.00',
 				homeTeam: 'W89',
 				awayTeam: 'W90',
 				groupOrRound: 'Match 89, kvartsfinal',
@@ -925,7 +979,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Fredag 10 juli',
 		matches: [
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'W93',
 				awayTeam: 'W94',
 				groupOrRound: 'Match 90, kvartsfinal',
@@ -938,7 +992,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Lördag 11 juli',
 		matches: [
 			{
-				time: '23.00',
+				startTime: '23.00',
 				homeTeam: 'W91',
 				awayTeam: 'W92',
 				groupOrRound: 'Match 91, kvartsfinal',
@@ -951,7 +1005,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Söndag 12 juli',
 		matches: [
 			{
-				time: '03.00',
+				startTime: '03.00',
 				homeTeam: 'W95',
 				awayTeam: 'W96',
 				groupOrRound: 'Match 92, kvartsfinal',
@@ -964,7 +1018,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Tisdag 14 juli',
 		matches: [
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'W97',
 				awayTeam: 'W98',
 				groupOrRound: 'Match 93, semifinal',
@@ -977,7 +1031,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Onsdag 15 juli',
 		matches: [
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'W99',
 				awayTeam: 'W100',
 				groupOrRound: 'Match 94, semifinal',
@@ -990,7 +1044,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Lördag 18 juli',
 		matches: [
 			{
-				time: '23.00',
+				startTime: '23.00',
 				homeTeam: 'L101',
 				awayTeam: 'L102',
 				groupOrRound: 'Match 95, bronsmatch',
@@ -1003,7 +1057,7 @@ export const worldCupData: WorldCup[] = [
 		label: 'Söndag 19 juli',
 		matches: [
 			{
-				time: '21.00',
+				startTime: '21.00',
 				homeTeam: 'W101',
 				awayTeam: 'W102',
 				groupOrRound: 'VM-final',
@@ -1012,3 +1066,12 @@ export const worldCupData: WorldCup[] = [
 		],
 	},
 ];
+
+export const worldCupData: WorldCup[] = rawWorldCupData.map((day) => ({
+	...day,
+	matches: day.matches.map((match) => ({
+		...match,
+		awayTeamRanking: teamRankingsByName[match.awayTeam],
+		homeTeamRanking: teamRankingsByName[match.homeTeam],
+	})),
+}));

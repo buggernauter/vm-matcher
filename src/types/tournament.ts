@@ -3,48 +3,14 @@ export type TeamParticipant = {
 	teamName: string;
 };
 
-export type GroupPositionParticipant = {
-	group: string;
-	kind: 'group-position';
+export type PlaceholderParticipant = {
+	kind: 'placeholder';
 	label: string;
-	position: 1 | 2;
 };
 
-export type ThirdPlaceParticipant = {
-	groups: string[];
-	kind: 'third-place';
-	label: string;
-	position: 3;
-};
+export type GameParticipant = TeamParticipant | PlaceholderParticipant;
 
-export type WinnerParticipant = {
-	kind: 'winner';
-	label: string;
-	matchNumber: number;
-};
-
-export type LoserParticipant = {
-	kind: 'loser';
-	label: string;
-	matchNumber: number;
-};
-
-export type GameParticipant =
-	| TeamParticipant
-	| GroupPositionParticipant
-	| ThirdPlaceParticipant
-	| WinnerParticipant
-	| LoserParticipant;
-
-export type MatchParticipantResolutionContext = {
-	resolveGroupPosition?: (side: GroupPositionParticipant) => string | undefined;
-	resolveLoser?: (side: LoserParticipant) => string | undefined;
-	resolveTeam?: (side: TeamParticipant) => string | undefined;
-	resolveThirdPlace?: (side: ThirdPlaceParticipant) => string | undefined;
-	resolveWinner?: (side: WinnerParticipant) => string | undefined;
-};
-
-export type MatchResult = {
+export type GameResult = {
 	homeScore: number;
 	awayScore: number;
 	sourceUrl?: string;
@@ -52,20 +18,16 @@ export type MatchResult = {
 
 export type Broadcaster = 'SVT och SVT Play' | 'TV4 och TV4 Play';
 
-export type ScrapedMatchResult = {
-	homeScore: number;
-	awayScore: number;
-	sourceUrl?: string;
-};
-
 export type TournamentGame = {
 	awayTeam: GameParticipant;
+	awayTeamRanking?: number;
 	broadcaster?: Broadcaster;
 	groupOrRound: string;
 	homeTeam: GameParticipant;
+	homeTeamRanking?: number;
 	id: string;
-	matchNumber?: number;
-	result?: MatchResult;
+	isTopRankedMatch?: boolean;
+	result?: GameResult;
 	time: string;
 };
 
@@ -87,28 +49,16 @@ export type GroupTableRow = {
 
 export type GroupTablesByLabel = Record<string, GroupTableRow[]>;
 
-export type TournamentScheduleSource = 'hybrid' | 'static';
 
-export type TournamentSchedulePayload = {
-	groupTablesByLabel: GroupTablesByLabel;
-	matchDays: TournamentGamesData[];
-	source: TournamentScheduleSource;
-	syncedAt: string;
-};
-
-export type TournamentEntry = {
-	day: TournamentGamesData;
-	dayIndex: number;
-	match: TournamentGame;
-	matchIndex: number;
-};
 export type WorldCupGame = {
 	awayTeam: string;
+	awayTeamRanking?: number;
 	broadcaster?: Broadcaster;
 	groupOrRound: string;
 	homeTeam: string;
-	result?: MatchResult;
-	time: string;
+	homeTeamRanking?: number;
+	result?: GameResult;
+	startTime: string;
 	venue?: string;
 };
 
@@ -116,12 +66,4 @@ export type WorldCup = {
 	date: string;
 	label: string;
 	matches: WorldCupGame[];
-};
-
-export type MatchToCheck = {
-	id: string;
-	date: string;
-	time: string;
-	homeTeam: string;
-	awayTeam: string;
 };

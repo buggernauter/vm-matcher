@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update:world-cup-results": "node --experimental-strip-types scripts/generate-updated-results.mts"
   },
   "dependencies": {
     "@next/bundle-analyzer": "16.2.7",

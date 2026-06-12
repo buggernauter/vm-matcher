@@ -1,10 +1,10 @@
 import { getGroupLabel } from '@/lib/tournument';
 import {
 	GROUP_POSITION_PATTERN,
-	THIRD_PLACE_PATTERN,
-	WINNER_MATCH_PATTERN,
 	LOSER_MATCH_PATTERN,
 	LOSER_MATCH_TEXT_PATTERN,
+	THIRD_PLACE_PATTERN,
+	WINNER_MATCH_PATTERN,
 } from '@/server/constants';
 import type {
 	GameParticipant,
@@ -13,72 +13,25 @@ import type {
 	TournamentGamesData,
 } from '@/types/tournament';
 
+const PLACEHOLDER_SIDE_PATTERNS = [
+	GROUP_POSITION_PATTERN,
+	THIRD_PLACE_PATTERN,
+	WINNER_MATCH_PATTERN,
+	LOSER_MATCH_PATTERN,
+	LOSER_MATCH_TEXT_PATTERN,
+];
+
 export const createMatchSide = (rawSide: string): GameParticipant => {
-	const groupPositionMatch = rawSide.match(GROUP_POSITION_PATTERN);
-
-	if (groupPositionMatch) {
+	if (PLACEHOLDER_SIDE_PATTERNS.some((pattern) => pattern.test(rawSide))) {
 		return {
-			group: groupPositionMatch[2],
-			kind: 'group-position',
+			kind: 'placeholder',
 			label: rawSide,
-			position: Number(groupPositionMatch[1]) as 1 | 2,
 		};
 	}
-
-	const thirdPlaceMatch = rawSide.match(THIRD_PLACE_PATTERN);
-
-	if (thirdPlaceMatch) {
-		return {
-			groups: thirdPlaceMatch[1].split('/'),
-			kind: 'third-place',
-			label: rawSide,
-			position: 3,
-		};
-	}
-
-	const winnerMatch = rawSide.match(WINNER_MATCH_PATTERN);
-
-	if (winnerMatch) {
-		return {
-			kind: 'winner',
-			label: rawSide,
-			matchNumber: Number(winnerMatch[1]),
-		};
-	}
-
-	const loserMatch = rawSide.match(LOSER_MATCH_PATTERN);
-
-	if (loserMatch) {
-		return {
-			kind: 'loser',
-			label: rawSide,
-			matchNumber: Number(loserMatch[1]),
-		};
-	}
-
-	const loserMatchText = rawSide.match(LOSER_MATCH_TEXT_PATTERN);
-
-	if (loserMatchText) {
-		return {
-			kind: 'loser',
-			label: rawSide,
-			matchNumber: Number(loserMatchText[1]),
-		};
-	}
-
 	return {
 		kind: 'team',
 		teamName: rawSide,
 	};
-};
-export const extractMatchNumber = (groupOrRound: string) => {
-	const match = groupOrRound.match(/Match (\d+)/);
-
-	if (!match) {
-		return;
-	}
-
-	return Number(match[1]);
 };
 
 export const getGameSideLabel = (side: GameParticipant) =>

@@ -1,0 +1,56 @@
+name: Update World Cup Results
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-world-cup-results
+  cancel-in-progress: false
+
+jobs:
+  update-results:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.5.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version: 22
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate updated results
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-5.5
+        run: node --experimental-strip-types scripts/generate-updated-results.mts
+
+      - name: Commit updated results
+        run: |
+          if git diff --quiet -- src/server/data/updated-results.json; then
+            echo "No result updates to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/server/data/updated-results.json
+          git commit -m "Update world cup results"
+          git push origin HEAD:${{ github.ref_name }}

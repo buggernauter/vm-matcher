@@ -6,14 +6,8 @@ export const StyledContainer = styled.section`
 	padding: 0.8rem 1rem 0.85rem;
 	background: ${({ theme }) => theme.palette.transparent};
 	color: ${({ theme }) => theme.palette.textPrimary};
-	font-family:
-		Inter,
-		ui-sans-serif,
-		system-ui,
-		-apple-system,
-		BlinkMacSystemFont,
-		'Segoe UI',
-		sans-serif;
+	font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI', sans-serif;
 `;
 
 export const StyledActionButton = styled.button`
