@@ -3,12 +3,12 @@ import { StyledChip, StyledImage, StyledLogo } from './styles';
 
 const broadcasterLogos: Record<Broadcaster, { alt: string; src: string; url?: string }> = {
 	'SVT och SVT Play': {
-		alt: 'SVT',
+		alt: 'Gå till SVT-play',
 		src: 'svtp-logo.svg',
 		url: 'https://www.svtplay.se/kategori/fotbolls-vm',
 	},
 	'TV4 och TV4 Play': {
-		alt: 'TV4',
+		alt: 'Gå till TV4-play',
 		src: '/tv4-logo.png',
 		url: 'https://www.tv4play.se/kategorier/fifa-fotbolls-vm-2026',
 	},

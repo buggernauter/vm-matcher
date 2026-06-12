@@ -29,10 +29,7 @@ export const StyledCardHeader = styled.div`
 export const StyledTimeBadge = styled.div`
 	align-items: center;
 	justify-content: center;
-
 	padding: 0.4rem 0.7rem;
-	/* border-radius: 1rem; */
-	/* background: ${({ theme }) => theme.palette.stepperControlGradient}; */
 	color: ${({ theme }) => theme.palette.textPrimary};
 	font-size: 1rem;
 	font-weight: 700;
