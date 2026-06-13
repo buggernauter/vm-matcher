@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Flag from 'react-world-flags';
 
+import { sortByName } from '@/lib/helper';
 import {
 	StyledSquadCard,
 	StyledSquadCell,
@@ -18,11 +19,13 @@ import {
 } from './styles';
 import { worldCupSquads } from '@/server/data/world-cup-squads';
 
+const sortedWorldCupSquads = sortByName(worldCupSquads, (squad) => squad.countryName);
+
 export const WorldCupSquads = memo(function WorldCupSquads() {
 	return (
 		<StyledSquadsSection aria-label="Trupper för Fotbolls-VM 2026">
 			<StyledSquadsGrid>
-				{worldCupSquads.map((squad) => {
+				{sortedWorldCupSquads.map((squad) => {
 					return (
 						<StyledSquadCard key={squad.countryName}>
 							<StyledSquadSummary>
@@ -41,10 +44,7 @@ export const WorldCupSquads = memo(function WorldCupSquads() {
 
 							<StyledSquadRoster role="table" aria-label={`Trupp för ${squad.countryName}`}>
 								{squad.players.map((player) => (
-									<StyledSquadRosterRow
-										key={`${squad.countryName}-${player.player}`}
-										role="row"
-									>
+									<StyledSquadRosterRow key={`${squad.countryName}-${player.player}`} role="row">
 										<StyledSquadCell role="cell" $inlineGap>
 											<span data-primary>
 												<span>{player.pos}</span>

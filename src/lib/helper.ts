@@ -85,3 +85,6 @@ export const normalizeText = (value: string) =>
 		.normalize('NFD')
 		.replace(/[\u0300-\u036f]/g, '')
 		.toLowerCase();
+
+export const sortByName = <T>(items: T[], getName: (item: T) => string) =>
+	[...items].sort((left, right) => getName(left).localeCompare(getName(right)));
