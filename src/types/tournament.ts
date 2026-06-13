@@ -29,6 +29,7 @@ export type TournamentGame = {
 	isTopRankedMatch?: boolean;
 	result?: GameResult;
 	time: string;
+	venue?: string;
 };
 
 export type TournamentGamesData = {

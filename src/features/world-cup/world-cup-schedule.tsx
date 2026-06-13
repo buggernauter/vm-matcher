@@ -129,6 +129,7 @@ export const WorldCupSchedule = () => {
 								goToMatchDay(match.date);
 							}}
 							startTime={match.time}
+							venue={match.venue}
 						/>
 					))}
 				</StyledMatches>
@@ -179,6 +180,7 @@ export const WorldCupSchedule = () => {
 									isTopRankedMatch={match.isTopRankedMatch}
 									result={match.result}
 									startTime={match.time}
+									venue={match.venue}
 								/>
 							))}
 						</StyledMatches>

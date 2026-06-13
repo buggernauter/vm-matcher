@@ -85,6 +85,13 @@ export const StyledMetaText = styled.p`
 	font-size: 0.84rem;
 `;
 
+export const StyledVenueText = styled.p`
+	margin: 0;
+	color: ${({ theme }) => theme.palette.textDisabled};
+	font-size: 0.78rem;
+	line-height: 1.4;
+`;
+
 export const StyledMetaButton = styled.button`
 	display: inline-flex;
 	align-items: center;

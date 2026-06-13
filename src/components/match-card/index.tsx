@@ -25,6 +25,7 @@ import {
 	StyledTeams,
 	StyledTimeBadge,
 	StyledTimeBadgeWrapper,
+	StyledVenueText,
 } from './styles';
 import { GroupStandings } from '../group-standings';
 import { BroadcasterChip } from '../broadcaster-chip';
@@ -40,6 +41,7 @@ type Props = {
 	startTime: string;
 	onDayLabelClick?: () => void;
 	dayLabel?: string;
+	venue?: string;
 };
 
 export const MatchCard = ({
@@ -53,6 +55,7 @@ export const MatchCard = ({
 	startTime,
 	onDayLabelClick,
 	dayLabel,
+	venue,
 }: Props) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const homeTeamLabel = resolveMatchSideDisplayName(homeTeam);
@@ -65,6 +68,7 @@ export const MatchCard = ({
 	const shouldRenderFooter = Boolean(broadcaster || dayLabel);
 	const groupLabel = getGroupLabel(groupOrRound);
 	const canExpandGroup = Boolean(groupLabel && groupTable && groupTable.length > 0);
+
 	return (
 		<StyledCard aria-label={matchLabel}>
 			<StyledCardHeader>
@@ -88,6 +92,9 @@ export const MatchCard = ({
 							</>
 						)}
 					</StyledTeams>
+					{venue ? (
+						<StyledVenueText aria-label={`Spelplats ${venue}`}>{venue}</StyledVenueText>
+					) : null}
 					{canExpandGroup ? (
 						<StyledMetaButton
 							type="button"
