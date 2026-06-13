@@ -31,7 +31,7 @@ export const StyledDateChip = styled.button<{ $active: boolean; $highlighted: bo
 	padding: 0.45rem 0.2rem 0.25rem;
 	border: ${({ $active }) => ($active ? '0.09375rem' : '0')} solid
 		${({ theme }) => theme.palette.primaryMain};
-	border-bottom: ${({ $active }) => ($active ? '0.09375rem' : '0.005rem')} solid
+	border-bottom: ${({ $active }) => ($active ? '0.09375rem' : '0.063rem')} solid
 		${({ $active, $highlighted, theme }) =>
 			$active ? theme.palette.primaryMain : $highlighted ? '#c99517' : theme.palette.outline};
 	border-radius: 1rem;

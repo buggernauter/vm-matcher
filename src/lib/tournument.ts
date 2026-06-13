@@ -1,5 +1,5 @@
 import { GROUP_ROUND_PATTERN } from '@/server/constants';
-import type { GameParticipant } from '../types/tournament';
+import { GameParticipant } from '@/types';
 
 export const getGroupLabel = (groupOrRound: string) => {
 	const match = groupOrRound.match(GROUP_ROUND_PATTERN);

@@ -1,4 +1,4 @@
-import type { WorldCup } from '@/types/tournament';
+import { WorldCup } from '@/types';
 
 const teamRankingsByName: Record<string, number> = {
 	Algeriet: 28,
@@ -9,7 +9,7 @@ const teamRankingsByName: Record<string, number> = {
 	Brasilien: 6,
 	Colombia: 13,
 	Curacao: 82,
-	'Curaçao': 82,
+	Curaçao: 82,
 	'Demokratiska republiken Kongo': 46,
 	'DR Kongo': 46,
 	Ecuador: 23,

@@ -9,6 +9,7 @@ export const LOSER_MATCH_TEXT_PATTERN = /^Förlorare match (\d+)$/;
 export const THIRD_PLACE_PATTERN = /^3([A-Z](?:\/[A-Z])+)$/;
 export const WINNER_MATCH_PATTERN = /^W(\d+)$/;
 export const WORLD_CUP_SCHEDULE_PATH = '/fotbolls-vm-2026';
+export const WORLD_CUP_TEAMS_PATH = '/lag-vm-2026';
 
 export const SWEDISH_LONG_DATE_FORMATTER = new Intl.DateTimeFormat('sv-SE', {
 	day: 'numeric',

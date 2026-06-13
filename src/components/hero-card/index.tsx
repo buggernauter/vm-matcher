@@ -1,42 +1,32 @@
 'use client';
 
-import { useId, type ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
+import { WORLD_CUP_SCHEDULE_PATH, WORLD_CUP_TEAMS_PATH } from '@/server/constants';
 
-import {
-	StyledHeroActions,
-	StyledHeroBadge,
-	StyledHeroCard,
-	StyledHeroText,
-	StyledHeroTitle,
-} from './styles';
+import { StyledBadgeWrapper, StyledHeroBadge, StyledHeroCard } from './styles';
+import { ReactNode } from 'react';
 
 type Props = {
-	action?: ReactNode;
-	badge: ReactNode;
-	description: string;
-	title: string;
-	titleTag?: 'h1' | 'h2' | 'h3';
+	firstBadge: ReactNode;
+	secondBadge: ReactNode;
 };
 
-export const HeroCard = ({ action, badge, description, title, titleTag = 'h1' }: Props) => {
-	const titleId = useId();
-	const descriptionId = useId();
+export const HeroCard = ({ firstBadge, secondBadge }: Props) => {
+	const pathname = usePathname();
 
 	return (
-		<StyledHeroCard
-			tabIndex={0}
-			aria-labelledby={titleId}
-			aria-describedby={descriptionId}
-			aria-label={title}
-		>
-			<StyledHeroBadge tabIndex={0}>{badge}</StyledHeroBadge>
-			<StyledHeroTitle as={titleTag} id={titleId} tabIndex={0}>
-				{title}
-			</StyledHeroTitle>
-			<StyledHeroText id={descriptionId} tabIndex={0}>
-				{description}
-			</StyledHeroText>
-			{action ? <StyledHeroActions>{action}</StyledHeroActions> : null}
+		<StyledHeroCard aria-label="Navigering för Fotbolls-VM 2026">
+			<StyledBadgeWrapper>
+				<StyledHeroBadge
+					href={WORLD_CUP_SCHEDULE_PATH}
+					$active={pathname === WORLD_CUP_SCHEDULE_PATH}
+				>
+					{firstBadge}
+				</StyledHeroBadge>
+				<StyledHeroBadge href={WORLD_CUP_TEAMS_PATH} $active={pathname === WORLD_CUP_TEAMS_PATH}>
+					{secondBadge}
+				</StyledHeroBadge>
+			</StyledBadgeWrapper>
 		</StyledHeroCard>
 	);
 };

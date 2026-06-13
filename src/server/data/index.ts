@@ -1,8 +1,9 @@
-import { GroupTablesByLabel, TournamentGamesData } from '@/types/tournament';
+import { GroupTablesByLabel, TournamentGamesData, WorldCupResults } from '@/types';
 import { buildWorldCupMatchId } from './match-id';
 import { buildGroupTablesByLabel, createMatchSide } from './helper';
 import { worldCupData } from './data';
-import { worldCupResults } from './world-cup-results';
+
+import updatedResults from './updated-results.json';
 
 const isTopThirtyRanking = (ranking?: number) =>
 	typeof ranking === 'number' && ranking >= 1 && ranking <= 30;
@@ -21,7 +22,7 @@ export const tournamentGamesData: TournamentGamesData[] = worldCupData.map((day)
 			matchIndex: index,
 			startTime: match.startTime,
 		});
-
+		const results: WorldCupResults = updatedResults;
 		return {
 			awayTeam,
 			awayTeamRanking: match.awayTeamRanking,
@@ -31,7 +32,7 @@ export const tournamentGamesData: TournamentGamesData[] = worldCupData.map((day)
 			homeTeamRanking: match.homeTeamRanking,
 			id,
 			isTopRankedMatch,
-			result: worldCupResults[id] ?? match.result,
+			result: results[id] ?? match.result,
 			time: match.startTime,
 			venue: match.venue,
 		};

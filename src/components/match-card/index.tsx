@@ -5,12 +5,7 @@ import { useState } from 'react';
 
 import { getVenueLocalTime } from '@/lib/helper';
 import { getGroupLabel, resolveMatchSideDisplayName } from '../../lib/tournument';
-import type {
-	Broadcaster,
-	GameParticipant,
-	GroupTableRow,
-	GameResult,
-} from '../../types/tournament';
+
 import {
 	StyledChip,
 	StyledCard,
@@ -28,10 +23,10 @@ import {
 	StyledTimeBadgeWrapper,
 	StyledGeoWrapper,
 	StyledVenueRow,
-	StyledVenueText,
 } from './styles';
 import { GroupStandings } from '../group-standings';
 import { BroadcasterChip } from '../broadcaster-chip';
+import { Broadcaster, GroupTableRow, GameParticipant, GameResult } from '@/types';
 
 type Props = {
 	broadcaster?: Broadcaster;

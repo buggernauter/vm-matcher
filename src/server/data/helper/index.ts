@@ -11,7 +11,7 @@ import type {
 	GroupTableRow,
 	GroupTablesByLabel,
 	TournamentGamesData,
-} from '@/types/tournament';
+} from '@/types';
 
 const PLACEHOLDER_SIDE_PATTERNS = [
 	GROUP_POSITION_PATTERN,

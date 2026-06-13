@@ -1,4 +1,4 @@
-import { GameParticipant } from '@/types/tournament';
+import { GameParticipant } from '@/types';
 
 const MIN_ROUND_VALUE = 0;
 const SWEDEN_TEAM_ALIASES = new Set(['sverige', 'sweden']);

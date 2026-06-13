@@ -1,5 +1,4 @@
-import { GroupTableRow } from '@/types/tournament';
-
+import { GroupTableRow } from '@/types';
 import {
 	StyledGroupList,
 	StyledGroupPanel,

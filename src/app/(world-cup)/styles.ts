@@ -4,15 +4,13 @@ import styled from 'styled-components';
 
 export const StyledWorldCupPageShell = styled.main`
 	position: relative;
-	/* isolation: isolate; */
 	width: 100%;
 	max-width: 96rem;
 	min-height: 70vh;
-	/* margin-inline: auto; */
-
 	overflow: hidden;
 	background: ${({ theme }) => theme.palette.cardSurfaceGradient};
 	box-shadow: ${({ theme }) => theme.palette.cardSurfaceShadow};
+	margin: 0 auto 2rem;
 
 	&::before {
 		content: '';
@@ -29,6 +27,4 @@ export const StyledWorldCupPageShell = styled.main`
 		position: relative;
 		z-index: 1;
 	}
-
-	margin: 0 auto 2rem;
 `;

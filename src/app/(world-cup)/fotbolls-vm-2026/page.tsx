@@ -8,13 +8,10 @@ import {
 	SCHEDULE_PAGE_DESCRIPTION,
 	SCHEDULE_PAGE_TITLE,
 } from '@/server/seo';
-import { Countdown } from '@/components/count-down';
-import { HeroCard } from '@/components/hero-card';
-import { JsonLd } from '@/components/json-ld';
-import { WorldCupSchedule } from '@/features/world-cup/world-cup-schedule';
-import { Trophy } from 'lucide-react';
 
-import { StyledWorldCupPageShell } from './styles';
+import { Header } from '@/components/header';
+import { JsonLd } from '@/components/json-ld';
+import { WorldCupSchedule } from '@/features/world-cup/schedule/world-cup-schedule';
 
 export const metadata: Metadata = {
 	alternates: {
@@ -37,21 +34,8 @@ export default async function WorldCupSchedulePage() {
 	return (
 		<>
 			<JsonLd data={buildSchedulePageJsonLd()} />
-			<StyledWorldCupPageShell>
-				<HeroCard
-					badge={
-						<>
-							<Trophy aria-hidden="true" color="gold" />
-							Fotbolls-VM 2026
-						</>
-					}
-					title={SCHEDULE_HERO_TITLE}
-					description={SCHEDULE_HERO_DESCRIPTION}
-					action={<Countdown />}
-				/>
-
-				<WorldCupSchedule />
-			</StyledWorldCupPageShell>
+			<Header title={SCHEDULE_HERO_TITLE} description={SCHEDULE_HERO_DESCRIPTION} />
+			<WorldCupSchedule />
 		</>
 	);
 }

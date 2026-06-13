@@ -1,4 +1,4 @@
-import { Broadcaster } from '@/types/tournament';
+import { Broadcaster } from '@/types';
 import { StyledChip, StyledImage, StyledLogo } from './styles';
 
 const broadcasterLogos: Record<

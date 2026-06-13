@@ -50,7 +50,6 @@ export type GroupTableRow = {
 
 export type GroupTablesByLabel = Record<string, GroupTableRow[]>;
 
-
 export type WorldCupGame = {
 	awayTeam: string;
 	awayTeamRanking?: number;
@@ -68,3 +67,16 @@ export type WorldCup = {
 	label: string;
 	matches: WorldCupGame[];
 };
+export type WorldCupSquadPlayer = {
+	pos: 'GK' | 'DF' | 'MF' | 'FW';
+	player: string;
+	age: number;
+	club: string;
+};
+
+export type WorldCupSquad = {
+	countryName: string;
+	flagCode: string;
+	players: WorldCupSquadPlayer[];
+};
+export type WorldCupResults = Record<string, GameResult>;
