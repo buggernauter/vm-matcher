@@ -3,6 +3,7 @@
 import { ChevronDown, Star } from 'lucide-react';
 import { useState } from 'react';
 
+import { getVenueLocalTime } from '@/lib/helper';
 import { getGroupLabel, resolveMatchSideDisplayName } from '../../lib/tournument';
 import type {
 	Broadcaster,
@@ -25,6 +26,8 @@ import {
 	StyledTeams,
 	StyledTimeBadge,
 	StyledTimeBadgeWrapper,
+	StyledGeoWrapper,
+	StyledVenueRow,
 	StyledVenueText,
 } from './styles';
 import { GroupStandings } from '../group-standings';
@@ -39,6 +42,7 @@ type Props = {
 	isTopRankedMatch?: boolean;
 	result?: GameResult;
 	startTime: string;
+	date?: string;
 	onDayLabelClick?: () => void;
 	dayLabel?: string;
 	venue?: string;
@@ -53,6 +57,7 @@ export const MatchCard = ({
 	isTopRankedMatch,
 	result,
 	startTime,
+	date,
 	onDayLabelClick,
 	dayLabel,
 	venue,
@@ -68,7 +73,7 @@ export const MatchCard = ({
 	const shouldRenderFooter = Boolean(broadcaster || dayLabel);
 	const groupLabel = getGroupLabel(groupOrRound);
 	const canExpandGroup = Boolean(groupLabel && groupTable && groupTable.length > 0);
-
+	const venueLocalTime = date ? getVenueLocalTime(date, startTime, venue) : undefined;
 	return (
 		<StyledCard aria-label={matchLabel}>
 			<StyledCardHeader>
@@ -93,7 +98,13 @@ export const MatchCard = ({
 						)}
 					</StyledTeams>
 					{venue ? (
-						<StyledVenueText aria-label={`Spelplats ${venue}`}>{venue}</StyledVenueText>
+						<StyledVenueRow>
+							{venueLocalTime ? (
+								<StyledGeoWrapper aria-label={`Lokal tid ${venueLocalTime}`}>
+									{`${venueLocalTime} i ${venue}`}
+								</StyledGeoWrapper>
+							) : null}
+						</StyledVenueRow>
 					) : null}
 					{canExpandGroup ? (
 						<StyledMetaButton

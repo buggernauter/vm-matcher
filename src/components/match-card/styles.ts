@@ -92,6 +92,21 @@ export const StyledVenueText = styled.p`
 	line-height: 1.4;
 `;
 
+export const StyledVenueRow = styled.div`
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.5rem;
+	width: fit-content;
+`;
+
+export const StyledGeoWrapper = styled.span`
+	flex: 0 0 auto;
+	color: ${({ theme }) => theme.palette.textDisabled};
+	font-size: 0.78rem;
+	line-height: 1.4;
+	font-variant-numeric: tabular-nums;
+`;
+
 export const StyledMetaButton = styled.button`
 	display: inline-flex;
 	align-items: center;

@@ -119,6 +119,7 @@ export const WorldCupSchedule = () => {
 							key={match.id}
 							awayTeam={match.awayTeam}
 							broadcaster={match.broadcaster}
+							date={match.date}
 							groupOrRound={match.groupOrRound}
 							groupTable={groupTablesByLabel[getGroupLabel(match.groupOrRound) ?? '']}
 							homeTeam={match.homeTeam}
@@ -174,6 +175,7 @@ export const WorldCupSchedule = () => {
 									key={match.id}
 									awayTeam={match.awayTeam}
 									broadcaster={match.broadcaster}
+									date={selectedDay.date}
 									groupOrRound={match.groupOrRound}
 									groupTable={groupTablesByLabel[getGroupLabel(match.groupOrRound) ?? '']}
 									homeTeam={match.homeTeam}
