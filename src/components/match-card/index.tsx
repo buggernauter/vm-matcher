@@ -57,15 +57,21 @@ export const MatchCard = ({
 	const [isExpanded, setIsExpanded] = useState(false);
 	const homeTeamLabel = resolveMatchSideDisplayName(homeTeam);
 	const awayTeamLabel = resolveMatchSideDisplayName(awayTeam);
+	const matchLabel = result
+		? `${homeTeamLabel} ${result.homeScore}-${result.awayScore} ${awayTeamLabel}`
+		: `${homeTeamLabel} mot ${awayTeamLabel}`;
+	const timeLabel = `Avspark ${startTime}`;
 
 	const shouldRenderFooter = Boolean(broadcaster || dayLabel);
 	const groupLabel = getGroupLabel(groupOrRound);
 	const canExpandGroup = Boolean(groupLabel && groupTable && groupTable.length > 0);
 	return (
-		<StyledCard>
+		<StyledCard aria-label={matchLabel}>
 			<StyledCardHeader>
 				<StyledTimeBadgeWrapper>
-					<StyledTimeBadge>{startTime}</StyledTimeBadge>
+					<StyledTimeBadge as="time" aria-label={timeLabel}>
+						{startTime}
+					</StyledTimeBadge>
 				</StyledTimeBadgeWrapper>
 				<StyledInfo>
 					<StyledTeams as="h3">
@@ -86,6 +92,7 @@ export const MatchCard = ({
 						<StyledMetaButton
 							type="button"
 							aria-expanded={isExpanded}
+							aria-label={`${isExpanded ? 'Dölj' : 'Visa'} tabell för ${groupLabel}`}
 							onClick={() => {
 								setIsExpanded((currentValue) => !currentValue);
 							}}
@@ -119,6 +126,7 @@ export const MatchCard = ({
 						<StyledChip
 							as={onDayLabelClick ? 'button' : 'span'}
 							type={onDayLabelClick ? 'button' : undefined}
+							aria-label={onDayLabelClick ? `Visa matcher för ${dayLabel}` : undefined}
 							onClick={onDayLabelClick}
 						>
 							{dayLabel}

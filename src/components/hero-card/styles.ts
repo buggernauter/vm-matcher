@@ -1,10 +1,20 @@
-import styled from 'styled-components';
+import { css, styled } from 'styled-components';
+
+const focusRing = css`
+	&:focus-visible {
+		outline: 0.125rem solid ${({ theme }) => theme.palette.primaryMain};
+		outline-offset: 0.2rem;
+		border-radius: 0.5rem;
+	}
+`;
 
 export const StyledHeroCard = styled.section`
 	position: relative;
 	overflow: hidden;
 	padding: 0.8rem 1rem 0.85rem;
 	background: ${({ theme }) => theme.palette.transparent};
+
+	${focusRing}
 `;
 
 export const StyledHeroBadge = styled.span`
@@ -21,6 +31,8 @@ export const StyledHeroBadge = styled.span`
 	font-weight: 700;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
+
+	${focusRing}
 `;
 
 export const StyledHeroTitle = styled.h1`
@@ -28,6 +40,8 @@ export const StyledHeroTitle = styled.h1`
 	font-size: 1.7rem;
 	line-height: 1;
 	letter-spacing: -0.03em;
+
+	${focusRing}
 `;
 
 export const StyledHeroText = styled.p`
@@ -35,6 +49,8 @@ export const StyledHeroText = styled.p`
 	color: ${({ theme }) => theme.palette.textDisabled};
 	font-size: 0.94rem;
 	line-height: 1.55;
+
+	${focusRing}
 `;
 
 export const StyledHeroActions = styled.div`
