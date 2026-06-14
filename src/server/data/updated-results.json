@@ -18,5 +18,25 @@
     "awayScore": 1,
     "homeScore": 4,
     "sourceUrl": "https://www.skysports.com/football/competitions/world-cup/results"
+  },
+  "2026-06-13-21.00-Qatar-Schweiz-1": {
+    "awayScore": 1,
+    "homeScore": 1,
+    "sourceUrl": "https://www.skysports.com/football/qatar-vs-switzerland/report/549770"
+  },
+  "2026-06-14-00.00-Brasilien-Marocko-0": {
+    "awayScore": 1,
+    "homeScore": 1,
+    "sourceUrl": "https://apnews.com/article/brazil-morocco-score-f7c99c7947a903c46562344462d12057"
+  },
+  "2026-06-14-03.00-Haiti-Skottland-1": {
+    "awayScore": 1,
+    "homeScore": 0,
+    "sourceUrl": "https://www.skysports.com/football/haiti-vs-scotland/report/549772"
+  },
+  "2026-06-14-06.00-Australien-Turkiet-2": {
+    "awayScore": 0,
+    "homeScore": 2,
+    "sourceUrl": "https://apnews.com/article/australia-turkey-score-690429346bffc3d906fb01005df38010"
   }
 }
