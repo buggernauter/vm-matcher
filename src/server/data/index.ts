@@ -1,7 +1,7 @@
 import { GroupTablesByLabel, TournamentGamesData, WorldCupResults } from '@/types';
 import { buildWorldCupMatchId } from './match-id';
 import { buildGroupTablesByLabel, createMatchSide } from './helper';
-import { worldCupData } from './data';
+import { worldCupData } from './match-data';
 
 import updatedResults from './updated-results.json';
 

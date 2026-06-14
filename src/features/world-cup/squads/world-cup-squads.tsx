@@ -17,7 +17,7 @@ import {
 	StyledSquadsGrid,
 	StyledSquadsSection,
 } from './styles';
-import { worldCupSquads } from '@/server/data/world-cup-squads';
+import { worldCupSquads } from '@/server/data/squads';
 
 const sortedWorldCupSquads = sortByName(worldCupSquads, (squad) => squad.countryName);
 

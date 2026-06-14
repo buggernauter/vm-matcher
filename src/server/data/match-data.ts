@@ -1,4 +1,4 @@
-import { WorldCup } from '@/types';
+import type { WorldCup } from '../../types/index';
 
 const teamRankingsByName: Record<string, number> = {
 	Algeriet: 28,
