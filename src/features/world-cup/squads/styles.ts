@@ -16,11 +16,11 @@ export const StyledSquadsSection = styled.section`
 	color: ${({ theme }) => theme.palette.textPrimary};
 `;
 
-export const StyledSquadsGrid = styled.div`
+export const StyledSquadsContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	gap: 0.8rem;
+	gap: 0.9rem;
 `;
 
 export const StyledSquadCard = styled.details`
@@ -92,6 +92,13 @@ export const StyledSquadCountry = styled.h2`
 	line-height: 1.15;
 `;
 
+export const StyledSquadRanking = styled.span`
+	color: ${({ theme }) => theme.palette.textPrimary};
+	font-size: 0.86rem;
+	font-variant-numeric: tabular-nums;
+	line-height: 1;
+`;
+
 export const StyledSquadMeta = styled.p`
 	margin: 0;
 	color: ${({ theme }) => theme.palette.textDisabled};
@@ -117,6 +124,21 @@ export const StyledSquadRoster = styled.div`
 	padding: 0 0.5rem 0.5rem;
 `;
 
+export const StyledSquadRosterTitle = styled.h3`
+	margin: 0;
+	padding: 0.9rem 0.5rem 0.35rem;
+	color: ${({ theme }) => theme.palette.textDisabled};
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	display: flex;
+	justify-content: center;
+
+	&:not(:first-child) {
+		padding-top: 1rem;
+	}
+`;
+
 export const StyledSquadRosterRow = styled.div`
 	display: flex;
 	padding: 0.7rem 0.5rem;
@@ -124,56 +146,43 @@ export const StyledSquadRosterRow = styled.div`
 	font-size: 0.88rem;
 `;
 
-export const StyledSquadCell = styled.span<{
-	$inlineGap?: boolean;
-	$muted?: boolean;
-	$numeric?: boolean;
-}>`
-	display: block;
+export const StyledSquadCell = styled.span`
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
 	width: 100%;
 	min-width: 0;
-	color: ${({ $muted, theme }) =>
-		$muted ? theme.palette.textDisabled : theme.palette.textPrimary};
-	font-variant-numeric: ${({ $numeric }) => ($numeric ? 'tabular-nums' : 'normal')};
+	column-gap: 0.75rem;
+	align-items: baseline;
+	color: ${({ theme }) => theme.palette.textPrimary};
 	word-break: break-word;
 
-	${({ $inlineGap }) =>
-		$inlineGap
-			? css`
-					display: grid;
-					grid-template-columns: minmax(0, 1fr) auto;
-					width: 100%;
-					column-gap: 0.75rem;
-					align-items: baseline;
+	[data-primary] {
+		display: inline-flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 0.75rem;
+		align-items: baseline;
+		min-width: 0;
+		font-size: 0.9rem;
+	}
 
-					[data-primary] {
-						display: inline-flex;
-						flex-wrap: wrap;
-						gap: 0.4rem 0.75rem;
-						align-items: baseline;
-						min-width: 0;
-					}
+	[data-club] {
+		justify-self: end;
+		text-align: right;
+		min-width: 0;
+		overflow-wrap: anywhere;
+		font-size: 0.9rem;
+	}
 
-					[data-club] {
-						justify-self: end;
-						text-align: right;
-						min-width: 0;
-						overflow-wrap: anywhere;
-					}
+	@media (max-width: 24rem) {
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 0.35rem;
+		[data-primary] {
+			display: inline-flex;
+		}
 
-					@media (max-width: 24rem) {
-						grid-template-columns: minmax(0, 1fr);
-						row-gap: 0.35rem;
-
-						[data-primary] {
-							display: inline-flex;
-						}
-
-						[data-club] {
-							justify-self: start;
-							text-align: left;
-						}
-					}
-				`
-			: ''}
+		[data-club] {
+			justify-self: start;
+			text-align: left;
+		}
+	}
 `;

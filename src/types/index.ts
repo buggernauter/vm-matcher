@@ -68,15 +68,17 @@ export type WorldCup = {
 	matches: WorldCupGame[];
 };
 export type WorldCupSquadPlayer = {
-	pos: 'GK' | 'DF' | 'MF' | 'FW';
 	player: string;
 	age: number;
 	club: string;
 };
 
+export type WorldCupSquadPosition = 'GK' | 'DF' | 'MF' | 'FW';
+
 export type WorldCupSquad = {
 	countryName: string;
 	flagCode: string;
-	players: WorldCupSquadPlayer[];
+	ranking: number;
+	players: Record<WorldCupSquadPosition, WorldCupSquadPlayer[]>;
 };
 export type WorldCupResults = Record<string, GameResult>;

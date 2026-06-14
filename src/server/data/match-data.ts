@@ -1,58 +1,11 @@
 import type { WorldCup } from '../../types/index';
+import { worldCupSquads } from './squads';
 
-const teamRankingsByName: Record<string, number> = {
-	Algeriet: 28,
-	Argentina: 1,
-	Australien: 27,
-	Belgien: 9,
-	'Bosnien och Hercegovina': 64,
-	Brasilien: 6,
-	Colombia: 13,
-	Curacao: 82,
-	Curaçao: 82,
-	'Demokratiska republiken Kongo': 46,
-	'DR Kongo': 46,
-	Ecuador: 23,
-	Egypten: 29,
-	Elfbenskusten: 33,
-	Elfenbenskusten: 33,
-	England: 4,
-	Frankrike: 3,
-	Ghana: 73,
-	Haiti: 83,
-	Irak: 57,
-	Iran: 20,
-	Japan: 18,
-	Jordanien: 63,
-	Kanada: 30,
-	'Kap Verde': 67,
-	Kroatien: 11,
-	Marocko: 7,
-	Mexiko: 14,
-	Nederländerna: 8,
-	Norge: 31,
-	'Nya Zeeland': 85,
-	Panama: 34,
-	Paraguay: 41,
-	Portugal: 5,
-	Qatar: 56,
-	Saudiarabien: 61,
-	Schweiz: 19,
-	Senegal: 15,
-	Skottland: 42,
-	Spanien: 2,
-	Sydafrika: 60,
-	Sydkorea: 25,
-	Sverige: 38,
-	Tjeckien: 40,
-	Tunisien: 45,
-	Turkiet: 22,
-	Tyskland: 10,
-	USA: 17,
-	Uruguay: 16,
-	Uzbekistan: 50,
-	Österrike: 24,
-};
+const teamRankingsByName: Record<string, number> = Object.create(null);
+
+for (const { countryName, ranking } of worldCupSquads) {
+	teamRankingsByName[countryName] = ranking;
+}
 
 const rawWorldCupData: WorldCup[] = [
 	{
@@ -258,7 +211,7 @@ const rawWorldCupData: WorldCup[] = [
 			{
 				startTime: '19.00',
 				homeTeam: 'Portugal',
-				awayTeam: 'DR Kongo',
+				awayTeam: 'Demokratiska republiken Kongo',
 				groupOrRound: 'Grupp K',
 				broadcaster: 'TV4 och TV4 Play',
 				venue: 'Houston',
@@ -516,7 +469,7 @@ const rawWorldCupData: WorldCup[] = [
 			{
 				startTime: '04.00',
 				homeTeam: 'Colombia',
-				awayTeam: 'DR Kongo',
+				awayTeam: 'Demokratiska republiken Kongo',
 				groupOrRound: 'Grupp K',
 				broadcaster: 'TV4 och TV4 Play',
 				venue: 'Guadalajara',
