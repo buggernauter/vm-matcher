@@ -1,6 +1,6 @@
 const [{ worldCupData }, { buildWorldCupMatchId }, { isFinishedMatch, shouldRunOpenAIForMatch }] =
 	await Promise.all([
-		import(new URL('../../src/server/data/data.ts', import.meta.url).href),
+		import(new URL('../../src/server/data/match-data.ts', import.meta.url).href),
 		import(new URL('../../src/server/data/match-id.ts', import.meta.url).href),
 		import(new URL('./match-window.mts', import.meta.url).href),
 	]);
