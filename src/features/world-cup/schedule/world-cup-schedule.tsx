@@ -12,17 +12,15 @@ import { MatchCard } from '@/components/match-card';
 
 import { getInitialDayIndex, clampValue, getTeamName, isSwedenPlaying } from '@/lib/helper';
 import { getGroupLabel } from '@/lib/tournument';
-import { buildGroupTablesByLabel } from '@/server/data/helper';
 
 import { useWorldCupSchedule } from '@/hooks/useWorldCupSchedule';
 
 export const WorldCupSchedule = () => {
-	const { data: schedule } = useWorldCupSchedule();
+	const { schedule } = useWorldCupSchedule();
 
-	const { matchDays } = schedule;
+	const { groupTablesByLabel, matchDays } = schedule;
 
 	const displayMatchDays = matchDays;
-	const groupTablesByLabel = buildGroupTablesByLabel(displayMatchDays);
 
 	const [selectedMatchDay, setSelectedMatchDay] = useState(() =>
 		getInitialDayIndex(displayMatchDays),

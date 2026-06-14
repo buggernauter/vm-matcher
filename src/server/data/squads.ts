@@ -1,4 +1,4 @@
-import { WorldCupSquad } from '@/types';
+import type { WorldCupSquad } from '../../types/index.ts';
 
 // Source: https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads
 export const worldCupSquads: WorldCupSquad[] = [

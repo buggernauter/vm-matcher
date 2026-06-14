@@ -1,7 +1,6 @@
-const [{ worldCupData }, { buildWorldCupMatchId }, { isFinishedMatch, shouldRunOpenAIForMatch }] =
+const [{ worldCupData }, { isFinishedMatch, shouldRunOpenAIForMatch }] =
 	await Promise.all([
 		import(new URL('../../src/server/data/match-data.ts', import.meta.url).href),
-		import(new URL('../../src/server/data/match-id.ts', import.meta.url).href),
 		import(new URL('./match-window.mts', import.meta.url).href),
 	]);
 
@@ -20,14 +19,8 @@ export const getRunnableMatches = ({
 	const runnableMatches: RunnableMatch[] = [];
 
 	for (const day of worldCupData) {
-		for (const [matchIndex, match] of day.matches.entries()) {
-			const matchId = buildWorldCupMatchId({
-				awayTeam: match.awayTeam,
-				date: day.date,
-				homeTeam: match.homeTeam,
-				matchIndex,
-				startTime: match.startTime,
-			});
+		for (const match of day.matches) {
+			const matchId = match.id;
 
 			if (!isFinishedMatch(day.date, match.startTime, now)) {
 				continue;

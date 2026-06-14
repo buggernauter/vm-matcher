@@ -88,3 +88,19 @@ export const normalizeText = (value: string) =>
 
 export const sortByName = <T>(items: T[], getName: (item: T) => string) =>
 	[...items].sort((left, right) => getName(left).localeCompare(getName(right)));
+
+export const subscribeToPageActivation = (onActivate: () => void) => {
+	const handlePageActivation = () => {
+		if (document.visibilityState === 'visible') {
+			onActivate();
+		}
+	};
+
+	window.addEventListener('focus', handlePageActivation);
+	document.addEventListener('visibilitychange', handlePageActivation);
+
+	return () => {
+		window.removeEventListener('focus', handlePageActivation);
+		document.removeEventListener('visibilitychange', handlePageActivation);
+	};
+};

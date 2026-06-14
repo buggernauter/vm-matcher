@@ -50,6 +50,16 @@ export type GroupTableRow = {
 
 export type GroupTablesByLabel = Record<string, GroupTableRow[]>;
 
+export type WorldCupScheduleData = {
+	groupTablesByLabel: GroupTablesByLabel;
+	matchDays: TournamentGamesData[];
+};
+
+export type WorldCupScheduleResponse = WorldCupScheduleData & {
+	source: 'dynamic' | 'static';
+	syncedAt: string;
+};
+
 export type WorldCupGame = {
 	awayTeam: string;
 	awayTeamRanking?: number;
@@ -57,6 +67,7 @@ export type WorldCupGame = {
 	groupOrRound: string;
 	homeTeam: string;
 	homeTeamRanking?: number;
+	id: string;
 	result?: GameResult;
 	startTime: string;
 	venue?: string;
