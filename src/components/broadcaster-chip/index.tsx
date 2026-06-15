@@ -8,7 +8,7 @@ const broadcasterLogos: Record<
 	'SVT och SVT Play': {
 		alt: 'SVT Play',
 		linkLabel: 'Se matchinformation hos SVT Play',
-		src: 'svtp-logo.svg',
+		src: '/svtp-logo.svg',
 		url: 'https://www.svtplay.se/kategori/fotbolls-vm',
 	},
 	'TV4 och TV4 Play': {

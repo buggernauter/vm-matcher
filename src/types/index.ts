@@ -78,7 +78,7 @@ export type WorldCup = {
 	label: string;
 	matches: WorldCupGame[];
 };
-export type WorldCupSquadPlayer = {
+export type Player = {
 	number: number;
 	player: string;
 	age: number;
@@ -91,6 +91,6 @@ export type WorldCupSquad = {
 	countryName: string;
 	flagCode: string;
 	ranking: number;
-	players: Record<WorldCupSquadPosition, WorldCupSquadPlayer[]>;
+	players: Record<WorldCupSquadPosition, Player[]>;
 };
 export type WorldCupResults = Record<string, GameResult>;

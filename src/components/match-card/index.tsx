@@ -3,13 +3,15 @@
 import { ChevronDown, Star } from 'lucide-react';
 import { useState } from 'react';
 
-import { getVenueLocalTime } from '@/lib/helper';
+import { createTeamSlug, getVenueLocalTime, normalizeTeamName } from '@/lib/helper';
+import { WORLD_CUP_TEAMS_PATH } from '@/server/constants';
 import { getGroupLabel, resolveMatchSideDisplayName } from '../../lib/tournument';
 
 import {
 	StyledChip,
 	StyledCard,
 	StyledFooter,
+	StyledInlineLink,
 	StyledInlineSeparator,
 	StyledInlineValue,
 	StyledScore,
@@ -38,9 +40,10 @@ type Props = {
 	result?: GameResult;
 	startTime: string;
 	date?: string;
-	onDayLabelClick?: () => void;
+	onDayLabelClick?: VoidFunction;
 	dayLabel?: string;
 	venue?: string;
+	currentTeamName?: string;
 };
 
 export const MatchCard = ({
@@ -56,6 +59,7 @@ export const MatchCard = ({
 	onDayLabelClick,
 	dayLabel,
 	venue,
+	currentTeamName,
 }: Props) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const homeTeamLabel = resolveMatchSideDisplayName(homeTeam);
@@ -69,6 +73,24 @@ export const MatchCard = ({
 	const groupLabel = getGroupLabel(groupOrRound);
 	const canExpandGroup = Boolean(groupLabel && groupTable && groupTable.length > 0);
 	const venueLocalTime = date ? getVenueLocalTime(date, startTime, venue) : undefined;
+	const renderMatchSide = (side: GameParticipant, label: string) => {
+		const isTeam = side.kind === 'team';
+		const isCurrentTeam =
+			isTeam &&
+			currentTeamName &&
+			normalizeTeamName(side.teamName) === normalizeTeamName(currentTeamName);
+
+		if (!isTeam || isCurrentTeam) {
+			return <StyledInlineValue>{label}</StyledInlineValue>;
+		}
+
+		return (
+			<StyledInlineLink href={`${WORLD_CUP_TEAMS_PATH}/${createTeamSlug(side.teamName)}`}>
+				{label}
+			</StyledInlineLink>
+		);
+	};
+
 	return (
 		<StyledCard aria-label={matchLabel}>
 			<StyledCardHeader>
@@ -79,16 +101,17 @@ export const MatchCard = ({
 				</StyledTimeBadgeWrapper>
 				<StyledInfo>
 					<StyledTeams as="h3">
-						<StyledInlineValue>{homeTeamLabel}</StyledInlineValue>
 						{result ? (
 							<>
+								{renderMatchSide(homeTeam, homeTeamLabel)}
 								<StyledScore>{`${result.homeScore} - ${result.awayScore}`}</StyledScore>
-								<StyledInlineValue>{awayTeamLabel}</StyledInlineValue>
+								{renderMatchSide(awayTeam, awayTeamLabel)}
 							</>
 						) : (
 							<>
+								{renderMatchSide(homeTeam, homeTeamLabel)}
 								<StyledInlineSeparator>-</StyledInlineSeparator>
-								<StyledInlineValue>{awayTeamLabel}</StyledInlineValue>
+								{renderMatchSide(awayTeam, awayTeamLabel)}
 							</>
 						)}
 					</StyledTeams>

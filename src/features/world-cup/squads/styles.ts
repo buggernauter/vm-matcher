@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { css, styled } from 'styled-components';
 
 const focusRing = css`
@@ -23,33 +24,25 @@ export const StyledSquadsContainer = styled.div`
 	gap: 0.9rem;
 `;
 
-export const StyledSquadCard = styled.details`
-	overflow: hidden;
+export const StyledSquadCard = styled(Link)`
+	display: block;
 	flex: 1 1 19rem;
 	min-width: min(19rem, 100%);
 	border-radius: 1rem;
 	background: ${({ theme }) => theme.palette.fieldSurfaceGradient};
 	box-shadow: ${({ theme }) => theme.palette.fieldSurfaceShadow};
+	color: inherit;
+	text-decoration: none;
 
-	&[open] {
-		background: ${({ theme }) => theme.palette.cardSurfaceGradient};
-	}
+	${focusRing}
 `;
 
-export const StyledSquadSummary = styled.summary`
+export const StyledSquadSummary = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 1rem;
 	padding: 0.95rem 1rem;
-	cursor: pointer;
-	list-style: none;
-
-	&::-webkit-details-marker {
-		display: none;
-	}
-
-	${focusRing}
 `;
 
 export const StyledSquadHeading = styled.div`
@@ -111,80 +104,4 @@ export const StyledSquadChevron = styled.span`
 	justify-content: center;
 	flex-shrink: 0;
 	color: ${({ theme }) => theme.palette.textDisabled};
-	transition: transform 180ms ease;
-
-	${StyledSquadCard}[open] & {
-		transform: rotate(180deg);
-	}
-`;
-
-export const StyledSquadRoster = styled.div`
-	display: flex;
-	flex-direction: column;
-	padding: 0 0.5rem 0.5rem;
-`;
-
-export const StyledSquadRosterTitle = styled.h3`
-	margin: 0;
-	padding: 0.9rem 0.5rem 0.35rem;
-	color: ${({ theme }) => theme.palette.textDisabled};
-	font-size: 0.8rem;
-	font-weight: 700;
-	letter-spacing: 0.08em;
-	display: flex;
-	justify-content: center;
-
-	&:not(:first-child) {
-		padding-top: 1rem;
-	}
-`;
-
-export const StyledSquadRosterRow = styled.div`
-	display: flex;
-	padding: 0.7rem 0.5rem;
-	border-top: 1px solid rgba(255, 255, 255, 0.07);
-	font-size: 0.88rem;
-`;
-
-export const StyledSquadCell = styled.span`
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) auto;
-	width: 100%;
-	min-width: 0;
-	column-gap: 0.75rem;
-	align-items: baseline;
-	color: ${({ theme }) => theme.palette.textPrimary};
-	word-break: break-word;
-
-	[data-primary] {
-		display: inline-flex;
-		flex-wrap: wrap;
-		gap: 0.4rem 0.75rem;
-		align-items: baseline;
-		min-width: 0;
-		font-size: 0.99rem;
-		letter-spacing: 0.03rem;
-		font-weight: 600;
-	}
-
-	[data-club] {
-		justify-self: end;
-		text-align: right;
-		min-width: 0;
-		overflow-wrap: anywhere;
-		font-size: 0.9rem;
-	}
-
-	@media (max-width: 24rem) {
-		grid-template-columns: minmax(0, 1fr);
-		row-gap: 0.35rem;
-		[data-primary] {
-			display: inline-flex;
-		}
-
-		[data-club] {
-			justify-self: start;
-			text-align: left;
-		}
-	}
 `;

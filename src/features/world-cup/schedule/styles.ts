@@ -52,8 +52,3 @@ export const StyledMatches = styled.div`
 	flex-direction: column;
 	gap: 0.625rem;
 `;
-export const StyledDivider = styled.div`
-	width: 100%;
-	height: 0.75rem;
-	background: ${({ theme }) => theme.palette.transparent};
-`;

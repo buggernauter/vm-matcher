@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
 export const StyledCard = styled.article`
@@ -61,6 +62,18 @@ export const StyledTeams = styled.div`
 export const StyledInlineValue = styled.span`
 	overflow-wrap: anywhere;
 	word-break: break-word;
+`;
+
+export const StyledInlineLink = styled(Link)`
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	color: inherit;
+	text-decoration: none;
+
+	&:hover,
+	&:focus-visible {
+		text-decoration: underline;
+	}
 `;
 
 export const StyledInlineSeparator = styled.span`

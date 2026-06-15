@@ -32,6 +32,11 @@ export const normalizeTeamName = (value: string) =>
 		.toLowerCase()
 		.trim();
 
+export const createTeamSlug = (value: string) =>
+	normalizeTeamName(value)
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '');
+
 const getSwedishDateKey = () =>
 	new Intl.DateTimeFormat('sv-SE', {
 		timeZone: 'Europe/Stockholm',

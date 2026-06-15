@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 
-import { StyledActionButton, StyledDivider, StyledMatches, StyledContainer } from './styles';
+import { StyledActionButton, StyledMatches, StyledContainer } from './styles';
 
 import { SearchBar } from '@/components/search-bar';
 import { DayNavigation } from '@/components/day-navigation';
@@ -10,10 +10,16 @@ import { EmptyStateCard } from '@/components/empty-state-card';
 import { HorizontalDatePicker } from '@/components/horizontal-date-picker';
 import { MatchCard } from '@/components/match-card';
 
-import { getInitialDayIndex, clampValue, getTeamName, isSwedenPlaying } from '@/lib/helper';
+import {
+	getInitialDayIndex,
+	clampValue,
+	getTeamName,
+	isSwedenPlaying,
+} from '@/lib/helper';
 import { getGroupLabel } from '@/lib/tournument';
 
 import { useWorldCupSchedule } from '@/hooks/useWorldCupSchedule';
+import { Divider } from '@/components/divider';
 
 export const WorldCupSchedule = () => {
 	const { schedule } = useWorldCupSchedule();
@@ -64,7 +70,6 @@ export const WorldCupSchedule = () => {
 	);
 
 	const normalizedSearchTerm = searchTerm.trim().toLowerCase();
-
 	const filteredMatches = normalizedSearchTerm
 		? displayMatchDays.flatMap((day) =>
 				day.matches
@@ -95,8 +100,8 @@ export const WorldCupSchedule = () => {
 			>
 				Idag
 			</StyledActionButton>
-			<StyledDivider />
-			<StyledDivider />
+			<Divider />
+			<Divider />
 			<SearchBar
 				key={searchTerm}
 				loading={false}
@@ -108,8 +113,8 @@ export const WorldCupSchedule = () => {
 				}}
 				value={searchTerm}
 			/>
-			<StyledDivider />
-			<StyledDivider />
+			<Divider />
+			<Divider />
 			{searchTerm ? (
 				<StyledMatches>
 					{filteredMatches.map((match) => (

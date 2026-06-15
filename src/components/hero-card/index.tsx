@@ -23,7 +23,10 @@ export const HeroCard = ({ firstBadge, secondBadge }: Props) => {
 				>
 					{firstBadge}
 				</StyledHeroBadge>
-				<StyledHeroBadge href={WORLD_CUP_TEAMS_PATH} $active={pathname === WORLD_CUP_TEAMS_PATH}>
+				<StyledHeroBadge
+					href={WORLD_CUP_TEAMS_PATH}
+					$active={pathname.startsWith(WORLD_CUP_TEAMS_PATH)}
+				>
 					{secondBadge}
 				</StyledHeroBadge>
 			</StyledBadgeWrapper>
