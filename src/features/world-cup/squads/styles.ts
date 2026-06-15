@@ -162,7 +162,9 @@ export const StyledSquadCell = styled.span`
 		gap: 0.4rem 0.75rem;
 		align-items: baseline;
 		min-width: 0;
-		font-size: 0.9rem;
+		font-size: 0.99rem;
+		letter-spacing: 0.03rem;
+		font-weight: 600;
 	}
 
 	[data-club] {

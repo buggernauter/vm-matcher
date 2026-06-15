@@ -42,6 +42,7 @@ const renderSquad = (squad: (typeof sortedWorldCupSquads)[number]) => {
 							<StyledSquadRosterRow key={`${squad.countryName}-${player.player}`} role="row">
 								<StyledSquadCell role="cell">
 									<span data-primary>
+										<span>#{player.number}</span>
 										<span>{player.player}</span>
 										<span>{player.age} år</span>
 									</span>

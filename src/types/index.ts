@@ -79,6 +79,7 @@ export type WorldCup = {
 	matches: WorldCupGame[];
 };
 export type WorldCupSquadPlayer = {
+	number: number;
 	player: string;
 	age: number;
 	club: string;
