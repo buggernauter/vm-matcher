@@ -105,8 +105,8 @@ const rawWorldCupData: WorldCup[] = [
 			{
 				startTime: '19.00',
 				homeTeam: 'Tyskland',
-				awayTeam: 'Curacao',
-				id: '2026-06-14-19.00-Tyskland-Curacao-3',
+				awayTeam: 'Curaçao',
+				id: '2026-06-14-19.00-Tyskland-Curaçao-3',
 				groupOrRound: 'Grupp E',
 				broadcaster: 'TV4 och TV4 Play',
 				venue: 'Houston',
@@ -128,9 +128,9 @@ const rawWorldCupData: WorldCup[] = [
 		matches: [
 			{
 				startTime: '01.00',
-				homeTeam: 'Elfbenskusten',
+				homeTeam: 'Elfenbenskusten',
 				awayTeam: 'Ecuador',
-				id: '2026-06-15-01.00-Elfbenskusten-Ecuador-0',
+				id: '2026-06-15-01.00-Elfenbenskusten-Ecuador-0',
 				groupOrRound: 'Grupp E',
 				broadcaster: 'TV4 och TV4 Play',
 				venue: 'Philadelphia',
@@ -366,8 +366,8 @@ const rawWorldCupData: WorldCup[] = [
 			{
 				startTime: '22.00',
 				homeTeam: 'Tyskland',
-				awayTeam: 'Elfbenskusten',
-				id: '2026-06-20-22.00-Tyskland-Elfbenskusten-4',
+				awayTeam: 'Elfenbenskusten',
+				id: '2026-06-20-22.00-Tyskland-Elfenbenskusten-4',
 				groupOrRound: 'Grupp E',
 				broadcaster: 'TV4 och TV4 Play',
 				venue: 'Toronto',
@@ -584,9 +584,9 @@ const rawWorldCupData: WorldCup[] = [
 			},
 			{
 				startTime: '22.00',
-				homeTeam: 'Curacao',
+				homeTeam: 'Curaçao',
 				awayTeam: 'Elfenbenskusten',
-				id: '2026-06-25-22.00-Curacao-Elfenbenskusten-4',
+				id: '2026-06-25-22.00-Curaçao-Elfenbenskusten-4',
 				groupOrRound: 'Grupp E',
 				broadcaster: 'SVT och SVT Play',
 				venue: 'Philadelphia',

@@ -780,7 +780,7 @@ export const worldCupSquads: WorldCupSquad[] = [
 		},
 	},
 	{
-		countryName: 'Elfbenskusten',
+		countryName: 'Elfenbenskusten',
 		flagCode: 'CI',
 		ranking: 33,
 		players: {
