@@ -58,5 +58,15 @@
     "awayScore": 1,
     "homeScore": 5,
     "sourceUrl": "https://www.washingtonpost.com/sports/soccer/2026/06/15/world-cup-sweden-tunisia-score/1ab746e8-6871-11f1-830e-133d20cadd28_story.html"
+  },
+  "2026-06-15-18.00-Spanien-Kap Verde-2": {
+    "awayScore": 0,
+    "homeScore": 0,
+    "sourceUrl": "https://www.foxsports.com/soccer/fifa-world-cup-men-spain-vs-cape-verde-jun-15-2026-game-boxscore-647628"
+  },
+  "2026-06-15-21.00-Belgien-Egypten-3": {
+    "awayScore": 1,
+    "homeScore": 1,
+    "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760426/egypt-belgium"
   }
 }
