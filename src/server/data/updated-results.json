@@ -88,5 +88,10 @@
     "awayScore": 4,
     "homeScore": 1,
     "sourceUrl": "https://www.skysports.com/football/competitions/world-cup/results"
+  },
+  "2026-06-17-03.00-Argentina-Algeriet-1": {
+    "awayScore": 0,
+    "homeScore": 3,
+    "sourceUrl": "https://apnews.com/article/world-cup-argentina-lionel-messi-6bdb86e04ed24187b4321cdeed542d4c"
   }
 }
