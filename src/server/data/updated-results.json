@@ -143,5 +143,15 @@
     "awayScore": 0,
     "homeScore": 2,
     "sourceUrl": "https://apnews.com/article/world-cup-united-states-australia-score-be65bf85eac80da9fd999af080bb300c"
+  },
+  "2026-06-20-00.00-Skottland-Marocko-0": {
+    "awayScore": 1,
+    "homeScore": 0,
+    "sourceUrl": "https://elpais.com/deportes/mundial-futbol/2026-06-20/marruecos-marca-rapido-y-padece-despues-contra-escocia.html"
+  },
+  "2026-06-20-03.00-Brasilien-Haiti-1": {
+    "awayScore": 0,
+    "homeScore": 3,
+    "sourceUrl": "https://cadenaser.com/nacional/2026/06/20/brasil-3-0-haiti-resumen-resultados-y-goles-del-partido-del-grupo-c-del-mundial-2026-cadena-ser/"
   }
 }
