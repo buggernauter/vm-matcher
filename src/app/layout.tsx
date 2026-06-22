@@ -6,6 +6,7 @@ import { StyledComponentsRegistry } from '@/lib/styled-components-registry';
 import { SITE_DESCRIPTION, SITE_NAME } from '@/server/seo';
 import { getMetadataBase } from '@/server/site';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -76,6 +77,7 @@ export default function RootLayout({
 		<html lang="sv" className={`${geistSans.variable} ${geistMono.variable}`}>
 			<body>
 				<SpeedInsights />
+				<Analytics />
 				<StyledComponentsRegistry>{children}</StyledComponentsRegistry>
 			</body>
 		</html>
