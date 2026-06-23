@@ -1,11 +1,11 @@
-import { loadLocalResults } from '@/server/data/load-local-results';
+import { loadLocalSchedule } from '@/server/data/load-local-schedule';
 import { buildScheduleData } from '@/server/data/schedule-base';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-	const updatedResults = await loadLocalResults();
-	const schedule = buildScheduleData(updatedResults);
+	const scheduleData = await loadLocalSchedule();
+	const schedule = buildScheduleData(scheduleData);
 
 	return Response.json({
 		...schedule,

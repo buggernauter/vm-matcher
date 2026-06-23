@@ -1,0 +1,1479 @@
+[
+  {
+    "date": "2026-06-11",
+    "label": "Torsdag 11 juni",
+    "matches": [
+      {
+        "startTime": "21.00",
+        "homeTeam": "Mexiko",
+        "awayTeam": "Sydafrika",
+        "id": "2026-06-11-21.00-Mexiko-Sydafrika-0",
+        "groupOrRound": "Grupp A",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Mexico City",
+        "awayTeamRanking": 60,
+        "homeTeamRanking": 14,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 2,
+          "sourceUrl": "https://apnews.com/article/4c9de5961b70f1b2cc6e754ff2db57c2"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-12",
+    "label": "Fredag 12 juni",
+    "matches": [
+      {
+        "startTime": "04.00",
+        "homeTeam": "Sydkorea",
+        "awayTeam": "Tjeckien",
+        "id": "2026-06-12-04.00-Sydkorea-Tjeckien-0",
+        "groupOrRound": "Grupp A",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Guadalajara",
+        "awayTeamRanking": 40,
+        "homeTeamRanking": 25,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 2,
+          "sourceUrl": "https://apnews.com/article/496e7772dde95ca0af90b5074fdb13d9"
+        }
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Kanada",
+        "awayTeam": "Bosnien och Hercegovina",
+        "id": "2026-06-12-21.00-Kanada-Bosnien och Hercegovina-1",
+        "groupOrRound": "Grupp B",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Toronto",
+        "awayTeamRanking": 64,
+        "homeTeamRanking": 30,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://apnews.com/article/world-cup-bosnia-herzegovina-canada-score-c58d5a51d827dd0456fe56e65eca1518"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-13",
+    "label": "Lördag 13 juni",
+    "matches": [
+      {
+        "startTime": "03.00",
+        "homeTeam": "USA",
+        "awayTeam": "Paraguay",
+        "id": "2026-06-13-03.00-USA-Paraguay-0",
+        "groupOrRound": "Grupp D",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Los Angeles",
+        "awayTeamRanking": 41,
+        "homeTeamRanking": 17,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 4,
+          "sourceUrl": "https://www.skysports.com/football/competitions/world-cup/results"
+        }
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Qatar",
+        "awayTeam": "Schweiz",
+        "id": "2026-06-13-21.00-Qatar-Schweiz-1",
+        "groupOrRound": "Grupp B",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "San Francisco",
+        "awayTeamRanking": 19,
+        "homeTeamRanking": 56,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://www.skysports.com/football/qatar-vs-switzerland/report/549770"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-14",
+    "label": "Söndag 14 juni",
+    "matches": [
+      {
+        "startTime": "00.00",
+        "homeTeam": "Brasilien",
+        "awayTeam": "Marocko",
+        "id": "2026-06-14-00.00-Brasilien-Marocko-0",
+        "groupOrRound": "Grupp C",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "New Jersey",
+        "awayTeamRanking": 7,
+        "homeTeamRanking": 6,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://apnews.com/article/brazil-morocco-score-f7c99c7947a903c46562344462d12057"
+        }
+      },
+      {
+        "startTime": "03.00",
+        "homeTeam": "Haiti",
+        "awayTeam": "Skottland",
+        "id": "2026-06-14-03.00-Haiti-Skottland-1",
+        "groupOrRound": "Grupp C",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Boston",
+        "awayTeamRanking": 42,
+        "homeTeamRanking": 83,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 0,
+          "sourceUrl": "https://www.skysports.com/football/haiti-vs-scotland/report/549772"
+        }
+      },
+      {
+        "startTime": "06.00",
+        "homeTeam": "Australien",
+        "awayTeam": "Turkiet",
+        "id": "2026-06-14-06.00-Australien-Turkiet-2",
+        "groupOrRound": "Grupp D",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Vancouver",
+        "awayTeamRanking": 22,
+        "homeTeamRanking": 27,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 2,
+          "sourceUrl": "https://apnews.com/article/australia-turkey-score-690429346bffc3d906fb01005df38010"
+        }
+      },
+      {
+        "startTime": "19.00",
+        "homeTeam": "Tyskland",
+        "awayTeam": "Curaçao",
+        "id": "2026-06-14-19.00-Tyskland-Curaçao-3",
+        "groupOrRound": "Grupp E",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Houston",
+        "awayTeamRanking": 82,
+        "homeTeamRanking": 10,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 7,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/14/alemania-7-1-curazao-resumen-resultado-y-goles-del-partido-del-grupo-e-del-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "22.00",
+        "homeTeam": "Nederländerna",
+        "awayTeam": "Japan",
+        "id": "2026-06-14-22.00-Nederländerna-Japan-4",
+        "groupOrRound": "Grupp F",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Dallas",
+        "awayTeamRanking": 18,
+        "homeTeamRanking": 8,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 2,
+          "sourceUrl": "https://apnews.com/article/d5cb428f3a5f1199345894d44a6bdded"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-15",
+    "label": "Måndag 15 juni",
+    "matches": [
+      {
+        "startTime": "01.00",
+        "homeTeam": "Elfenbenskusten",
+        "awayTeam": "Ecuador",
+        "id": "2026-06-15-01.00-Elfenbenskusten-Ecuador-0",
+        "groupOrRound": "Grupp E",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Philadelphia",
+        "awayTeamRanking": 23,
+        "homeTeamRanking": 33,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 1,
+          "sourceUrl": "https://www.washingtonpost.com/sports/soccer/2026/06/14/world-cup-ivory-coast-ecuador-score/cc00963e-6858-11f1-830e-133d20cadd28_story.html"
+        }
+      },
+      {
+        "startTime": "04.00",
+        "homeTeam": "Sverige",
+        "awayTeam": "Tunisien",
+        "id": "2026-06-15-04.00-Sverige-Tunisien-1",
+        "groupOrRound": "Grupp F",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Monterrey",
+        "awayTeamRanking": 45,
+        "homeTeamRanking": 38,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 5,
+          "sourceUrl": "https://www.washingtonpost.com/sports/soccer/2026/06/15/world-cup-sweden-tunisia-score/1ab746e8-6871-11f1-830e-133d20cadd28_story.html"
+        }
+      },
+      {
+        "startTime": "18.00",
+        "homeTeam": "Spanien",
+        "awayTeam": "Kap Verde",
+        "id": "2026-06-15-18.00-Spanien-Kap Verde-2",
+        "groupOrRound": "Grupp H",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Atlanta",
+        "awayTeamRanking": 67,
+        "homeTeamRanking": 2,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 0,
+          "sourceUrl": "https://www.foxsports.com/soccer/fifa-world-cup-men-spain-vs-cape-verde-jun-15-2026-game-boxscore-647628"
+        }
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Belgien",
+        "awayTeam": "Egypten",
+        "id": "2026-06-15-21.00-Belgien-Egypten-3",
+        "groupOrRound": "Grupp G",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Seattle",
+        "awayTeamRanking": 29,
+        "homeTeamRanking": 9,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760426/egypt-belgium"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-16",
+    "label": "Tisdag 16 juni",
+    "matches": [
+      {
+        "startTime": "00.00",
+        "homeTeam": "Saudiarabien",
+        "awayTeam": "Uruguay",
+        "id": "2026-06-16-00.00-Saudiarabien-Uruguay-0",
+        "groupOrRound": "Grupp H",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Miami",
+        "awayTeamRanking": 16,
+        "homeTeamRanking": 61,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/16/arabia-saudi-1-1-uruguay-resumen-resultado-y-goles-del-partido-del-grupo-h-del-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "03.00",
+        "homeTeam": "Iran",
+        "awayTeam": "Nya Zeeland",
+        "id": "2026-06-16-03.00-Iran-Nya Zeeland-1",
+        "groupOrRound": "Grupp G",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Los Angeles",
+        "awayTeamRanking": 85,
+        "homeTeamRanking": 20,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 2,
+          "sourceUrl": "https://apnews.com/article/world-cup-iran-new-zealand-score-314655749d94fe577bb2b52ebd6b32c4"
+        }
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Frankrike",
+        "awayTeam": "Senegal",
+        "id": "2026-06-16-21.00-Frankrike-Senegal-2",
+        "groupOrRound": "Grupp I",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "New Jersey",
+        "awayTeamRanking": 15,
+        "homeTeamRanking": 3,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 3,
+          "sourceUrl": "https://www.sofascore.com/football/match/senegal-france/GObsOUb"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-17",
+    "label": "Onsdag 17 juni",
+    "matches": [
+      {
+        "startTime": "00.00",
+        "homeTeam": "Irak",
+        "awayTeam": "Norge",
+        "id": "2026-06-17-00.00-Irak-Norge-0",
+        "groupOrRound": "Grupp I",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Boston",
+        "awayTeamRanking": 31,
+        "homeTeamRanking": 57,
+        "result": {
+          "awayScore": 4,
+          "homeScore": 1,
+          "sourceUrl": "https://www.skysports.com/football/competitions/world-cup/results"
+        }
+      },
+      {
+        "startTime": "03.00",
+        "homeTeam": "Argentina",
+        "awayTeam": "Algeriet",
+        "id": "2026-06-17-03.00-Argentina-Algeriet-1",
+        "groupOrRound": "Grupp J",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Kansas City",
+        "awayTeamRanking": 28,
+        "homeTeamRanking": 1,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 3,
+          "sourceUrl": "https://apnews.com/article/world-cup-argentina-lionel-messi-6bdb86e04ed24187b4321cdeed542d4c"
+        }
+      },
+      {
+        "startTime": "06.00",
+        "homeTeam": "Österrike",
+        "awayTeam": "Jordanien",
+        "id": "2026-06-17-06.00-Österrike-Jordanien-2",
+        "groupOrRound": "Grupp J",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "San Francisco",
+        "awayTeamRanking": 63,
+        "homeTeamRanking": 24,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 3,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/17/austria-3-1-jordania-resumen-resultado-y-goles-del-partido-del-grupo-j-en-el-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "19.00",
+        "homeTeam": "Portugal",
+        "awayTeam": "Demokratiska republiken Kongo",
+        "id": "2026-06-17-19.00-Portugal-Demokratiska republiken Kongo-3",
+        "groupOrRound": "Grupp K",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Houston",
+        "awayTeamRanking": 46,
+        "homeTeamRanking": 5,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://elpais.com/deportes/mundial-futbol/2026-06-17/portugal-se-atasca-con-cristiano-y-el-congo-celebra-su-fiesta-mas-grande.html"
+        }
+      },
+      {
+        "startTime": "22.00",
+        "homeTeam": "England",
+        "awayTeam": "Kroatien",
+        "id": "2026-06-17-22.00-England-Kroatien-4",
+        "groupOrRound": "Grupp L",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Dallas",
+        "awayTeamRanking": 11,
+        "homeTeamRanking": 4,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 4,
+          "sourceUrl": "https://apnews.com/article/c1bca89bb4a4897fbfa57b2804608426"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-18",
+    "label": "Torsdag 18 juni",
+    "matches": [
+      {
+        "startTime": "01.00",
+        "homeTeam": "Ghana",
+        "awayTeam": "Panama",
+        "id": "2026-06-18-01.00-Ghana-Panama-0",
+        "groupOrRound": "Grupp L",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Toronto",
+        "awayTeamRanking": 34,
+        "homeTeamRanking": 73,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 1,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/18/ghana-1-0-panama-resumen-resultado-y-goles-del-partido-del-grupo-l-del-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "04.00",
+        "homeTeam": "Uzbekistan",
+        "awayTeam": "Colombia",
+        "id": "2026-06-18-04.00-Uzbekistan-Colombia-1",
+        "groupOrRound": "Grupp K",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Mexico City",
+        "awayTeamRanking": 13,
+        "homeTeamRanking": 50,
+        "result": {
+          "awayScore": 3,
+          "homeScore": 1,
+          "sourceUrl": "https://elpais.com/america-colombia/2026-06-18/colombia-uzbekistan-el-partido-del-mundial-en-vivo.html"
+        }
+      },
+      {
+        "startTime": "18.00",
+        "homeTeam": "Tjeckien",
+        "awayTeam": "Sydafrika",
+        "id": "2026-06-18-18.00-Tjeckien-Sydafrika-2",
+        "groupOrRound": "Grupp A",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Atlanta",
+        "awayTeamRanking": 60,
+        "homeTeamRanking": 40,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://www.aftonbladet.se/sportbladet/fotboll/a/gkzVe1/sen-straff-raddade-sydafrika-mot-tjeckien"
+        }
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Schweiz",
+        "awayTeam": "Bosnien och Hercegovina",
+        "id": "2026-06-18-21.00-Schweiz-Bosnien och Hercegovina-3",
+        "groupOrRound": "Grupp B",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Los Angeles",
+        "awayTeamRanking": 64,
+        "homeTeamRanking": 19,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 4,
+          "sourceUrl": "https://www.sportytrader.com/en/results-live/switzerland-bosnia-herzegovina-8427297/"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-19",
+    "label": "Fredag 19 juni",
+    "matches": [
+      {
+        "startTime": "00.00",
+        "homeTeam": "Kanada",
+        "awayTeam": "Qatar",
+        "id": "2026-06-19-00.00-Kanada-Qatar-0",
+        "groupOrRound": "Grupp B",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Vancouver",
+        "awayTeamRanking": 56,
+        "homeTeamRanking": 30,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 6,
+          "sourceUrl": "https://apnews.com/article/canada-qatar-score-world-cup-ac2e21764948dba88373e5e287f3d0c1"
+        }
+      },
+      {
+        "startTime": "03.00",
+        "homeTeam": "Mexiko",
+        "awayTeam": "Sydkorea",
+        "id": "2026-06-19-03.00-Mexiko-Sydkorea-1",
+        "groupOrRound": "Grupp A",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Guadalajara",
+        "awayTeamRanking": 25,
+        "homeTeamRanking": 14,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 1,
+          "sourceUrl": "https://apnews.com/article/31e17a499d793f415c1214610b29ffb5"
+        }
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "USA",
+        "awayTeam": "Australien",
+        "id": "2026-06-19-21.00-USA-Australien-2",
+        "groupOrRound": "Grupp D",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Seattle",
+        "awayTeamRanking": 27,
+        "homeTeamRanking": 17,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 2,
+          "sourceUrl": "https://apnews.com/article/world-cup-united-states-australia-score-be65bf85eac80da9fd999af080bb300c"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-20",
+    "label": "Lördag 20 juni",
+    "matches": [
+      {
+        "startTime": "00.00",
+        "homeTeam": "Skottland",
+        "awayTeam": "Marocko",
+        "id": "2026-06-20-00.00-Skottland-Marocko-0",
+        "groupOrRound": "Grupp C",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Boston",
+        "awayTeamRanking": 7,
+        "homeTeamRanking": 42,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 0,
+          "sourceUrl": "https://elpais.com/deportes/mundial-futbol/2026-06-20/marruecos-marca-rapido-y-padece-despues-contra-escocia.html"
+        }
+      },
+      {
+        "startTime": "03.00",
+        "homeTeam": "Brasilien",
+        "awayTeam": "Haiti",
+        "id": "2026-06-20-03.00-Brasilien-Haiti-1",
+        "groupOrRound": "Grupp C",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Philadelphia",
+        "awayTeamRanking": 83,
+        "homeTeamRanking": 6,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 3,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/20/brasil-3-0-haiti-resumen-resultados-y-goles-del-partido-del-grupo-c-del-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "06.00",
+        "homeTeam": "Turkiet",
+        "awayTeam": "Paraguay",
+        "id": "2026-06-20-06.00-Turkiet-Paraguay-2",
+        "groupOrRound": "Grupp D",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "San Francisco",
+        "awayTeamRanking": 41,
+        "homeTeamRanking": 22,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 0,
+          "sourceUrl": "https://apnews.com/article/world-cup-turkey-paraguay-score-39092d1e8e7a5e2fbdd840886cdb749a"
+        }
+      },
+      {
+        "startTime": "19.00",
+        "homeTeam": "Nederländerna",
+        "awayTeam": "Sverige",
+        "id": "2026-06-20-19.00-Nederländerna-Sverige-3",
+        "groupOrRound": "Grupp F",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Houston",
+        "awayTeamRanking": 38,
+        "homeTeamRanking": 8,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 5,
+          "sourceUrl": "https://elpais.com/deportes/mundial-futbol/2026-06-20/paises-bajos-saca-el-mazo-contra-suecia-se-libera-y-al-fin-se-divierte.html"
+        }
+      },
+      {
+        "startTime": "22.00",
+        "homeTeam": "Tyskland",
+        "awayTeam": "Elfenbenskusten",
+        "id": "2026-06-20-22.00-Tyskland-Elfenbenskusten-4",
+        "groupOrRound": "Grupp E",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Toronto",
+        "awayTeamRanking": 33,
+        "homeTeamRanking": 10,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 2,
+          "sourceUrl": "https://www.aftonbladet.se/sportbladet/fotboll/a/7pRK4K/deniz-undav-fralser-tyskland-i-fotbolls-vm"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-21",
+    "label": "Söndag 21 juni",
+    "matches": [
+      {
+        "startTime": "02.00",
+        "homeTeam": "Ecuador",
+        "awayTeam": "Curaçao",
+        "id": "2026-06-21-02.00-Ecuador-Curaçao-0",
+        "groupOrRound": "Grupp E",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Kansas City",
+        "awayTeamRanking": 82,
+        "homeTeamRanking": 23,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 0,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/21/ecuador-0-0-curazao-resumen-resultados-y-goles-del-partido-del-grupo-e-del-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "06.00",
+        "homeTeam": "Tunisien",
+        "awayTeam": "Japan",
+        "id": "2026-06-21-06.00-Tunisien-Japan-1",
+        "groupOrRound": "Grupp F",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Monterrey",
+        "awayTeamRanking": 18,
+        "homeTeamRanking": 45,
+        "result": {
+          "awayScore": 4,
+          "homeScore": 0,
+          "sourceUrl": "https://www.vg.no/sport/i/d4qm4J/fotball-vm-2026-japan-vant-40-over-tunisia"
+        }
+      },
+      {
+        "startTime": "18.00",
+        "homeTeam": "Spanien",
+        "awayTeam": "Saudiarabien",
+        "id": "2026-06-21-18.00-Spanien-Saudiarabien-2",
+        "groupOrRound": "Grupp H",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Atlanta",
+        "awayTeamRanking": 61,
+        "homeTeamRanking": 2,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 4,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/21/espana-4-0-arabia-saudi-resumen-resultado-y-goles-del-partido-del-grupo-h-del-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Belgien",
+        "awayTeam": "Iran",
+        "id": "2026-06-21-21.00-Belgien-Iran-3",
+        "groupOrRound": "Grupp G",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Los Angeles",
+        "awayTeamRanking": 20,
+        "homeTeamRanking": 9,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 0,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/21/belgica-0-0-iran-resumen-resultado-y-goles-del-partido-del-grupo-g-del-mundial-2026-cadena-ser/"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-22",
+    "label": "Måndag 22 juni",
+    "matches": [
+      {
+        "startTime": "00.00",
+        "homeTeam": "Uruguay",
+        "awayTeam": "Kap Verde",
+        "id": "2026-06-22-00.00-Uruguay-Kap Verde-0",
+        "groupOrRound": "Grupp H",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Miami",
+        "awayTeamRanking": 67,
+        "homeTeamRanking": 16,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 2,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/22/uruguay-2-2-cabo-verde-resumen-resultado-y-goles-del-partido-del-grupo-h-del-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "03.00",
+        "homeTeam": "Nya Zeeland",
+        "awayTeam": "Egypten",
+        "id": "2026-06-22-03.00-Nya Zeeland-Egypten-1",
+        "groupOrRound": "Grupp G",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Vancouver",
+        "awayTeamRanking": 29,
+        "homeTeamRanking": 85,
+        "result": {
+          "awayScore": 3,
+          "homeScore": 1,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/22/nueva-zelanda-1-3-egipto-resumen-resultado-y-goles-del-partido-del-grupo-g-del-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "19.00",
+        "homeTeam": "Argentina",
+        "awayTeam": "Österrike",
+        "id": "2026-06-22-19.00-Argentina-Österrike-2",
+        "groupOrRound": "Grupp J",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Dallas",
+        "awayTeamRanking": 24,
+        "homeTeamRanking": 1,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 2,
+          "sourceUrl": "https://apnews.com/article/world-cup-argentina-austria-messi-3ad605618a23e1d71fc539d8c596e33e"
+        }
+      },
+      {
+        "startTime": "23.00",
+        "homeTeam": "Frankrike",
+        "awayTeam": "Irak",
+        "id": "2026-06-22-23.00-Frankrike-Irak-3",
+        "groupOrRound": "Grupp I",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Philadelphia",
+        "awayTeamRanking": 57,
+        "homeTeamRanking": 3,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 3,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/23/francia-3-0-irak-resumen-resultado-y-goles-del-partido-del-grupo-i-del-mundial-2026-cadena-ser/"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-23",
+    "label": "Tisdag 23 juni",
+    "matches": [
+      {
+        "startTime": "02.00",
+        "homeTeam": "Norge",
+        "awayTeam": "Senegal",
+        "id": "2026-06-23-02.00-Norge-Senegal-0",
+        "groupOrRound": "Grupp I",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "New Jersey",
+        "awayTeamRanking": 15,
+        "homeTeamRanking": 31,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 3,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/23/noruega-3-2-senegal-resumen-resultado-y-goles-del-partido-del-grupo-i-del-mundial-2026-cadena-ser/"
+        }
+      },
+      {
+        "startTime": "05.00",
+        "homeTeam": "Jordanien",
+        "awayTeam": "Algeriet",
+        "id": "2026-06-23-05.00-Jordanien-Algeriet-1",
+        "groupOrRound": "Grupp J",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "San Francisco",
+        "awayTeamRanking": 28,
+        "homeTeamRanking": 63
+      },
+      {
+        "startTime": "19.00",
+        "homeTeam": "Portugal",
+        "awayTeam": "Uzbekistan",
+        "id": "2026-06-23-19.00-Portugal-Uzbekistan-2",
+        "groupOrRound": "Grupp K",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Houston",
+        "awayTeamRanking": 50,
+        "homeTeamRanking": 5
+      },
+      {
+        "startTime": "22.00",
+        "homeTeam": "England",
+        "awayTeam": "Ghana",
+        "id": "2026-06-23-22.00-England-Ghana-3",
+        "groupOrRound": "Grupp L",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Boston",
+        "awayTeamRanking": 73,
+        "homeTeamRanking": 4
+      }
+    ]
+  },
+  {
+    "date": "2026-06-24",
+    "label": "Onsdag 24 juni",
+    "matches": [
+      {
+        "startTime": "01.00",
+        "homeTeam": "Panama",
+        "awayTeam": "Kroatien",
+        "id": "2026-06-24-01.00-Panama-Kroatien-0",
+        "groupOrRound": "Grupp L",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Toronto",
+        "awayTeamRanking": 11,
+        "homeTeamRanking": 34
+      },
+      {
+        "startTime": "04.00",
+        "homeTeam": "Colombia",
+        "awayTeam": "Demokratiska republiken Kongo",
+        "id": "2026-06-24-04.00-Colombia-Demokratiska republiken Kongo-1",
+        "groupOrRound": "Grupp K",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Guadalajara",
+        "awayTeamRanking": 46,
+        "homeTeamRanking": 13
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Schweiz",
+        "awayTeam": "Kanada",
+        "id": "2026-06-24-21.00-Schweiz-Kanada-2",
+        "groupOrRound": "Grupp B",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Vancouver",
+        "awayTeamRanking": 30,
+        "homeTeamRanking": 19
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Bosnien och Hercegovina",
+        "awayTeam": "Qatar",
+        "id": "2026-06-24-21.00-Bosnien och Hercegovina-Qatar-3",
+        "groupOrRound": "Grupp B",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Seattle",
+        "awayTeamRanking": 56,
+        "homeTeamRanking": 64
+      }
+    ]
+  },
+  {
+    "date": "2026-06-25",
+    "label": "Torsdag 25 juni",
+    "matches": [
+      {
+        "startTime": "00.00",
+        "homeTeam": "Marocko",
+        "awayTeam": "Haiti",
+        "id": "2026-06-25-00.00-Marocko-Haiti-0",
+        "groupOrRound": "Grupp C",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Atlanta",
+        "awayTeamRanking": 83,
+        "homeTeamRanking": 7
+      },
+      {
+        "startTime": "00.00",
+        "homeTeam": "Skottland",
+        "awayTeam": "Brasilien",
+        "id": "2026-06-25-00.00-Skottland-Brasilien-1",
+        "groupOrRound": "Grupp C",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Miami",
+        "awayTeamRanking": 6,
+        "homeTeamRanking": 42
+      },
+      {
+        "startTime": "03.00",
+        "homeTeam": "Sydafrika",
+        "awayTeam": "Sydkorea",
+        "id": "2026-06-25-03.00-Sydafrika-Sydkorea-2",
+        "groupOrRound": "Grupp A",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Monterrey",
+        "awayTeamRanking": 25,
+        "homeTeamRanking": 60
+      },
+      {
+        "startTime": "03.00",
+        "homeTeam": "Tjeckien",
+        "awayTeam": "Mexiko",
+        "id": "2026-06-25-03.00-Tjeckien-Mexiko-3",
+        "groupOrRound": "Grupp A",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Mexico City",
+        "awayTeamRanking": 14,
+        "homeTeamRanking": 40
+      },
+      {
+        "startTime": "22.00",
+        "homeTeam": "Curaçao",
+        "awayTeam": "Elfenbenskusten",
+        "id": "2026-06-25-22.00-Curaçao-Elfenbenskusten-4",
+        "groupOrRound": "Grupp E",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Philadelphia",
+        "awayTeamRanking": 33,
+        "homeTeamRanking": 82
+      },
+      {
+        "startTime": "22.00",
+        "homeTeam": "Ecuador",
+        "awayTeam": "Tyskland",
+        "id": "2026-06-25-22.00-Ecuador-Tyskland-5",
+        "groupOrRound": "Grupp E",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "New Jersey",
+        "awayTeamRanking": 10,
+        "homeTeamRanking": 23
+      }
+    ]
+  },
+  {
+    "date": "2026-06-26",
+    "label": "Fredag 26 juni",
+    "matches": [
+      {
+        "startTime": "01.00",
+        "homeTeam": "Tunisien",
+        "awayTeam": "Nederländerna",
+        "id": "2026-06-26-01.00-Tunisien-Nederländerna-0",
+        "groupOrRound": "Grupp F",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Kansas City",
+        "awayTeamRanking": 8,
+        "homeTeamRanking": 45
+      },
+      {
+        "startTime": "01.00",
+        "homeTeam": "Japan",
+        "awayTeam": "Sverige",
+        "id": "2026-06-26-01.00-Japan-Sverige-1",
+        "groupOrRound": "Grupp F",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Dallas",
+        "awayTeamRanking": 38,
+        "homeTeamRanking": 18
+      },
+      {
+        "startTime": "04.00",
+        "homeTeam": "Turkiet",
+        "awayTeam": "USA",
+        "id": "2026-06-26-04.00-Turkiet-USA-2",
+        "groupOrRound": "Grupp D",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Los Angeles",
+        "awayTeamRanking": 17,
+        "homeTeamRanking": 22
+      },
+      {
+        "startTime": "04.00",
+        "homeTeam": "Paraguay",
+        "awayTeam": "Australien",
+        "id": "2026-06-26-04.00-Paraguay-Australien-3",
+        "groupOrRound": "Grupp D",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "San Francisco",
+        "awayTeamRanking": 27,
+        "homeTeamRanking": 41
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Norge",
+        "awayTeam": "Frankrike",
+        "id": "2026-06-26-21.00-Norge-Frankrike-4",
+        "groupOrRound": "Grupp I",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Boston",
+        "awayTeamRanking": 3,
+        "homeTeamRanking": 31
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "Senegal",
+        "awayTeam": "Irak",
+        "id": "2026-06-26-21.00-Senegal-Irak-5",
+        "groupOrRound": "Grupp I",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Toronto",
+        "awayTeamRanking": 57,
+        "homeTeamRanking": 15
+      }
+    ]
+  },
+  {
+    "date": "2026-06-27",
+    "label": "Lördag 27 juni",
+    "matches": [
+      {
+        "startTime": "02.00",
+        "homeTeam": "Kap Verde",
+        "awayTeam": "Saudiarabien",
+        "id": "2026-06-27-02.00-Kap Verde-Saudiarabien-0",
+        "groupOrRound": "Grupp H",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Houston",
+        "awayTeamRanking": 61,
+        "homeTeamRanking": 67
+      },
+      {
+        "startTime": "02.00",
+        "homeTeam": "Uruguay",
+        "awayTeam": "Spanien",
+        "id": "2026-06-27-02.00-Uruguay-Spanien-1",
+        "groupOrRound": "Grupp H",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Guadalajara",
+        "awayTeamRanking": 2,
+        "homeTeamRanking": 16
+      },
+      {
+        "startTime": "05.00",
+        "homeTeam": "Nya Zeeland",
+        "awayTeam": "Belgien",
+        "id": "2026-06-27-05.00-Nya Zeeland-Belgien-2",
+        "groupOrRound": "Grupp G",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Vancouver",
+        "awayTeamRanking": 9,
+        "homeTeamRanking": 85
+      },
+      {
+        "startTime": "05.00",
+        "homeTeam": "Egypten",
+        "awayTeam": "Iran",
+        "id": "2026-06-27-05.00-Egypten-Iran-3",
+        "groupOrRound": "Grupp G",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Seattle",
+        "awayTeamRanking": 20,
+        "homeTeamRanking": 29
+      },
+      {
+        "startTime": "23.00",
+        "homeTeam": "Panama",
+        "awayTeam": "England",
+        "id": "2026-06-27-23.00-Panama-England-4",
+        "groupOrRound": "Grupp L",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "New Jersey",
+        "awayTeamRanking": 4,
+        "homeTeamRanking": 34
+      },
+      {
+        "startTime": "23.00",
+        "homeTeam": "Kroatien",
+        "awayTeam": "Ghana",
+        "id": "2026-06-27-23.00-Kroatien-Ghana-5",
+        "groupOrRound": "Grupp L",
+        "broadcaster": "SVT och SVT Play",
+        "venue": "Philadelphia",
+        "awayTeamRanking": 73,
+        "homeTeamRanking": 11
+      }
+    ]
+  },
+  {
+    "date": "2026-06-28",
+    "label": "Söndag 28 juni",
+    "matches": [
+      {
+        "startTime": "01.30",
+        "homeTeam": "Demokratiska republiken Kongo",
+        "awayTeam": "Uzbekistan",
+        "id": "2026-06-28-01.30-Demokratiska republiken Kongo-Uzbekistan-0",
+        "groupOrRound": "Grupp K",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Atlanta",
+        "awayTeamRanking": 50,
+        "homeTeamRanking": 46
+      },
+      {
+        "startTime": "01.30",
+        "homeTeam": "Colombia",
+        "awayTeam": "Portugal",
+        "id": "2026-06-28-01.30-Colombia-Portugal-1",
+        "groupOrRound": "Grupp K",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Miami",
+        "awayTeamRanking": 5,
+        "homeTeamRanking": 13
+      },
+      {
+        "startTime": "04.00",
+        "homeTeam": "Algeriet",
+        "awayTeam": "Österrike",
+        "id": "2026-06-28-04.00-Algeriet-Österrike-2",
+        "groupOrRound": "Grupp J",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Kansas City",
+        "awayTeamRanking": 24,
+        "homeTeamRanking": 28
+      },
+      {
+        "startTime": "04.00",
+        "homeTeam": "Jordanien",
+        "awayTeam": "Argentina",
+        "id": "2026-06-28-04.00-Jordanien-Argentina-3",
+        "groupOrRound": "Grupp J",
+        "broadcaster": "TV4 och TV4 Play",
+        "venue": "Dallas",
+        "awayTeamRanking": 1,
+        "homeTeamRanking": 63
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "2A",
+        "awayTeam": "2B",
+        "id": "2026-06-28-21.00-2A-2B-4",
+        "groupOrRound": "Match 73, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-06-29",
+    "label": "Måndag 29 juni",
+    "matches": [
+      {
+        "startTime": "19.00",
+        "homeTeam": "1C",
+        "awayTeam": "2F",
+        "id": "2026-06-29-19.00-1C-2F-0",
+        "groupOrRound": "Match 76, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      },
+      {
+        "startTime": "22.30",
+        "homeTeam": "Tyskland",
+        "awayTeam": "3ABCDF",
+        "id": "2026-06-29-22.30-1E-3A/B/C/D/F-1",
+        "groupOrRound": "Match 74, 16-delsfinal",
+        "broadcaster": "SVT och SVT Play",
+        "homeTeamRanking": 10
+      }
+    ]
+  },
+  {
+    "date": "2026-06-30",
+    "label": "Tisdag 30 juni",
+    "matches": [
+      {
+        "startTime": "03.00",
+        "homeTeam": "1F",
+        "awayTeam": "2C",
+        "id": "2026-06-30-03.00-1F-2C-0",
+        "groupOrRound": "Match 75, 16-delsfinal",
+        "broadcaster": "SVT och SVT Play"
+      },
+      {
+        "startTime": "19.00",
+        "homeTeam": "2E",
+        "awayTeam": "2I",
+        "id": "2026-06-30-19.00-2E-2I-1",
+        "groupOrRound": "Match 78, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      },
+      {
+        "startTime": "23.00",
+        "homeTeam": "1I",
+        "awayTeam": "3CDFGH",
+        "id": "2026-06-30-23.00-1I-3C/D/F/G/H-2",
+        "groupOrRound": "Match 77, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "label": "Onsdag 1 juli",
+    "matches": [
+      {
+        "startTime": "03.00",
+        "homeTeam": "Mexiko",
+        "awayTeam": "3CEFHI",
+        "id": "2026-07-01-03.00-1A-3C/E/F/H/I-0",
+        "groupOrRound": "Match 79, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 14
+      },
+      {
+        "startTime": "18.00",
+        "homeTeam": "1L",
+        "awayTeam": "3EHIJK",
+        "id": "2026-07-01-18.00-1L-3E/H/I/J/K-1",
+        "groupOrRound": "Match 80, 16-delsfinal",
+        "broadcaster": "SVT och SVT Play"
+      },
+      {
+        "startTime": "22.00",
+        "homeTeam": "1G",
+        "awayTeam": "3AEHIJ",
+        "id": "2026-07-01-22.00-1G-3A/E/H/I/J-2",
+        "groupOrRound": "Match 82, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-02",
+    "label": "Torsdag 2 juli",
+    "matches": [
+      {
+        "startTime": "02.00",
+        "homeTeam": "USA",
+        "awayTeam": "3BEFIJ",
+        "id": "2026-07-02-02.00-1D-3B/E/F/I/J-0",
+        "groupOrRound": "Match 81, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 17
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "1H",
+        "awayTeam": "2J",
+        "id": "2026-07-02-21.00-1H-2J-1",
+        "groupOrRound": "Match 84, 16-delsfinal",
+        "broadcaster": "SVT och SVT Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-03",
+    "label": "Fredag 3 juli",
+    "matches": [
+      {
+        "startTime": "01.00",
+        "homeTeam": "2K",
+        "awayTeam": "2L",
+        "id": "2026-07-03-01.00-2K-2L-0",
+        "groupOrRound": "Match 83, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      },
+      {
+        "startTime": "05.00",
+        "homeTeam": "1B",
+        "awayTeam": "3EFGIJ",
+        "id": "2026-07-03-05.00-1B-3E/F/G/I/J-1",
+        "groupOrRound": "Match 85, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      },
+      {
+        "startTime": "20.00",
+        "homeTeam": "2D",
+        "awayTeam": "2G",
+        "id": "2026-07-03-20.00-2D-2G-2",
+        "groupOrRound": "Match 88, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-04",
+    "label": "Lördag 4 juli",
+    "matches": [
+      {
+        "startTime": "00.00",
+        "homeTeam": "Argentina",
+        "awayTeam": "2H",
+        "id": "2026-07-04-00.00-1J-2H-0",
+        "groupOrRound": "Match 86, 16-delsfinal",
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 1
+      },
+      {
+        "startTime": "03.30",
+        "homeTeam": "1K",
+        "awayTeam": "3DEIJL",
+        "id": "2026-07-04-03.30-1K-3D/E/I/J/L-1",
+        "groupOrRound": "Match 87, 16-delsfinal",
+        "broadcaster": "SVT och SVT Play"
+      },
+      {
+        "startTime": "19.00",
+        "homeTeam": "W73",
+        "awayTeam": "W75",
+        "id": "2026-07-04-19.00-W73-W75-2",
+        "groupOrRound": "Match 90, åttondelsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      },
+      {
+        "startTime": "23.00",
+        "homeTeam": "W74",
+        "awayTeam": "W77",
+        "id": "2026-07-04-23.00-W74-W77-3",
+        "groupOrRound": "Match 89, åttondelsfinal",
+        "broadcaster": "SVT och SVT Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-05",
+    "label": "Söndag 5 juli",
+    "matches": [
+      {
+        "startTime": "22.00",
+        "homeTeam": "W76",
+        "awayTeam": "W78",
+        "id": "2026-07-05-22.00-W76-W78-0",
+        "groupOrRound": "Match 91, åttondelsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-06",
+    "label": "Måndag 6 juli",
+    "matches": [
+      {
+        "startTime": "02.00",
+        "homeTeam": "W79",
+        "awayTeam": "W80",
+        "id": "2026-07-06-02.00-W79-W80-0",
+        "groupOrRound": "Match 92, åttondelsfinal",
+        "broadcaster": "SVT och SVT Play"
+      },
+      {
+        "startTime": "21.00",
+        "homeTeam": "W83",
+        "awayTeam": "W84",
+        "id": "2026-07-06-21.00-W83-W84-1",
+        "groupOrRound": "Match 93, åttondelsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-07",
+    "label": "Tisdag 7 juli",
+    "matches": [
+      {
+        "startTime": "02.00",
+        "homeTeam": "W81",
+        "awayTeam": "W82",
+        "id": "2026-07-07-02.00-W81-W82-0",
+        "groupOrRound": "Match 94, åttondelsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      },
+      {
+        "startTime": "18.00",
+        "homeTeam": "W86",
+        "awayTeam": "W88",
+        "id": "2026-07-07-18.00-W86-W88-1",
+        "groupOrRound": "Match 95, åttondelsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      },
+      {
+        "startTime": "22.00",
+        "homeTeam": "W85",
+        "awayTeam": "W87",
+        "id": "2026-07-07-22.00-W85-W87-2",
+        "groupOrRound": "Match 96, åttondelsfinal",
+        "broadcaster": "SVT och SVT Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-09",
+    "label": "Torsdag 9 juli",
+    "matches": [
+      {
+        "startTime": "22.00",
+        "homeTeam": "W89",
+        "awayTeam": "W90",
+        "id": "2026-07-09-22.00-W89-W90-0",
+        "groupOrRound": "Match 97, kvartsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-10",
+    "label": "Fredag 10 juli",
+    "matches": [
+      {
+        "startTime": "21.00",
+        "homeTeam": "W93",
+        "awayTeam": "W94",
+        "id": "2026-07-10-21.00-W93-W94-0",
+        "groupOrRound": "Match 98, kvartsfinal",
+        "broadcaster": "SVT och SVT Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-11",
+    "label": "Lördag 11 juli",
+    "matches": [
+      {
+        "startTime": "23.00",
+        "homeTeam": "W91",
+        "awayTeam": "W92",
+        "id": "2026-07-11-23.00-W91-W92-0",
+        "groupOrRound": "Match 99, kvartsfinal",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-12",
+    "label": "Söndag 12 juli",
+    "matches": [
+      {
+        "startTime": "03.00",
+        "homeTeam": "W95",
+        "awayTeam": "W96",
+        "id": "2026-07-12-03.00-W95-W96-0",
+        "groupOrRound": "Match 100, kvartsfinal",
+        "broadcaster": "SVT och SVT Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-14",
+    "label": "Tisdag 14 juli",
+    "matches": [
+      {
+        "startTime": "21.00",
+        "homeTeam": "W97",
+        "awayTeam": "W98",
+        "id": "2026-07-14-21.00-W97-W98-0",
+        "groupOrRound": "Match 101, semifinal",
+        "broadcaster": "SVT och SVT Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-15",
+    "label": "Onsdag 15 juli",
+    "matches": [
+      {
+        "startTime": "21.00",
+        "homeTeam": "W99",
+        "awayTeam": "W100",
+        "id": "2026-07-15-21.00-W99-W100-0",
+        "groupOrRound": "Match 102, semifinal",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-18",
+    "label": "Lördag 18 juli",
+    "matches": [
+      {
+        "startTime": "23.00",
+        "homeTeam": "L101",
+        "awayTeam": "L102",
+        "id": "2026-07-18-23.00-L101-L102-0",
+        "groupOrRound": "Match 103, bronsmatch",
+        "broadcaster": "SVT och SVT Play"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-19",
+    "label": "Söndag 19 juli",
+    "matches": [
+      {
+        "startTime": "21.00",
+        "homeTeam": "W101",
+        "awayTeam": "W102",
+        "id": "2026-07-19-21.00-W101-W102-0",
+        "groupOrRound": "Match 104, VM-final",
+        "broadcaster": "TV4 och TV4 Play"
+      }
+    ]
+  }
+]

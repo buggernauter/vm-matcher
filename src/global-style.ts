@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import { globalThemeVariables } from "./styles/global-variables";
 
 export const StyledGlobalStyle = createGlobalStyle`
   :root {
     color-scheme: ${({ theme }) => theme.mode};
+    ${globalThemeVariables}
   }
 
   body {

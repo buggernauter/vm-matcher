@@ -25,18 +25,6 @@ test('shouldRunOpenAIForMatch blocks matches that already have results', () => {
 		shouldRunOpenAIForMatch({
 			date: '2026-06-14',
 			hasBaseResult: true,
-			hasStoredResult: false,
-			now,
-			startTime: '03.00',
-		}),
-		false,
-	);
-
-	assert.equal(
-		shouldRunOpenAIForMatch({
-			date: '2026-06-14',
-			hasBaseResult: false,
-			hasStoredResult: true,
 			now,
 			startTime: '03.00',
 		}),
@@ -52,7 +40,6 @@ test('shouldRunOpenAIForMatch waits until the minimum match age threshold', () =
 		shouldRunOpenAIForMatch({
 			date: '2026-06-14',
 			hasBaseResult: false,
-			hasStoredResult: false,
 			now: beforeThreshold,
 			startTime: '03.00',
 		}),
@@ -63,7 +50,6 @@ test('shouldRunOpenAIForMatch waits until the minimum match age threshold', () =
 		shouldRunOpenAIForMatch({
 			date: '2026-06-14',
 			hasBaseResult: false,
-			hasStoredResult: false,
 			now: atThreshold,
 			startTime: '03.00',
 		}),

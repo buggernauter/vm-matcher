@@ -94,3 +94,35 @@ export type WorldCupSquad = {
 	players: Record<WorldCupSquadPosition, Player[]>;
 };
 export type WorldCupResults = Record<string, GameResult>;
+
+export type BracketRoundLayout =
+	| 'compactColumns'
+	| 'compactStackedPairs'
+	| 'default'
+	| 'quarterColumns'
+	| 'semiColumns';
+
+export type BracketRoundData = {
+	id: string;
+	layout?: BracketRoundLayout;
+	title: string;
+	matches: BracketMatchData[];
+};
+
+export type BracketMatchData = {
+	awayLabel: string;
+	awayFlagCode?: string;
+	compactDate?: string;
+	compactDayMonth?: string;
+	compactTime?: string;
+	compactWeekday?: string;
+	homeLabel: string;
+	homeFlagCode?: string;
+	id: string;
+	layoutVariant?: 'compact' | 'default';
+	matchNumber?: number;
+	meta?: string;
+	result?: GameResult;
+	roundLabel?: string;
+	venue?: string;
+};

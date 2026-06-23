@@ -1,20 +1,16 @@
-export type StoredMatchResult = {
-	awayScore: number;
-	homeScore: number;
-	sourceUrl?: string;
-};
-
 export type PendingMatch = {
 	awayTeam: string;
 	date: string;
+	groupOrRound: string;
 	homeTeam: string;
 	id: string;
 	startTime: string;
 };
 
+export type PendingPlayoffMatch = PendingMatch;
+
 export type RunnableMatch = PendingMatch & {
 	hasBaseResult: boolean;
-	hasStoredResult: boolean;
 };
 
 export type OpenAIResultItem = {
@@ -24,6 +20,14 @@ export type OpenAIResultItem = {
 	sourceUrl: string;
 };
 
+export type OpenAIPlayoffTeamItem = {
+	awayTeam: string;
+	homeTeam: string;
+	matchId: string;
+	sourceUrl: string;
+};
+
 export type OpenAIResponsePayload = {
+	playoffTeams: OpenAIPlayoffTeamItem[];
 	results: OpenAIResultItem[];
 };

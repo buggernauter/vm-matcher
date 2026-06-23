@@ -115,6 +115,8 @@ export const shadows = {
 } as const;
 
 export const lightPalette: Palette = {
+	bracketFinalBorderColor: '#d4af37',
+	bracketFinalShadow: '0 1.1rem 2.4rem rgba(212, 175, 55, 0.24)',
 	cardSurfaceGradient: gradients.light.cardSurface,
 	cardSurfaceShadow: shadows.light.cardSurface,
 	descriptionSurfaceGradient: gradients.light.descriptionSurface,
@@ -143,6 +145,8 @@ export const lightPalette: Palette = {
 };
 
 export const darkPalette: Palette = {
+	bracketFinalBorderColor: '#d4af37',
+	bracketFinalShadow: '0rem 1.1rem 2.4rem #d4af37',
 	cardSurfaceGradient: gradients.dark.cardSurface,
 	cardSurfaceShadow: shadows.dark.cardSurface,
 	descriptionSurfaceGradient: gradients.dark.descriptionSurface,

@@ -14,17 +14,15 @@ export const isFinishedMatch = (date: string, startTime: string, now: number) =>
 export const shouldRunOpenAIForMatch = ({
 	date,
 	hasBaseResult,
-	hasStoredResult,
 	now,
 	startTime,
 }: {
 	date: string;
 	hasBaseResult: boolean;
-	hasStoredResult: boolean;
 	now: number;
 	startTime: string;
 }) => {
-	if (hasBaseResult || hasStoredResult) {
+	if (hasBaseResult) {
 		return false;
 	}
 

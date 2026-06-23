@@ -2,6 +2,11 @@ name: Update World Cup Results
 
 on:
   workflow_dispatch:
+  # Runs automatically every 30 minutes.
+  # GitHub Actions cron schedules use UTC time.
+  # Runs at:
+  # - 19:00, 19:30, ..., 23:30 UTC
+  # - 00:00, 00:30, ..., 07:30 UTC
   schedule:
   - cron: '0,30 19-23 * * *'
   - cron: '0,30 0-7 * * *'
@@ -35,13 +40,18 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      
 
+      # This script runs inside a GitHub Actions runner (ubuntu) (not on a local machine or dedicated server.),
+      # Executes the Node.js script that fetches and generates (public/scripts/generate-updated-results.mts)
+      # the latest World Cup results using the configured OpenAI model.
       - name: Generate updated results
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-5.5
         run: node --experimental-strip-types scripts/generate-updated-results.mts
-
+    # If updated-results.json has changed, commit and push
+      # the new file back to the current branch.
       - name: Commit updated results
         run: |
           if git diff --quiet -- src/server/data/updated-results.json; then

@@ -1,4 +1,8 @@
 export type Palette = {
+  bracketFinalBorderColor: string;
+
+  bracketFinalShadow: string;
+
   cardSurfaceGradient: string;
 
   cardSurfaceShadow: string;

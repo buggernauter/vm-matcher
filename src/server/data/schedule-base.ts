@@ -1,31 +1,35 @@
-import { WorldCupResults, WorldCupScheduleData, WorldCupScheduleResponse } from '@/types';
+import { WorldCup, WorldCupScheduleData, WorldCupScheduleResponse } from '@/types';
 
 import { buildGroupTablesByLabel, createMatchSide } from './helper';
 import { worldCupData } from './match-data';
-import updatedResults from './updated-results.json';
+import { getTeamRanking } from './team-rankings';
 
 const isTopThirtyRanking = (ranking?: number) =>
 	typeof ranking === 'number' && ranking >= 1 && ranking <= 30;
 
-export const buildScheduleData = (updatedResults: WorldCupResults): WorldCupScheduleData => {
-	const matchDays = worldCupData.map((day) => ({
+export const buildScheduleData = (schedule: WorldCup[]): WorldCupScheduleData => {
+	const matchDays = schedule.map((day) => ({
 		...day,
 		matches: day.matches.map((match) => {
 			const homeTeam = createMatchSide(match.homeTeam);
 			const awayTeam = createMatchSide(match.awayTeam);
+			const homeTeamRanking =
+				homeTeam.kind === 'team' ? getTeamRanking(match.homeTeam) ?? match.homeTeamRanking : undefined;
+			const awayTeamRanking =
+				awayTeam.kind === 'team' ? getTeamRanking(match.awayTeam) ?? match.awayTeamRanking : undefined;
 			const isTopRankedMatch =
-				isTopThirtyRanking(match.homeTeamRanking) && isTopThirtyRanking(match.awayTeamRanking);
+				isTopThirtyRanking(homeTeamRanking) && isTopThirtyRanking(awayTeamRanking);
 
 			return {
 				awayTeam,
-				awayTeamRanking: match.awayTeamRanking,
+				awayTeamRanking,
 				broadcaster: match.broadcaster,
 				groupOrRound: match.groupOrRound,
 				homeTeam,
-				homeTeamRanking: match.homeTeamRanking,
+				homeTeamRanking,
 				id: match.id,
 				isTopRankedMatch,
-				result: updatedResults[match.id] ?? match.result,
+				result: match.result,
 				time: match.startTime,
 				venue: match.venue,
 			};
@@ -39,7 +43,7 @@ export const buildScheduleData = (updatedResults: WorldCupResults): WorldCupSche
 };
 
 export const fallbackScheduleData: WorldCupScheduleResponse = {
-	...buildScheduleData(updatedResults),
+	...buildScheduleData(worldCupData),
 	source: 'static',
 	syncedAt: '',
 };

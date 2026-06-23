@@ -1,6 +1,10 @@
 import type { MetadataRoute } from 'next';
 
-import { getScheduleCanonicalUrl, getTeamsCanonicalUrl } from '@/server/seo';
+import {
+	getPlayoffCanonicalUrl,
+	getScheduleCanonicalUrl,
+	getTeamsCanonicalUrl,
+} from '@/server/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	return [
@@ -13,6 +17,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: 'weekly',
 			priority: 0.8,
 			url: getTeamsCanonicalUrl(),
+		},
+		{
+			changeFrequency: 'daily',
+			priority: 0.9,
+			url: getPlayoffCanonicalUrl(),
 		},
 	];
 }
