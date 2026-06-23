@@ -18,7 +18,7 @@ export const WorldCupPlayoff = () => {
 					finalMatch={playoffBracket.finalMatch}
 					rounds={playoffBracket.rounds}
 					thirdPlaceMatch={playoffBracket.thirdPlaceMatch}
-					title="Vägen till finalen"
+					title="Vägen till VM-guld"
 				/>
 			) : (
 				<EmptyStateCard message="Slutspelsträdet är inte tillgängligt just nu." />
