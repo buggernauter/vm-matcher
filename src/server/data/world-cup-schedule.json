@@ -788,7 +788,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "Houston",
         "awayTeamRanking": 50,
-        "homeTeamRanking": 5
+        "homeTeamRanking": 5,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 5,
+          "sourceUrl": "https://www.squawka.com/en/news/world-cup/portugal-v-uzbekistan-result-stats-23-06-26/"
+        }
       },
       {
         "startTime": "22.00",
@@ -799,7 +804,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "Boston",
         "awayTeamRanking": 73,
-        "homeTeamRanking": 4
+        "homeTeamRanking": 4,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 0,
+          "sourceUrl": "https://www.sportsmole.co.uk/football/england/world-cup-2026/result/england-struck-by-second-game-curse-again-in-frustrating-world-cup-draw-with-ghana_599937.html"
+        }
       }
     ]
   },
@@ -816,7 +826,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Toronto",
         "awayTeamRanking": 11,
-        "homeTeamRanking": 34
+        "homeTeamRanking": 34,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 0,
+          "sourceUrl": "https://www.skysports.com/football/news/11095/13554940/world-cup-2026-panama-0-1-croatia-ante-budimir-scores-from-bench-to-kickstart-2018-finalists-tournament"
+        }
       },
       {
         "startTime": "04.00",
@@ -827,7 +842,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Guadalajara",
         "awayTeamRanking": 46,
-        "homeTeamRanking": 13
+        "homeTeamRanking": 13,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 1,
+          "sourceUrl": "https://www.squawka.com/en/news/world-cup/colombia-dr-congo-result-stats-24-06-2026/"
+        }
       },
       {
         "startTime": "21.00",
