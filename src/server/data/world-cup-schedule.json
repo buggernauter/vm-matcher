@@ -772,7 +772,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "San Francisco",
         "awayTeamRanking": 28,
-        "homeTeamRanking": 63
+        "homeTeamRanking": 63,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 1,
+          "sourceUrl": "https://apnews.com/article/world-cup-jordan-algeria-score-8f88f4999e2d2bdb7efcdfd4e6c83454"
+        }
       },
       {
         "startTime": "19.00",

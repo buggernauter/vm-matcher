@@ -1,11 +1,18 @@
 import { BracketRoundLayout } from '@/types';
 import styled from 'styled-components';
+import { breakpoints } from '@/styles/breakpoints';
 
 export const StyledSection = styled.section`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 	width: 100%;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		--bracket-card-height: 7.2rem;
+		--bracket-card-max-width: 21rem;
+		--bracket-pair-width: 24rem;
+	}
 `;
 
 export const StyledHeader = styled.div`
@@ -59,6 +66,13 @@ export const StyledRoundContainer = styled.div<{ $variant?: BracketRoundLayout }
 				--round-compact-card-height: 5.85rem;
 
 				--round-merge-gap: 0.22rem;
+
+				@media (min-width: ${breakpoints.desktop}) {
+					--round-card-height: 8rem;
+					--round-card-max-width: 3.35rem;
+					--round-compact-card-height: 8rem;
+					--round-inline-gap: 1rem;
+				}
 			`
 			: null}
 
@@ -70,6 +84,13 @@ export const StyledRoundContainer = styled.div<{ $variant?: BracketRoundLayout }
 				--round-compact-card-height: 5.85rem;
 				--round-inline-gap: 0.08rem;
 				--round-merge-gap: 0.22rem;
+
+				@media (min-width: ${breakpoints.desktop}) {
+					--round-card-height: 8rem;
+					--round-card-max-width: 3.35rem;
+					--round-compact-card-height: 8rem;
+					--round-inline-gap: 0.24rem;
+				}
 			`
 			: null}
 
@@ -78,6 +99,12 @@ export const StyledRoundContainer = styled.div<{ $variant?: BracketRoundLayout }
 			? `
 				--round-card-height: 5.1rem;
 				--round-card-max-width: 4.7rem;
+
+				@media (min-width: ${breakpoints.desktop}) {
+					--round-card-height: 6.2rem;
+					--round-card-max-width: 5.8rem;
+					--round-inline-gap: 0.9rem;
+				}
 
 			`
 			: null}
@@ -88,6 +115,12 @@ export const StyledRoundContainer = styled.div<{ $variant?: BracketRoundLayout }
 				--round-card-height: 5.25rem;
 				--round-card-max-width: 8.2rem;
 				--round-inline-gap: 0.55rem;
+
+				@media (min-width: ${breakpoints.desktop}) {
+					--round-card-height: 6.6rem;
+					--round-card-max-width: 9.6rem;
+					--round-inline-gap: 0.85rem;
+				}
 			`
 			: null}
 `;
@@ -186,6 +219,12 @@ export const StyledCompactCardRow = styled.div<{
 				height: calc((2 * var(--round-card-height)) + 0.55rem);
 				column-gap: 0.55rem;
 				row-gap: 0.55rem;
+
+				@media (min-width: ${breakpoints.desktop}) {
+					height: calc((2 * var(--round-card-height)) + 0.72rem);
+					column-gap: 0.72rem;
+					row-gap: 0.72rem;
+				}
 			`
 			: null}
 `;

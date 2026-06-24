@@ -34,7 +34,7 @@ export const PLAYOFF_PAGE_DESCRIPTION =
 export const PLAYOFF_HERO_TITLE = 'Slutspelsträd för Fotbolls-VM 2026';
 
 export const PLAYOFF_HERO_DESCRIPTION =
-	'Se vilka lag som möts i slutspelet, kommande VM-matcher och vägen till finalen.';
+	'Se vilka lag som möts i slutspelet, kommande VM-matcher och vägen till VM-guld 2026.';
 
 export const getScheduleCanonicalUrl = () => getAbsoluteUrl(WORLD_CUP_SCHEDULE_PATH);
 

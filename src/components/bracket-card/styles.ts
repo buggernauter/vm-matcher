@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { breakpoints } from '@/styles/breakpoints';
 
 export const StyledCard = styled.article<{ $compact?: boolean; $featured?: boolean }>`
 	position: relative;
@@ -14,6 +15,12 @@ export const StyledCard = styled.article<{ $compact?: boolean; $featured?: boole
 	box-shadow: ${({ theme }) => theme.palette.cardSurfaceShadow};
 	isolation: isolate;
 	overflow: hidden;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		padding: 1.02rem 1.08rem 0.9rem;
+		gap: 0.28rem;
+		border-radius: 1.2rem;
+	}
 
 	&::before {
 		content: '';
@@ -62,6 +69,12 @@ export const StyledCard = styled.article<{ $compact?: boolean; $featured?: boole
 					padding: 0.22rem 0.04rem 0.12rem;
 					gap: 0.16rem;
 					border-radius: 0.5rem;
+
+					@media (min-width: ${breakpoints.desktop}) {
+						padding: 0.38rem 0.16rem 0.22rem;
+						gap: 0.22rem;
+						border-radius: 0.75rem;
+					}
 				`
 			: null}
 `;
@@ -71,6 +84,10 @@ export const StyledMatchHeader = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.18rem;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		gap: 0.24rem;
+	}
 `;
 
 export const StyledMeta = styled.span`
@@ -78,12 +95,20 @@ export const StyledMeta = styled.span`
 	font-size: 0.78rem;
 	line-height: 1.35;
 	text-align: center;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: 0.92rem;
+	}
 `;
 export const StyledVenue = styled.span`
 	color: ${({ theme }) => theme.palette.textDisabled};
 	font-size: 0.74rem;
 	line-height: 1.35;
 	text-align: center;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: 0.84rem;
+	}
 `;
 
 export const StyledTeams = styled.div`
@@ -94,12 +119,21 @@ export const StyledTeams = styled.div`
 	gap: 0.5rem;
 	margin-top: auto;
 	padding-bottom: 0.15rem;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		gap: 0.66rem;
+		padding-bottom: 0.22rem;
+	}
 `;
 export const StyledTeamRow = styled.div`
 	display: flex;
 	align-items: baseline;
 	justify-content: space-between;
 	gap: 0.75rem;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		gap: 0.95rem;
+	}
 `;
 
 export const StyledTeamName = styled.span`
@@ -110,6 +144,10 @@ export const StyledTeamName = styled.span`
 	overflow-wrap: anywhere;
 	text-align: center;
 	width: 100%;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: 1.18rem;
+	}
 `;
 
 export const StyledTeamFlag = styled.span`
@@ -124,6 +162,11 @@ export const StyledTeamFlag = styled.span`
 		height: auto;
 		border-radius: 0.12rem;
 		box-shadow: 0 0 0 0.03125rem var(--bracket-flag-outline-color);
+
+		@media (min-width: ${breakpoints.desktop}) {
+			width: 1.8rem;
+			border-radius: 0.16rem;
+		}
 	}
 `;
 export const StyledScore = styled.span`
@@ -132,6 +175,10 @@ export const StyledScore = styled.span`
 	font-size: 0.84rem;
 	font-variant-numeric: tabular-nums;
 	font-weight: 700;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: 1.02rem;
+	}
 `;
 export const StyledDivider = styled.span`
 	display: block;
@@ -164,6 +211,10 @@ export const StyledCompactWeekday = styled.span`
 	letter-spacing: 0.02em;
 	line-height: 1;
 	text-transform: uppercase;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: 0.54rem;
+	}
 `;
 
 export const StyledCompactDayMonth = styled.span`
@@ -172,6 +223,10 @@ export const StyledCompactDayMonth = styled.span`
 	font-weight: 600;
 	line-height: 1;
 	text-transform: none;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: 0.64rem;
+	}
 `;
 
 export const StyledCompactTime = styled.span`
@@ -180,6 +235,10 @@ export const StyledCompactTime = styled.span`
 	font-variant-numeric: tabular-nums;
 	font-weight: 700;
 	line-height: 1;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: 0.86rem;
+	}
 `;
 
 export const StyledCompactTeams = styled.div`
@@ -191,6 +250,11 @@ export const StyledCompactTeams = styled.div`
 	justify-content: center;
 	gap: 0.04rem;
 	min-height: 2.3rem;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		gap: 0.08rem;
+		min-height: 3.55rem;
+	}
 `;
 
 export const StyledCompactTeamLabel = styled.span`
@@ -205,6 +269,11 @@ export const StyledCompactTeamLabel = styled.span`
 	align-items: center;
 	gap: 0.02rem;
 	max-width: 100%;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: 0.62rem;
+		gap: 0.04rem;
+	}
 `;
 
 export const StyledCompactTeamFlag = styled.span`
@@ -219,6 +288,11 @@ export const StyledCompactTeamFlag = styled.span`
 		height: auto;
 		border-radius: 0.1rem;
 		box-shadow: 0 0 0 0.03125rem var(--bracket-flag-outline-color);
+
+		@media (min-width: ${breakpoints.desktop}) {
+			width: 1.34rem;
+			border-radius: 0.14rem;
+		}
 	}
 `;
 
@@ -227,6 +301,10 @@ export const StyledCompactSeparator = styled.span`
 	font-size: 0.44rem;
 	font-weight: 700;
 	line-height: 1;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: 0.68rem;
+	}
 `;
 
 export const StyledCompactTeamLine = styled.span`
@@ -250,4 +328,9 @@ export const StyledMatchNumber = styled.span<{ $compact?: boolean }>`
 	text-align: center;
 	white-space: pre-line;
 	pointer-events: none;
+
+	@media (min-width: ${breakpoints.desktop}) {
+		font-size: ${({ $compact }) => ($compact ? '0.58rem' : '0.78rem')};
+		padding-top: ${({ $compact }) => ($compact ? '0.1rem' : '0.38rem')};
+	}
 `;
