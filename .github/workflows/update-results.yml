@@ -22,6 +22,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Initialize run log
+        run: |
+          mkdir -p logs
+          {
+            echo "workflow=update-results"
+            echo "run_id=${{ github.run_id }}"
+            echo "run_attempt=${{ github.run_attempt }}"
+            echo "event_name=${{ github.event_name }}"
+            echo "ref_name=${{ github.ref_name }}"
+            echo "started_at=$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+            echo
+          } > logs/update-results.log
+
       - name: Check out repository
         uses: actions/checkout@v4
         with:
@@ -49,13 +62,24 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-5.5
-        run: node --experimental-strip-types scripts/generate-updated-results.mts
+        run: |
+          {
+            echo "== generate-updated-results start $(date -u '+%Y-%m-%dT%H:%M:%SZ') =="
+            node --experimental-strip-types scripts/generate-updated-results.mts
+            echo "== generate-updated-results end $(date -u '+%Y-%m-%dT%H:%M:%SZ') =="
+            echo
+          } 2>&1 | tee -a logs/update-results.log
     # If updated-results.json has changed, commit and push
       # the new file back to the current branch.
       - name: Commit updated results
         run: |
+          {
+            echo "== commit step start $(date -u '+%Y-%m-%dT%H:%M:%SZ') =="
+          } >> logs/update-results.log
+
           if git diff --quiet -- src/server/data/world-cup-schedule.json; then
             echo "No result updates to commit."
+            echo "No result updates to commit." >> logs/update-results.log
             exit 0
           fi
 
@@ -64,3 +88,15 @@ jobs:
           git add src/server/data/world-cup-schedule.json
           git commit -m "Update world cup results"
           git push origin HEAD:${{ github.ref_name }}
+          {
+            echo "Committed and pushed updated results."
+            echo "== commit step end $(date -u '+%Y-%m-%dT%H:%M:%SZ') =="
+            echo
+          } >> logs/update-results.log
+
+      - name: Upload run log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-results-log-${{ github.run_id }}-${{ github.run_attempt }}
+          path: logs/update-results.log
