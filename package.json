@@ -9,7 +9,7 @@
     "tsc": "tsc",
     "lint": "eslint",
     "test:world-cup-results": "node --experimental-strip-types --test scripts/world-cup-results/*.test.mjs",
-    "update:result": "node --experimental-strip-types scripts/generate-updated-results.mts"
+    "update:world-cup-results": "node --experimental-strip-types scripts/generate-updated-results.mts"
   },
   "dependencies": {
     "@next/bundle-analyzer": "16.2.7",
