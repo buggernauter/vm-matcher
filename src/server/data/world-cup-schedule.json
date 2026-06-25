@@ -858,7 +858,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Vancouver",
         "awayTeamRanking": 30,
-        "homeTeamRanking": 19
+        "homeTeamRanking": 19,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 2,
+          "sourceUrl": "https://apnews.com/article/bf6b7a6e5386df29406406563fbc6aa4"
+        }
       },
       {
         "startTime": "21.00",
@@ -869,7 +874,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Seattle",
         "awayTeamRanking": 56,
-        "homeTeamRanking": 64
+        "homeTeamRanking": 64,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 3,
+          "sourceUrl": "https://www.skysports.com/football/bosnia-and-herzegovina-vs-qatar/report/549816"
+        }
       }
     ]
   },
@@ -886,7 +896,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Atlanta",
         "awayTeamRanking": 83,
-        "homeTeamRanking": 7
+        "homeTeamRanking": 7,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 4,
+          "sourceUrl": "https://www.concacaf.com/competitions/fifa-world-cup/news/haiti-closes-world-cup-campaign-with-thriller-against-morocco"
+        }
       },
       {
         "startTime": "00.00",
@@ -897,7 +912,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Miami",
         "awayTeamRanking": 6,
-        "homeTeamRanking": 42
+        "homeTeamRanking": 42,
+        "result": {
+          "awayScore": 3,
+          "homeScore": 0,
+          "sourceUrl": "https://www.skysports.com/football/scotland-vs-brazil/report/549819"
+        }
       },
       {
         "startTime": "03.00",
@@ -908,7 +928,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "Monterrey",
         "awayTeamRanking": 25,
-        "homeTeamRanking": 60
+        "homeTeamRanking": 60,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 1,
+          "sourceUrl": "https://www.the-afc.com/en/national/fifa_world_cup.html/news/group-a-south-africa-1-0-korea-republic"
+        }
       },
       {
         "startTime": "03.00",
@@ -919,7 +944,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "Mexico City",
         "awayTeamRanking": 14,
-        "homeTeamRanking": 40
+        "homeTeamRanking": 40,
+        "result": {
+          "awayScore": 3,
+          "homeScore": 0,
+          "sourceUrl": "https://www.the-afc.com/en/national/fifa_world_cup.html/news/group-a-czechia-0-3-mexico"
+        }
       },
       {
         "startTime": "22.00",
@@ -1139,11 +1169,13 @@
       },
       {
         "startTime": "21.00",
-        "homeTeam": "2A",
-        "awayTeam": "2B",
+        "homeTeam": "Sydafrika",
+        "awayTeam": "Kanada",
         "id": "2026-06-28-21.00-2A-2B-4",
         "groupOrRound": "Match 73, 16-delsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "awayTeamRanking": 30,
+        "homeTeamRanking": 60
       }
     ]
   },
@@ -1153,11 +1185,12 @@
     "matches": [
       {
         "startTime": "19.00",
-        "homeTeam": "1C",
+        "homeTeam": "Brasilien",
         "awayTeam": "2F",
         "id": "2026-06-29-19.00-1C-2F-0",
         "groupOrRound": "Match 76, 16-delsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 6
       },
       {
         "startTime": "22.30",
@@ -1177,10 +1210,11 @@
       {
         "startTime": "03.00",
         "homeTeam": "1F",
-        "awayTeam": "2C",
+        "awayTeam": "Marocko",
         "id": "2026-06-30-03.00-1F-2C-0",
         "groupOrRound": "Match 75, 16-delsfinal",
-        "broadcaster": "SVT och SVT Play"
+        "broadcaster": "SVT och SVT Play",
+        "awayTeamRanking": 7
       },
       {
         "startTime": "19.00",
@@ -1268,11 +1302,12 @@
       },
       {
         "startTime": "05.00",
-        "homeTeam": "1B",
+        "homeTeam": "Schweiz",
         "awayTeam": "3EFGIJ",
         "id": "2026-07-03-05.00-1B-3E/F/G/I/J-1",
         "groupOrRound": "Match 85, 16-delsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 19
       },
       {
         "startTime": "20.00",
