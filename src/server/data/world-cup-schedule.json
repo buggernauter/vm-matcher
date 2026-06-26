@@ -960,7 +960,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "Philadelphia",
         "awayTeamRanking": 33,
-        "homeTeamRanking": 82
+        "homeTeamRanking": 82,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 0,
+          "sourceUrl": "https://www.the-afc.com/en/national/fifa_world_cup.html/news/group-f-tunisia-1-3-netherlands"
+        }
       },
       {
         "startTime": "22.00",
@@ -971,7 +976,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "New Jersey",
         "awayTeamRanking": 10,
-        "homeTeamRanking": 23
+        "homeTeamRanking": 23,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 2,
+          "sourceUrl": "https://www.the-afc.com/en/national/fifa_world_cup.html/news/group-f-tunisia-1-3-netherlands"
+        }
       }
     ]
   },
@@ -988,7 +998,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "Kansas City",
         "awayTeamRanking": 8,
-        "homeTeamRanking": 45
+        "homeTeamRanking": 45,
+        "result": {
+          "awayScore": 3,
+          "homeScore": 1,
+          "sourceUrl": "https://www.the-afc.com/en/national/fifa_world_cup.html/news/group-f-tunisia-1-3-netherlands"
+        }
       },
       {
         "startTime": "01.00",
@@ -999,7 +1014,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "Dallas",
         "awayTeamRanking": 38,
-        "homeTeamRanking": 18
+        "homeTeamRanking": 18,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://www.the-afc.com/en/national/fifa_world_cup.html/news/group-f-tunisia-1-3-netherlands"
+        }
       },
       {
         "startTime": "04.00",
@@ -1010,7 +1030,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Los Angeles",
         "awayTeamRanking": 17,
-        "homeTeamRanking": 22
+        "homeTeamRanking": 22,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 3,
+          "sourceUrl": "https://www.goodmorningamerica.com/culture/story/usmnt-world-cup-match-turkey-soccer-134198534"
+        }
       },
       {
         "startTime": "04.00",
@@ -1021,7 +1046,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "San Francisco",
         "awayTeamRanking": 27,
-        "homeTeamRanking": 41
+        "homeTeamRanking": 41,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 0,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/26/paraguay-y-australia-dan-por-buenas-las-tablas-para-acceder-de-la-mano-a-dieciseisavos-y-turquia-impide-el-pleno-de-eeuu-en-el-grupo-d-cadena-ser/"
+        }
       },
       {
         "startTime": "21.00",
@@ -1186,11 +1216,12 @@
       {
         "startTime": "19.00",
         "homeTeam": "Brasilien",
-        "awayTeam": "2F",
+        "awayTeam": "Japan",
         "id": "2026-06-29-19.00-1C-2F-0",
         "groupOrRound": "Match 76, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 6
+        "homeTeamRanking": 6,
+        "awayTeamRanking": 18
       },
       {
         "startTime": "22.30",
@@ -1209,20 +1240,22 @@
     "matches": [
       {
         "startTime": "03.00",
-        "homeTeam": "1F",
+        "homeTeam": "Nederländerna",
         "awayTeam": "Marocko",
         "id": "2026-06-30-03.00-1F-2C-0",
         "groupOrRound": "Match 75, 16-delsfinal",
         "broadcaster": "SVT och SVT Play",
-        "awayTeamRanking": 7
+        "awayTeamRanking": 7,
+        "homeTeamRanking": 8
       },
       {
         "startTime": "19.00",
-        "homeTeam": "2E",
+        "homeTeam": "Elfenbenskusten",
         "awayTeam": "2I",
         "id": "2026-06-30-19.00-2E-2I-1",
         "groupOrRound": "Match 78, 16-delsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 33
       },
       {
         "startTime": "23.00",
@@ -1272,11 +1305,12 @@
       {
         "startTime": "02.00",
         "homeTeam": "USA",
-        "awayTeam": "3BEFIJ",
+        "awayTeam": "Bosnien och Hercegovina",
         "id": "2026-07-02-02.00-1D-3B/E/F/I/J-0",
         "groupOrRound": "Match 81, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 17
+        "homeTeamRanking": 17,
+        "awayTeamRanking": 64
       },
       {
         "startTime": "21.00",
@@ -1311,11 +1345,12 @@
       },
       {
         "startTime": "20.00",
-        "homeTeam": "2D",
+        "homeTeam": "Australien",
         "awayTeam": "2G",
         "id": "2026-07-03-20.00-2D-2G-2",
         "groupOrRound": "Match 88, 16-delsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 27
       }
     ]
   },
