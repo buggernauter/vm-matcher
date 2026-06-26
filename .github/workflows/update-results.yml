@@ -22,6 +22,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
       - name: Initialize run log
         run: |
           mkdir -p logs
@@ -34,11 +39,6 @@ jobs:
             echo "started_at=$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
             echo
           } > logs/update-results.log
-
-      - name: Check out repository
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
