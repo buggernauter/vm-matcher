@@ -1100,7 +1100,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Houston",
         "awayTeamRanking": 61,
-        "homeTeamRanking": 67
+        "homeTeamRanking": 67,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 0,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/27/cabo-verde-0-0-arabia-saudi-resumen-y-resultado-del-partido-del-grupo-h-del-mundial-2026-cadena-ser/"
+        }
       },
       {
         "startTime": "02.00",
@@ -1111,7 +1116,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Guadalajara",
         "awayTeamRanking": 2,
-        "homeTeamRanking": 16
+        "homeTeamRanking": 16,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 0,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/27/uruguay-0-1-espana-resumen-resultado-y-goles-del-partido-del-grupo-h-del-mundial-2026-cadena-ser/"
+        }
       },
       {
         "startTime": "05.00",
@@ -1122,7 +1132,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Vancouver",
         "awayTeamRanking": 9,
-        "homeTeamRanking": 85
+        "homeTeamRanking": 85,
+        "result": {
+          "awayScore": 5,
+          "homeScore": 1,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/27/nueva-zelanda-1-5-belgica-resumen-resultado-y-goles-del-partido-del-grupo-g-del-mundial-2026-cadena-ser/"
+        }
       },
       {
         "startTime": "05.00",
@@ -1133,7 +1148,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Seattle",
         "awayTeamRanking": 20,
-        "homeTeamRanking": 29
+        "homeTeamRanking": 29,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/06/27/egipto-1-1-iran-resumen-resultado-y-goles-del-partido-del-grupo-g-del-mundial-2026-cadena-ser/"
+        }
       },
       {
         "startTime": "23.00",
@@ -1236,11 +1256,12 @@
       {
         "startTime": "22.30",
         "homeTeam": "Tyskland",
-        "awayTeam": "3ABCDF",
+        "awayTeam": "Paraguay",
         "id": "2026-06-29-22.30-1E-3A/B/C/D/F-1",
         "groupOrRound": "Match 74, 16-delsfinal",
         "broadcaster": "SVT och SVT Play",
-        "homeTeamRanking": 10
+        "homeTeamRanking": 10,
+        "awayTeamRanking": 41
       }
     ]
   },
@@ -1271,11 +1292,12 @@
       {
         "startTime": "23.00",
         "homeTeam": "Frankrike",
-        "awayTeam": "3CDFGH",
+        "awayTeam": "Sverige",
         "id": "2026-06-30-23.00-1I-3C/D/F/G/H-2",
         "groupOrRound": "Match 77, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 3
+        "homeTeamRanking": 3,
+        "awayTeamRanking": 38
       }
     ]
   },
@@ -1302,11 +1324,12 @@
       },
       {
         "startTime": "22.00",
-        "homeTeam": "1G",
+        "homeTeam": "Belgien",
         "awayTeam": "3AEHIJ",
         "id": "2026-07-01-22.00-1G-3A/E/H/I/J-2",
         "groupOrRound": "Match 82, 16-delsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 9
       }
     ]
   },
@@ -1326,11 +1349,12 @@
       },
       {
         "startTime": "21.00",
-        "homeTeam": "1H",
+        "homeTeam": "Spanien",
         "awayTeam": "2J",
         "id": "2026-07-02-21.00-1H-2J-1",
         "groupOrRound": "Match 84, 16-delsfinal",
-        "broadcaster": "SVT och SVT Play"
+        "broadcaster": "SVT och SVT Play",
+        "homeTeamRanking": 2
       }
     ]
   },
@@ -1358,11 +1382,12 @@
       {
         "startTime": "20.00",
         "homeTeam": "Australien",
-        "awayTeam": "2G",
+        "awayTeam": "Egypten",
         "id": "2026-07-03-20.00-2D-2G-2",
         "groupOrRound": "Match 88, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 27
+        "homeTeamRanking": 27,
+        "awayTeamRanking": 29
       }
     ]
   },
@@ -1373,11 +1398,12 @@
       {
         "startTime": "00.00",
         "homeTeam": "Argentina",
-        "awayTeam": "2H",
+        "awayTeam": "Kap Verde",
         "id": "2026-07-04-00.00-1J-2H-0",
         "groupOrRound": "Match 86, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 1
+        "homeTeamRanking": 1,
+        "awayTeamRanking": 67
       },
       {
         "startTime": "03.30",
