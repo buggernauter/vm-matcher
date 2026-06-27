@@ -1164,7 +1164,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "New Jersey",
         "awayTeamRanking": 4,
-        "homeTeamRanking": 34
+        "homeTeamRanking": 34,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 0,
+          "sourceUrl": "https://www.skysports.com/football/panama-vs-england/report/549837"
+        }
       },
       {
         "startTime": "23.00",
@@ -1175,7 +1180,12 @@
         "broadcaster": "SVT och SVT Play",
         "venue": "Philadelphia",
         "awayTeamRanking": 73,
-        "homeTeamRanking": 11
+        "homeTeamRanking": 11,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 2,
+          "sourceUrl": "https://www.skysports.com/football/croatia-vs-ghana/report/549836"
+        }
       }
     ]
   },
@@ -1308,28 +1318,32 @@
       {
         "startTime": "03.00",
         "homeTeam": "Mexiko",
-        "awayTeam": "3CEFHI",
+        "awayTeam": "Ecuador",
         "id": "2026-07-01-03.00-1A-3C/E/F/H/I-0",
         "groupOrRound": "Match 79, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 14
+        "homeTeamRanking": 14,
+        "awayTeamRanking": 23
       },
       {
         "startTime": "18.00",
-        "homeTeam": "1L",
-        "awayTeam": "3EHIJK",
+        "homeTeam": "England",
+        "awayTeam": "Senegal",
         "id": "2026-07-01-18.00-1L-3E/H/I/J/K-1",
         "groupOrRound": "Match 80, 16-delsfinal",
-        "broadcaster": "SVT och SVT Play"
+        "broadcaster": "SVT och SVT Play",
+        "awayTeamRanking": 15,
+        "homeTeamRanking": 4
       },
       {
         "startTime": "22.00",
         "homeTeam": "Belgien",
-        "awayTeam": "3AEHIJ",
+        "awayTeam": "Sydkorea",
         "id": "2026-07-01-22.00-1G-3A/E/H/I/J-2",
         "groupOrRound": "Match 82, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 9
+        "homeTeamRanking": 9,
+        "awayTeamRanking": 25
       }
     ]
   },
@@ -1350,11 +1364,12 @@
       {
         "startTime": "21.00",
         "homeTeam": "Spanien",
-        "awayTeam": "2J",
+        "awayTeam": "Österrike",
         "id": "2026-07-02-21.00-1H-2J-1",
         "groupOrRound": "Match 84, 16-delsfinal",
         "broadcaster": "SVT och SVT Play",
-        "homeTeamRanking": 2
+        "homeTeamRanking": 2,
+        "awayTeamRanking": 24
       }
     ]
   },
@@ -1364,20 +1379,23 @@
     "matches": [
       {
         "startTime": "01.00",
-        "homeTeam": "2K",
-        "awayTeam": "2L",
+        "homeTeam": "Portugal",
+        "awayTeam": "Kroatien",
         "id": "2026-07-03-01.00-2K-2L-0",
         "groupOrRound": "Match 83, 16-delsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "awayTeamRanking": 11,
+        "homeTeamRanking": 5
       },
       {
         "startTime": "05.00",
         "homeTeam": "Schweiz",
-        "awayTeam": "3EFGIJ",
+        "awayTeam": "Iran",
         "id": "2026-07-03-05.00-1B-3E/F/G/I/J-1",
         "groupOrRound": "Match 85, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 19
+        "homeTeamRanking": 19,
+        "awayTeamRanking": 20
       },
       {
         "startTime": "20.00",
@@ -1407,11 +1425,13 @@
       },
       {
         "startTime": "03.30",
-        "homeTeam": "1K",
-        "awayTeam": "3DEIJL",
+        "homeTeam": "Colombia",
+        "awayTeam": "Ghana",
         "id": "2026-07-04-03.30-1K-3D/E/I/J/L-1",
         "groupOrRound": "Match 87, 16-delsfinal",
-        "broadcaster": "SVT och SVT Play"
+        "broadcaster": "SVT och SVT Play",
+        "awayTeamRanking": 73,
+        "homeTeamRanking": 13
       },
       {
         "startTime": "19.00",
