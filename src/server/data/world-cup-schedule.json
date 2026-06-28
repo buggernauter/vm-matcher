@@ -1202,7 +1202,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Atlanta",
         "awayTeamRanking": 50,
-        "homeTeamRanking": 46
+        "homeTeamRanking": 46,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 3,
+          "sourceUrl": "https://www.skysports.com/football/news/12098/13556707/world-cup-2026-dr-congo-3-1-uzbekistan-yoane-wissa-stars-as-the-leopards-complete-comeback-win-to-set-up-last-32-clash-against-england"
+        }
       },
       {
         "startTime": "01.30",
@@ -1213,7 +1218,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Miami",
         "awayTeamRanking": 5,
-        "homeTeamRanking": 13
+        "homeTeamRanking": 13,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 0,
+          "sourceUrl": "https://www.skysports.com/football/news/33694/13556705/world-cup-2026-colombia-0-0-portugal-davinson-sanchezs-late-goal-ruled-out-for-offside-as-colombia-finish-top-of-group-k-with-portugal-runners-up"
+        }
       },
       {
         "startTime": "04.00",
