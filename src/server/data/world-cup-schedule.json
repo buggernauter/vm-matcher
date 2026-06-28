@@ -1234,7 +1234,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Kansas City",
         "awayTeamRanking": 24,
-        "homeTeamRanking": 28
+        "homeTeamRanking": 28,
+        "result": {
+          "awayScore": 3,
+          "homeScore": 3,
+          "sourceUrl": "https://www.skysports.com/football/algeria-vs-austria/report/549832"
+        }
       },
       {
         "startTime": "04.00",
@@ -1245,7 +1250,12 @@
         "broadcaster": "TV4 och TV4 Play",
         "venue": "Dallas",
         "awayTeamRanking": 1,
-        "homeTeamRanking": 63
+        "homeTeamRanking": 63,
+        "result": {
+          "awayScore": 3,
+          "homeScore": 1,
+          "sourceUrl": "https://www.skysports.com/football/jordan-vs-argentina/report/549833"
+        }
       },
       {
         "startTime": "21.00",
