@@ -1265,7 +1265,12 @@
         "groupOrRound": "Match 73, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
         "awayTeamRanking": 30,
-        "homeTeamRanking": 60
+        "homeTeamRanking": 60,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 0,
+          "sourceUrl": "https://apnews.com/article/canada-south-africa-score-world-cup-704407e25c4ec253daaa2803996d58b0"
+        }
       }
     ]
   },
