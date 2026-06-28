@@ -1460,11 +1460,12 @@
       },
       {
         "startTime": "19.00",
-        "homeTeam": "W73",
+        "homeTeam": "Kanada",
         "awayTeam": "W75",
         "id": "2026-07-04-19.00-W73-W75-2",
         "groupOrRound": "Match 90, åttondelsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 30
       },
       {
         "startTime": "23.00",
