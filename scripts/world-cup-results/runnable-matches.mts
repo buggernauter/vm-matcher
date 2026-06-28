@@ -1,16 +1,12 @@
 const { isFinishedMatch, shouldRunOpenAIForMatch } = await import(
-	new URL('./match-window.mts', import.meta.url).href,
+	new URL('./match-window.mts', import.meta.url).href
 );
 
-import type { PendingPlayoffMatch, RunnableMatch } from './types.mts';
+import type { PendingMatch, RunnableMatch } from './types.mts';
 import type { WorldCup } from '../../src/types/index.ts';
 
-const PLAYOFF_ROUND_PATTERN =
-	/(?:16-delsfinal|åttondelsfinal|kvartsfinal|semifinal|bronsmatch|VM-final)/i;
-const UNRESOLVED_PLAYOFF_SIDE_PATTERN = /^(?:[12][A-Z]|3[A-Z/]+|W\d+|(?:L|RU)\d+)$/;
-
-const isPlayoffMatch = (groupOrRound: string) => PLAYOFF_ROUND_PATTERN.test(groupOrRound);
-const hasUnresolvedPlayoffSide = (teamName: string) => UNRESOLVED_PLAYOFF_SIDE_PATTERN.test(teamName);
+// Matches placeholder values like 1A, 3EFGIJ, W73, RU101.
+const UNRESOLVED_TEAM_PATTERN = /^(?:[12][A-Z]|3[A-Z/]+|W\d+|(?:L|RU)\d+)$/;
 
 // Collects the finished matches that are still missing results and are allowed to trigger an OpenAI lookup.
 export const getRunnableMatches = ({
@@ -53,23 +49,25 @@ export const getRunnableMatches = ({
 	return runnableMatches;
 };
 
-export const getPendingPlayoffMatches = (schedule: WorldCup[]) => {
-	const pendingPlayoffMatches: PendingPlayoffMatch[] = [];
+// Collects all upcoming matches where at least one team slot is still an unconfirmed placeholder
+// (e.g. W73, 1B, 3EFGIJ). OpenAI resolves these based on official FIFA announcements.
+export const getMatchesWithUnresolvedTeams = (schedule: WorldCup[]): PendingMatch[] => {
+	const unresolvedMatches: PendingMatch[] = [];
 
 	for (const day of schedule) {
 		for (const match of day.matches) {
-			if (!isPlayoffMatch(match.groupOrRound) || match.result) {
+			if (match.result) {
 				continue;
 			}
 
 			if (
-				!hasUnresolvedPlayoffSide(match.homeTeam) &&
-				!hasUnresolvedPlayoffSide(match.awayTeam)
+				!UNRESOLVED_TEAM_PATTERN.test(match.homeTeam) &&
+				!UNRESOLVED_TEAM_PATTERN.test(match.awayTeam)
 			) {
 				continue;
 			}
 
-			pendingPlayoffMatches.push({
+			unresolvedMatches.push({
 				awayTeam: match.awayTeam,
 				date: day.date,
 				groupOrRound: match.groupOrRound,
@@ -80,5 +78,5 @@ export const getPendingPlayoffMatches = (schedule: WorldCup[]) => {
 		}
 	}
 
-	return pendingPlayoffMatches;
+	return unresolvedMatches;
 };

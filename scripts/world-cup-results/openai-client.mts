@@ -1,45 +1,43 @@
 const { DEFAULT_MODEL } = await import(new URL('./config.mts', import.meta.url).href);
-import type { OpenAIResponsePayload, PendingMatch, PendingPlayoffMatch } from './types.mts';
+import type { OpenAIResponsePayload, PendingMatch } from './types.mts';
 
-// Builds the instruction payload that tells OpenAI which matches need verified final scores.
 const buildOpenAIPrompt = ({
 	pendingMatches,
-	playoffMatchesToResolve,
+	unresolvedMatches,
 }: {
 	pendingMatches: PendingMatch[];
-	playoffMatchesToResolve: PendingPlayoffMatch[];
+	unresolvedMatches: PendingMatch[];
 }) =>
 	[
 		'Sammanställ slutresultat för följande herr-VM-matcher i fotboll 2026.',
 		'Använd webbsökning och returnera bara matcher där du kan bekräfta ett slutresultat från trovärdiga källor.',
 		'Returnera bara matcher där källan tydligt visar att matchen är avslutad och att resultatet är slutresultatet.',
-		'Verifiera även vilka lag som nu är klara för framtida slutspelsmatcher när det går att bekräfta från trovärdiga källor.',
-		'För slutspelsuppdateringar ska du använda fullständiga lokaliserade lagnamn i stället för FIFA-koder, till exempel Tyskland, Mexiko, Argentina och USA.',
-		'Behåll befintlig placeholder exakt oförändrad för den sida som ännu inte kan verifieras, till exempel 1A, 3CEFHI, W73 eller RU101.',
-		'Returnera bara slutspelsuppdateringar för matcher där minst en sida kan verifieras tydligt från trovärdiga källor.',
-		'Prioritera officiella eller etablerade sportkällor. Om en match inte kan verifieras ska den utelämnas.',
 		'Om en match fortfarande spelas, är uppskjuten eller har oklar status ska den utelämnas.',
-		'Alla datum och tider nedan är i svensk tid.',
+		'',
+		'Uppdatera även kommande matcher där hemlag eller bortelag är en obekräftad platshållare (till exempel 1A, 3CEFHI, W73).',
+		'Uppdatera enbart lag baserat på FIFAs officiella tillkännagivanden om vilka lag som ska spela — gör aldrig beräkningar eller förutsägelser baserat på grupp-resultat.',
+		'Behåll befintlig platshållare exakt oförändrad om FIFA inte officiellt har meddelat vilket lag som spelar på den platsen.',
+		'Returnera bara laguppdateringar för matcher där minst en sida kan verifieras från ett officiellt FIFA-tillkännagivande.',
+		'För lagnamn ska du använda fullständiga lokaliserade lagnamn i stället för FIFA-koder, till exempel Tyskland, Mexiko, Argentina och USA.',
+		'',
+		'Prioritera officiella eller etablerade sportkällor. Alla datum och tider nedan är i svensk tid.',
 		JSON.stringify(
 			{
 				pendingMatches,
-				playoffMatchesToResolve,
+				unresolvedMatches,
 			},
 			null,
 			2,
 		),
-	].join('\n\n');
+	].join('\n');
 
-// Calls the Responses API with web search and structured output so the reply can be written directly to JSON.
-export const fetchResultsFromOpenAI = async (
-	{
-		pendingMatches,
-		playoffMatchesToResolve,
-	}: {
-		pendingMatches: PendingMatch[];
-		playoffMatchesToResolve: PendingPlayoffMatch[];
-	},
-): Promise<OpenAIResponsePayload> => {
+export const fetchResultsFromOpenAI = async ({
+	pendingMatches,
+	unresolvedMatches,
+}: {
+	pendingMatches: PendingMatch[];
+	unresolvedMatches: PendingMatch[];
+}): Promise<OpenAIResponsePayload> => {
 	const apiKey = process.env.OPENAI_API_KEY;
 
 	if (!apiKey) {
@@ -55,7 +53,7 @@ export const fetchResultsFromOpenAI = async (
 		body: JSON.stringify({
 			input: buildOpenAIPrompt({
 				pendingMatches,
-				playoffMatchesToResolve,
+				unresolvedMatches,
 			}),
 			model: process.env.OPENAI_MODEL ?? DEFAULT_MODEL,
 			text: {
@@ -78,7 +76,7 @@ export const fetchResultsFromOpenAI = async (
 									additionalProperties: false,
 								},
 							},
-							playoffTeams: {
+							teamUpdates: {
 								type: 'array',
 								items: {
 									type: 'object',
@@ -93,7 +91,7 @@ export const fetchResultsFromOpenAI = async (
 								},
 							},
 						},
-						required: ['results', 'playoffTeams'],
+						required: ['results', 'teamUpdates'],
 						additionalProperties: false,
 					},
 					strict: true,

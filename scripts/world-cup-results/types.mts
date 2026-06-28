@@ -7,8 +7,6 @@ export type PendingMatch = {
 	startTime: string;
 };
 
-export type PendingPlayoffMatch = PendingMatch;
-
 export type RunnableMatch = PendingMatch & {
 	hasBaseResult: boolean;
 };
@@ -20,7 +18,7 @@ export type OpenAIResultItem = {
 	sourceUrl: string;
 };
 
-export type OpenAIPlayoffTeamItem = {
+export type OpenAITeamUpdateItem = {
 	awayTeam: string;
 	homeTeam: string;
 	matchId: string;
@@ -28,6 +26,6 @@ export type OpenAIPlayoffTeamItem = {
 };
 
 export type OpenAIResponsePayload = {
-	playoffTeams: OpenAIPlayoffTeamItem[];
 	results: OpenAIResultItem[];
+	teamUpdates: OpenAITeamUpdateItem[];
 };

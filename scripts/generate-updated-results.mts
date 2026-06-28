@@ -1,14 +1,10 @@
 import type { WorldCup } from '../src/types/index.ts';
-import type {
-	OpenAIResponsePayload,
-	PendingPlayoffMatch,
-	RunnableMatch,
-} from './world-cup-results/types.mts';
+import type { OpenAIResponsePayload, PendingMatch, RunnableMatch } from './world-cup-results/types.mts';
 
 const [
 	{ fetchResultsFromOpenAI },
 	{ readStoredSchedule, writeScheduleFile },
-	{ getPendingPlayoffMatches, getRunnableMatches },
+	{ getRunnableMatches, getMatchesWithUnresolvedTeams },
 	{ getTeamRanking },
 ] = await Promise.all([
 	import(new URL('./world-cup-results/openai-client.mts', import.meta.url).href),
@@ -20,7 +16,6 @@ const [
 const isDryRun = process.argv.includes('--dry-run');
 const isForcedRun = process.env.FORCE_RESULT_UPDATE === 'true';
 
-// Main flow: find runnable matches, optionally ask OpenAI for results, then persist any new scores.
 const main = async () => {
 	const storedSchedule: WorldCup[] = await readStoredSchedule();
 	const runnableMatches: RunnableMatch[] = getRunnableMatches({
@@ -28,15 +23,14 @@ const main = async () => {
 		now: Date.now(),
 		schedule: storedSchedule,
 	});
-	const pendingPlayoffMatches: PendingPlayoffMatch[] = getPendingPlayoffMatches(storedSchedule);
+	const unresolvedMatches: PendingMatch[] = getMatchesWithUnresolvedTeams(storedSchedule);
 
-	if (runnableMatches.length === 0 && (!isForcedRun || pendingPlayoffMatches.length === 0)) {
+	if (runnableMatches.length === 0 && unresolvedMatches.length === 0) {
 		console.log(
 			JSON.stringify(
 				{
 					message:
-						'Skipping OpenAI request because no finished unresolved match is inside the result-check window and no forced playoff refresh is active.',
-					pendingPlayoffMatches: pendingPlayoffMatches.length,
+						'Skipping OpenAI request because there are no finished unresolved matches and no upcoming matches with unconfirmed teams.',
 					scheduledMatches: storedSchedule.reduce((count, day) => count + day.matches.length, 0),
 				},
 				null,
@@ -50,9 +44,9 @@ const main = async () => {
 		console.log(
 			JSON.stringify(
 				{
-					pendingPlayoffMatches,
 					runnableMatches,
 					scheduledMatches: storedSchedule.reduce((count, day) => count + day.matches.length, 0),
+					unresolvedMatches,
 				},
 				null,
 				2,
@@ -67,12 +61,12 @@ const main = async () => {
 
 	const openAIResults: OpenAIResponsePayload = await fetchResultsFromOpenAI({
 		pendingMatches: runnableMatches,
-		playoffMatchesToResolve: pendingPlayoffMatches,
+		unresolvedMatches,
 	});
 	const runnableMatchIds = new Set(runnableMatches.map((match) => match.id));
-	const knownPlayoffMatchIds = new Set(pendingPlayoffMatches.map((match) => match.id));
+	const unresolvedMatchIds = new Set(unresolvedMatches.map((match) => match.id));
 	let appliedResultCount = 0;
-	let appliedPlayoffTeamCount = 0;
+	let appliedTeamUpdateCount = 0;
 
 	const mergedSchedule = storedSchedule.map((day) => ({
 		...day,
@@ -92,26 +86,26 @@ const main = async () => {
 				appliedResultCount += 1;
 			}
 
-			const playoffUpdate = openAIResults.playoffTeams.find((item) => item.matchId === match.id);
+			const teamUpdate = openAIResults.teamUpdates.find((item) => item.matchId === match.id);
 
-			if (playoffUpdate && knownPlayoffMatchIds.has(match.id)) {
-				const homeTeamRanking = getTeamRanking(playoffUpdate.homeTeam) ?? nextMatch.homeTeamRanking;
-				const awayTeamRanking = getTeamRanking(playoffUpdate.awayTeam) ?? nextMatch.awayTeamRanking;
+			if (teamUpdate && unresolvedMatchIds.has(match.id)) {
+				const homeTeamRanking = getTeamRanking(teamUpdate.homeTeam) ?? nextMatch.homeTeamRanking;
+				const awayTeamRanking = getTeamRanking(teamUpdate.awayTeam) ?? nextMatch.awayTeamRanking;
 
 				if (
-					playoffUpdate.homeTeam !== nextMatch.homeTeam ||
-					playoffUpdate.awayTeam !== nextMatch.awayTeam ||
+					teamUpdate.homeTeam !== nextMatch.homeTeam ||
+					teamUpdate.awayTeam !== nextMatch.awayTeam ||
 					homeTeamRanking !== nextMatch.homeTeamRanking ||
 					awayTeamRanking !== nextMatch.awayTeamRanking
 				) {
 					nextMatch = {
 						...nextMatch,
-						awayTeam: playoffUpdate.awayTeam,
+						awayTeam: teamUpdate.awayTeam,
 						awayTeamRanking,
-						homeTeam: playoffUpdate.homeTeam,
+						homeTeam: teamUpdate.homeTeam,
 						homeTeamRanking,
 					};
-					appliedPlayoffTeamCount += 1;
+					appliedTeamUpdateCount += 1;
 				}
 			}
 
@@ -124,10 +118,10 @@ const main = async () => {
 	console.log(
 		JSON.stringify(
 			{
-				playoffTeamsApplied: appliedPlayoffTeamCount,
-				playoffTeamsFound: openAIResults.playoffTeams.length,
 				resultsApplied: appliedResultCount,
 				resultsFound: openAIResults.results.length,
+				teamUpdatesApplied: appliedTeamUpdateCount,
+				teamUpdatesFound: openAIResults.teamUpdates.length,
 				updatedFile: didWriteFile,
 			},
 			null,
