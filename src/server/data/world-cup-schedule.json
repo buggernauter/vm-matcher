@@ -1286,7 +1286,12 @@
         "groupOrRound": "Match 76, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
         "homeTeamRanking": 6,
-        "awayTeamRanking": 18
+        "awayTeamRanking": 18,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 2,
+          "sourceUrl": "https://www.skysports.com/football/news/12098/13558811/world-cup-2026-brazil-2-1-japan-gabriel-martinelli-scores-dramatic-winner-as-carlo-ancelottis-side-advance-with-comeback-win"
+        }
       },
       {
         "startTime": "22.30",
@@ -1483,11 +1488,12 @@
     "matches": [
       {
         "startTime": "22.00",
-        "homeTeam": "W76",
+        "homeTeam": "Brasilien",
         "awayTeam": "W78",
         "id": "2026-07-05-22.00-W76-W78-0",
         "groupOrRound": "Match 91, åttondelsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 6
       }
     ]
   },
