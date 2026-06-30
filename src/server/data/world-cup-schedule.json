@@ -1301,7 +1301,12 @@
         "groupOrRound": "Match 74, 16-delsfinal",
         "broadcaster": "SVT och SVT Play",
         "homeTeamRanking": 10,
-        "awayTeamRanking": 41
+        "awayTeamRanking": 41,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/match-schedule-fixtures-results-teams-stadiums?cm_sp=WEB_IWS-_-KI-_-AMER-_-EN-_-B2B-_-Leap+Year+wedding+promo-_-HMM&cm_sp=WEB_IWS-_-KI-_-EN-_-REV-_-Harry+Potter-_-HMM&p=family-reach&p=leap-year-weddings"
+        }
       }
     ]
   },
@@ -1474,11 +1479,12 @@
       },
       {
         "startTime": "23.00",
-        "homeTeam": "W74",
+        "homeTeam": "Paraguay",
         "awayTeam": "W77",
         "id": "2026-07-04-23.00-W74-W77-3",
         "groupOrRound": "Match 89, åttondelsfinal",
-        "broadcaster": "SVT och SVT Play"
+        "broadcaster": "SVT och SVT Play",
+        "homeTeamRanking": 41
       }
     ]
   },
