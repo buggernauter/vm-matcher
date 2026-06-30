@@ -1322,7 +1322,12 @@
         "groupOrRound": "Match 75, 16-delsfinal",
         "broadcaster": "SVT och SVT Play",
         "awayTeamRanking": 7,
-        "homeTeamRanking": 8
+        "homeTeamRanking": 8,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://www.fifatrainingcentre.com/en/fifa-world-cup-2026/match-report-hub-knockout-stage.php"
+        }
       },
       {
         "startTime": "19.00",
@@ -1471,11 +1476,12 @@
       {
         "startTime": "19.00",
         "homeTeam": "Kanada",
-        "awayTeam": "W75",
+        "awayTeam": "Marocko",
         "id": "2026-07-04-19.00-W73-W75-2",
         "groupOrRound": "Match 90, åttondelsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 30
+        "homeTeamRanking": 30,
+        "awayTeamRanking": 7
       },
       {
         "startTime": "23.00",
