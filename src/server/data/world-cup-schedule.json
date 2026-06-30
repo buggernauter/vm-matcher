@@ -1337,7 +1337,12 @@
         "groupOrRound": "Match 78, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
         "homeTeamRanking": 33,
-        "awayTeamRanking": 31
+        "awayTeamRanking": 31,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 1,
+          "sourceUrl": "https://www.skysports.com/football/ivory-coast-vs-norway/report/549843"
+        }
       },
       {
         "startTime": "23.00",
@@ -1501,11 +1506,12 @@
       {
         "startTime": "22.00",
         "homeTeam": "Brasilien",
-        "awayTeam": "W78",
+        "awayTeam": "Norge",
         "id": "2026-07-05-22.00-W76-W78-0",
         "groupOrRound": "Match 91, åttondelsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "homeTeamRanking": 6
+        "homeTeamRanking": 6,
+        "awayTeamRanking": 31
       }
     ]
   },
