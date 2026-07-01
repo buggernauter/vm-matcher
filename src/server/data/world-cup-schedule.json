@@ -1373,7 +1373,12 @@
         "groupOrRound": "Match 79, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
         "homeTeamRanking": 14,
-        "awayTeamRanking": 23
+        "awayTeamRanking": 23,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 2,
+          "sourceUrl": "https://www.aljazeera.com/news/2026/7/1/mexico-ecuador-fifa-world-cup-2026-score-jimenez-quinones-hincapie"
+        }
       },
       {
         "startTime": "18.00",
@@ -1527,11 +1532,12 @@
     "matches": [
       {
         "startTime": "02.00",
-        "homeTeam": "W79",
+        "homeTeam": "Mexiko",
         "awayTeam": "W80",
         "id": "2026-07-06-02.00-W79-W80-0",
         "groupOrRound": "Match 92, åttondelsfinal",
-        "broadcaster": "SVT och SVT Play"
+        "broadcaster": "SVT och SVT Play",
+        "homeTeamRanking": 14
       },
       {
         "startTime": "21.00",
