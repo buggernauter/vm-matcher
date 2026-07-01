@@ -1496,11 +1496,12 @@
       {
         "startTime": "23.00",
         "homeTeam": "Paraguay",
-        "awayTeam": "W77",
+        "awayTeam": "Frankrike",
         "id": "2026-07-04-23.00-W74-W77-3",
         "groupOrRound": "Match 89, åttondelsfinal",
         "broadcaster": "SVT och SVT Play",
-        "homeTeamRanking": 41
+        "homeTeamRanking": 41,
+        "awayTeamRanking": 3
       }
     ]
   },
