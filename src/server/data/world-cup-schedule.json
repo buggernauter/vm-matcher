@@ -1439,7 +1439,12 @@
         "groupOrRound": "Match 84, 16-delsfinal",
         "broadcaster": "SVT och SVT Play",
         "homeTeamRanking": 2,
-        "awayTeamRanking": 24
+        "awayTeamRanking": 24,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 3,
+          "sourceUrl": "https://cadenaser.com/nacional/2026/07/02/espana-3-0-austria-resumen-resultado-y-goles-del-partido-de-dieciseisavos-de-final-del-mundial-2026-cadena-ser/"
+        }
       }
     ]
   },
