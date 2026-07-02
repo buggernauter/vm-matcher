@@ -1424,7 +1424,12 @@
         "groupOrRound": "Match 81, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
         "homeTeamRanking": 17,
-        "awayTeamRanking": 64
+        "awayTeamRanking": 64,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 2,
+          "sourceUrl": "https://sports.ndtv.com/fifa-world-cup-2026/usa-vs-bosnia-and-herzegovina-live-score-fifa-world-cup-2026-usa-vs-bih-live-updates-edin-dzeko-christian-pulisic-11714990?pfrom=home-ndtv_fifa"
+        }
       },
       {
         "startTime": "21.00",
