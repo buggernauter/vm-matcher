@@ -1571,12 +1571,13 @@
     "matches": [
       {
         "startTime": "02.00",
-        "homeTeam": "W81",
+        "homeTeam": "USA",
         "awayTeam": "Belgien",
         "id": "2026-07-07-02.00-W81-W82-0",
         "groupOrRound": "Match 94, åttondelsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "awayTeamRanking": 9
+        "awayTeamRanking": 9,
+        "homeTeamRanking": 17
       },
       {
         "startTime": "18.00",
