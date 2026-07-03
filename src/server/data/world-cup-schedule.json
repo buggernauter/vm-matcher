@@ -1490,7 +1490,12 @@
         "groupOrRound": "Match 88, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
         "homeTeamRanking": 27,
-        "awayTeamRanking": 29
+        "awayTeamRanking": 29,
+        "result": {
+          "awayScore": 1,
+          "homeScore": 1,
+          "sourceUrl": "https://www.cafonline.com/fifa-world-cup/news/egypt-beat-australia-on-penalties-to-reach-historic-world-cup-last-16/"
+        }
       }
     ]
   },
