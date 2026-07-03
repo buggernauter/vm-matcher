@@ -1606,11 +1606,12 @@
       },
       {
         "startTime": "22.00",
-        "homeTeam": "W85",
+        "homeTeam": "Schweiz",
         "awayTeam": "W87",
         "id": "2026-07-07-22.00-W85-W87-2",
         "groupOrRound": "Match 96, åttondelsfinal",
-        "broadcaster": "SVT och SVT Play"
+        "broadcaster": "SVT och SVT Play",
+        "homeTeamRanking": 19
       }
     ]
   },
