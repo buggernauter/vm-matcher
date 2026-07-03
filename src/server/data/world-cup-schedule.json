@@ -1475,7 +1475,12 @@
         "groupOrRound": "Match 85, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
         "homeTeamRanking": 19,
-        "awayTeamRanking": 28
+        "awayTeamRanking": 28,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 2,
+          "sourceUrl": "https://www.sofascore.com/football/match/switzerland-algeria/QTbsZTb"
+        }
       },
       {
         "startTime": "20.00",
