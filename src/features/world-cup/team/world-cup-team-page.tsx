@@ -78,7 +78,7 @@ export const WorldCupTeamPage = ({
 					<StyledSummaryCountry>{squad.countryName}</StyledSummaryCountry>
 					<StyledSummaryMeta>FIFA-ranking #{squad.ranking}</StyledSummaryMeta>
 				</StyledSummaryTopRow>
-				<StyledRosterDetails open>
+				<StyledRosterDetails open={false}>
 					<StyledRosterSummary>
 						<StyledSectionTitle as="span">Trupp</StyledSectionTitle>
 						<StyledRosterChevron aria-hidden="true">
