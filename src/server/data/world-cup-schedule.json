@@ -1572,12 +1572,13 @@
       },
       {
         "startTime": "21.00",
-        "homeTeam": "W83",
+        "homeTeam": "Portugal",
         "awayTeam": "Spanien",
         "id": "2026-07-06-21.00-W83-W84-1",
         "groupOrRound": "Match 93, åttondelsfinal",
         "broadcaster": "TV4 och TV4 Play",
-        "awayTeamRanking": 2
+        "awayTeamRanking": 2,
+        "homeTeamRanking": 5
       }
     ]
   },
