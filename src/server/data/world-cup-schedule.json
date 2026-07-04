@@ -1511,7 +1511,12 @@
         "groupOrRound": "Match 86, 16-delsfinal",
         "broadcaster": "TV4 och TV4 Play",
         "homeTeamRanking": 1,
-        "awayTeamRanking": 67
+        "awayTeamRanking": 67,
+        "result": {
+          "awayScore": 2,
+          "homeScore": 3,
+          "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760500/cape-verde-argentina"
+        }
       },
       {
         "startTime": "03.30",
@@ -1521,7 +1526,12 @@
         "groupOrRound": "Match 87, 16-delsfinal",
         "broadcaster": "SVT och SVT Play",
         "awayTeamRanking": 73,
-        "homeTeamRanking": 13
+        "homeTeamRanking": 13,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 1,
+          "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760501/ghana-colombia"
+        }
       },
       {
         "startTime": "19.00",
