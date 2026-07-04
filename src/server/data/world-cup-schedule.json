@@ -1613,20 +1613,23 @@
       },
       {
         "startTime": "18.00",
-        "homeTeam": "W86",
-        "awayTeam": "W88",
+        "homeTeam": "Argentina",
+        "awayTeam": "Egypten",
         "id": "2026-07-07-18.00-W86-W88-1",
         "groupOrRound": "Match 95, åttondelsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 1,
+        "awayTeamRanking": 29
       },
       {
         "startTime": "22.00",
         "homeTeam": "Schweiz",
-        "awayTeam": "W87",
+        "awayTeam": "Colombia",
         "id": "2026-07-07-22.00-W85-W87-2",
         "groupOrRound": "Match 96, åttondelsfinal",
         "broadcaster": "SVT och SVT Play",
-        "homeTeamRanking": 19
+        "homeTeamRanking": 19,
+        "awayTeamRanking": 13
       }
     ]
   },
