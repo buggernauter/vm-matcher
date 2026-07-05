@@ -1541,7 +1541,12 @@
         "groupOrRound": "Match 90, åttondelsfinal",
         "broadcaster": "TV4 och TV4 Play",
         "homeTeamRanking": 30,
-        "awayTeamRanking": 7
+        "awayTeamRanking": 7,
+        "result": {
+          "awayScore": 3,
+          "homeScore": 0,
+          "sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/canada-morocco-match-report-highlights"
+        }
       },
       {
         "startTime": "23.00",
@@ -1551,7 +1556,12 @@
         "groupOrRound": "Match 89, åttondelsfinal",
         "broadcaster": "SVT och SVT Play",
         "homeTeamRanking": 41,
-        "awayTeamRanking": 3
+        "awayTeamRanking": 3,
+        "result": {
+          "awayScore": 0,
+          "homeScore": 1,
+          "sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/paraguay-france-match-report-highlights"
+        }
       }
     ]
   },
@@ -1639,11 +1649,13 @@
     "matches": [
       {
         "startTime": "22.00",
-        "homeTeam": "W89",
-        "awayTeam": "W90",
+        "homeTeam": "Frankrike",
+        "awayTeam": "Marocko",
         "id": "2026-07-09-22.00-W89-W90-0",
         "groupOrRound": "Match 97, kvartsfinal",
-        "broadcaster": "TV4 och TV4 Play"
+        "broadcaster": "TV4 och TV4 Play",
+        "homeTeamRanking": 3,
+        "awayTeamRanking": 7
       }
     ]
   },
