@@ -70,7 +70,7 @@
 				"id": "2026-06-13-03.00-USA-Paraguay-0",
 				"groupOrRound": "Grupp D",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "Los Angeles",
+				"venue": "L.A.",
 				"awayTeamRanking": 41,
 				"homeTeamRanking": 17,
 				"result": {
@@ -280,7 +280,7 @@
 				"id": "2026-06-16-03.00-Iran-Nya Zeeland-1",
 				"groupOrRound": "Grupp G",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "Los Angeles",
+				"venue": "L.A.",
 				"awayTeamRanking": 85,
 				"homeTeamRanking": 20,
 				"result": {
@@ -334,7 +334,7 @@
 				"id": "2026-06-17-03.00-Argentina-Algeriet-1",
 				"groupOrRound": "Grupp J",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "Kansas City",
+				"venue": "Kansas",
 				"awayTeamRanking": 28,
 				"homeTeamRanking": 1,
 				"result": {
@@ -452,7 +452,7 @@
 				"id": "2026-06-18-21.00-Schweiz-Bosnien och Hercegovina-3",
 				"groupOrRound": "Grupp B",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "Los Angeles",
+				"venue": "L.A.",
 				"awayTeamRanking": 64,
 				"homeTeamRanking": 19,
 				"result": {
@@ -614,7 +614,7 @@
 				"id": "2026-06-21-02.00-Ecuador-Curaçao-0",
 				"groupOrRound": "Grupp E",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "Kansas City",
+				"venue": "Kansas",
 				"awayTeamRanking": 82,
 				"homeTeamRanking": 23,
 				"result": {
@@ -662,7 +662,7 @@
 				"id": "2026-06-21-21.00-Belgien-Iran-3",
 				"groupOrRound": "Grupp G",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "Los Angeles",
+				"venue": "L.A.",
 				"awayTeamRanking": 20,
 				"homeTeamRanking": 9,
 				"result": {
@@ -996,7 +996,7 @@
 				"id": "2026-06-26-01.00-Tunisien-Nederländerna-0",
 				"groupOrRound": "Grupp F",
 				"broadcaster": "SVT och SVT Play",
-				"venue": "Kansas City",
+				"venue": "Kansas",
 				"awayTeamRanking": 8,
 				"homeTeamRanking": 45,
 				"result": {
@@ -1028,7 +1028,7 @@
 				"id": "2026-06-26-04.00-Turkiet-USA-2",
 				"groupOrRound": "Grupp D",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "Los Angeles",
+				"venue": "L.A.",
 				"awayTeamRanking": 17,
 				"homeTeamRanking": 22,
 				"result": {
@@ -1232,7 +1232,7 @@
 				"id": "2026-06-28-04.00-Algeriet-Österrike-2",
 				"groupOrRound": "Grupp J",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "Kansas City",
+				"venue": "Kansas",
 				"awayTeamRanking": 24,
 				"homeTeamRanking": 28,
 				"result": {
@@ -1705,7 +1705,7 @@
 				"id": "2026-07-10-21.00-W93-W94-0",
 				"groupOrRound": "Match 98, kvartsfinal",
 				"broadcaster": "SVT och SVT Play",
-				"venue": "Los Angeles",
+				"venue": "L.A.",
 				"awayTeamRanking": 9,
 				"homeTeamRanking": 2
 			}
@@ -1739,7 +1739,7 @@
 				"id": "2026-07-12-03.00-W95-W96-0",
 				"groupOrRound": "Match 100, kvartsfinal",
 				"broadcaster": "SVT och SVT Play",
-				"venue": "Kansas City",
+				"venue": "Kansas",
 				"homeTeamRanking": 1,
 				"awayTeamRanking": 19
 			}
