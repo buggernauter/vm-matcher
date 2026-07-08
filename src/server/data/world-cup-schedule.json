@@ -1596,11 +1596,13 @@
 				"id": "2026-07-06-02.00-W79-W80-0",
 				"groupOrRound": "Match 92, åttondelsfinal",
 				"broadcaster": "SVT och SVT Play",
+				"venue": "Mexico City",
 				"homeTeamRanking": 14,
 				"awayTeamRanking": 4,
 				"result": {
 					"awayScore": 3,
-					"homeScore": 2
+					"homeScore": 2,
+					"sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-england-match-report-highlights"
 				}
 			},
 			{
@@ -1610,8 +1612,14 @@
 				"id": "2026-07-06-21.00-W83-W84-1",
 				"groupOrRound": "Match 93, åttondelsfinal",
 				"broadcaster": "TV4 och TV4 Play",
+				"venue": "Dallas",
 				"awayTeamRanking": 2,
-				"homeTeamRanking": 5
+				"homeTeamRanking": 5,
+				"result": {
+					"homeScore": 0,
+					"awayScore": 1,
+					"sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/portugal-spain-match-report-highlights"
+				}
 			}
 		]
 	},
@@ -1626,8 +1634,14 @@
 				"id": "2026-07-07-02.00-W81-W82-0",
 				"groupOrRound": "Match 94, åttondelsfinal",
 				"broadcaster": "TV4 och TV4 Play",
+				"venue": "Seattle",
 				"awayTeamRanking": 9,
-				"homeTeamRanking": 17
+				"homeTeamRanking": 17,
+				"result": {
+					"homeScore": 1,
+					"awayScore": 4,
+					"sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-belgium-match-report-highlights"
+				}
 			},
 			{
 				"startTime": "18.00",
@@ -1636,8 +1650,14 @@
 				"id": "2026-07-07-18.00-W86-W88-1",
 				"groupOrRound": "Match 95, åttondelsfinal",
 				"broadcaster": "TV4 och TV4 Play",
+				"venue": "Atlanta",
 				"homeTeamRanking": 1,
-				"awayTeamRanking": 29
+				"awayTeamRanking": 29,
+				"result": {
+					"homeScore": 3,
+					"awayScore": 2,
+					"sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-egypt-match-report-highlights"
+				}
 			},
 			{
 				"startTime": "22.00",
@@ -1646,8 +1666,14 @@
 				"id": "2026-07-07-22.00-W85-W87-2",
 				"groupOrRound": "Match 96, åttondelsfinal",
 				"broadcaster": "SVT och SVT Play",
+				"venue": "Vancouver",
 				"homeTeamRanking": 19,
-				"awayTeamRanking": 13
+				"awayTeamRanking": 13,
+				"result": {
+					"homeScore": 0,
+					"awayScore": 0,
+					"sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-colombia-match-report-highlights"
+				}
 			}
 		]
 	},
@@ -1662,6 +1688,7 @@
 				"id": "2026-07-09-22.00-W89-W90-0",
 				"groupOrRound": "Match 97, kvartsfinal",
 				"broadcaster": "TV4 och TV4 Play",
+				"venue": "Boston",
 				"homeTeamRanking": 3,
 				"awayTeamRanking": 7
 			}
@@ -1673,11 +1700,14 @@
 		"matches": [
 			{
 				"startTime": "21.00",
-				"homeTeam": "W93",
-				"awayTeam": "W94",
+				"homeTeam": "Spanien",
+				"awayTeam": "Belgien",
 				"id": "2026-07-10-21.00-W93-W94-0",
 				"groupOrRound": "Match 98, kvartsfinal",
-				"broadcaster": "SVT och SVT Play"
+				"broadcaster": "SVT och SVT Play",
+				"venue": "Los Angeles",
+				"awayTeamRanking": 9,
+				"homeTeamRanking": 2
 			}
 		]
 	},
@@ -1691,7 +1721,10 @@
 				"awayTeam": "England",
 				"id": "2026-07-11-23.00-W91-W92-0",
 				"groupOrRound": "Match 99, kvartsfinal",
-				"broadcaster": "TV4 och TV4 Play"
+				"broadcaster": "TV4 och TV4 Play",
+				"venue": "Miami",
+				"homeTeamRanking": 31,
+				"awayTeamRanking": 4
 			}
 		]
 	},
@@ -1701,11 +1734,14 @@
 		"matches": [
 			{
 				"startTime": "03.00",
-				"homeTeam": "W95",
-				"awayTeam": "W96",
+				"homeTeam": "Argentina",
+				"awayTeam": "Schweiz",
 				"id": "2026-07-12-03.00-W95-W96-0",
 				"groupOrRound": "Match 100, kvartsfinal",
-				"broadcaster": "SVT och SVT Play"
+				"broadcaster": "SVT och SVT Play",
+				"venue": "Kansas City",
+				"homeTeamRanking": 1,
+				"awayTeamRanking": 19
 			}
 		]
 	},
@@ -1719,7 +1755,8 @@
 				"awayTeam": "W98",
 				"id": "2026-07-14-21.00-W97-W98-0",
 				"groupOrRound": "Match 101, semifinal",
-				"broadcaster": "SVT och SVT Play"
+				"broadcaster": "SVT och SVT Play",
+				"venue": "Dallas"
 			}
 		]
 	},
@@ -1733,7 +1770,8 @@
 				"awayTeam": "W100",
 				"id": "2026-07-15-21.00-W99-W100-0",
 				"groupOrRound": "Match 102, semifinal",
-				"broadcaster": "TV4 och TV4 Play"
+				"broadcaster": "TV4 och TV4 Play",
+				"venue": "Atlanta"
 			}
 		]
 	},
@@ -1747,7 +1785,8 @@
 				"awayTeam": "L102",
 				"id": "2026-07-18-23.00-L101-L102-0",
 				"groupOrRound": "Match 103, bronsmatch",
-				"broadcaster": "SVT och SVT Play"
+				"broadcaster": "SVT och SVT Play",
+				"venue": "Miami"
 			}
 		]
 	},
@@ -1761,7 +1800,8 @@
 				"awayTeam": "W102",
 				"id": "2026-07-19-21.00-W101-W102-0",
 				"groupOrRound": "Match 104, VM-final",
-				"broadcaster": "TV4 och TV4 Play"
+				"broadcaster": "TV4 och TV4 Play",
+				"venue": "New Jersey"
 			}
 		]
 	}
