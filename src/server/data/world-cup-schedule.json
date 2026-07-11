@@ -1690,7 +1690,12 @@
 				"broadcaster": "TV4 och TV4 Play",
 				"venue": "Boston",
 				"homeTeamRanking": 3,
-				"awayTeamRanking": 7
+				"awayTeamRanking": 7,
+				"result": {
+					"homeScore": 2,
+					"awayScore": 0,
+					"sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760510/morocco-france"
+				}
 			}
 		]
 	},
@@ -1707,7 +1712,12 @@
 				"broadcaster": "SVT och SVT Play",
 				"venue": "L.A.",
 				"awayTeamRanking": 9,
-				"homeTeamRanking": 2
+				"homeTeamRanking": 2,
+				"result": {
+					"homeScore": 2,
+					"awayScore": 1,
+					"sourceUrl": "https://cadenaser.com/nacional/2026/07/10/espana-2-1-belgica-resumen-resultado-y-goles-del-partido-de-cuartos-de-final-del-mundial-2026-cadena-ser/"
+				}
 			}
 		]
 	},
