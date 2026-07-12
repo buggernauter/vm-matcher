@@ -1734,7 +1734,12 @@
 				"broadcaster": "TV4 och TV4 Play",
 				"venue": "Miami",
 				"homeTeamRanking": 31,
-				"awayTeamRanking": 4
+				"awayTeamRanking": 4,
+				"result": {
+					"homeScore": 1,
+					"awayScore": 2,
+					"sourceUrl": "https://www.espn.com/soccer/match/_/gameId/760512/england-norway"
+				}
 			}
 		]
 	},
@@ -1751,7 +1756,12 @@
 				"broadcaster": "SVT och SVT Play",
 				"venue": "Kansas",
 				"homeTeamRanking": 1,
-				"awayTeamRanking": 19
+				"awayTeamRanking": 19,
+				"result": {
+					"homeScore": 3,
+					"awayScore": 1,
+					"sourceUrl": "https://cadenaser.com/nacional/2026/07/12/argentina-3-1-suiza-resumen-resultado-y-goles-del-partido-de-cuartos-de-final-del-mundial-2026-cadena-ser/"
+				}
 			}
 		]
 	},
@@ -1761,12 +1771,14 @@
 		"matches": [
 			{
 				"startTime": "21.00",
-				"homeTeam": "W97",
-				"awayTeam": "W98",
+				"homeTeam": "Frankrike",
+				"awayTeam": "Spanien",
 				"id": "2026-07-14-21.00-W97-W98-0",
 				"groupOrRound": "Match 101, semifinal",
 				"broadcaster": "SVT och SVT Play",
-				"venue": "Dallas"
+				"venue": "Dallas",
+				"homeTeamRanking": 3,
+				"awayTeamRanking": 2
 			}
 		]
 	},
@@ -1776,12 +1788,14 @@
 		"matches": [
 			{
 				"startTime": "21.00",
-				"homeTeam": "W99",
-				"awayTeam": "W100",
+				"homeTeam": "England",
+				"awayTeam": "Argentina",
 				"id": "2026-07-15-21.00-W99-W100-0",
 				"groupOrRound": "Match 102, semifinal",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "Atlanta"
+				"venue": "Atlanta",
+				"homeTeamRanking": 4,
+				"awayTeamRanking": 1
 			}
 		]
 	},

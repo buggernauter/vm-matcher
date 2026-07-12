@@ -14,9 +14,10 @@ type Props = {
 	firstBadge: ReactNode;
 	secondBadge: ReactNode;
 	thirdBadge: ReactNode;
+	fourthBadge?: ReactNode;
 };
 
-export const HeroCard = ({ firstBadge, secondBadge, thirdBadge }: Props) => {
+export const HeroCard = ({ firstBadge, secondBadge, thirdBadge, fourthBadge }: Props) => {
 	const pathname = usePathname();
 
 	return (
@@ -40,6 +41,7 @@ export const HeroCard = ({ firstBadge, secondBadge, thirdBadge }: Props) => {
 				>
 					{thirdBadge}
 				</StyledHeroBadge>
+				{fourthBadge}
 			</StyledBadgeWrapper>
 		</StyledHeroCard>
 	);

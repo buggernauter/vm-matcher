@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { HeroCard } from '@/components/hero-card';
+import { SupportButton } from '@/components/support-button';
 import { Trophy, Users } from 'lucide-react';
 import { Podium } from 'lucide-react';
 
@@ -28,6 +29,7 @@ export default function WorldCupLayout({ children }: { children: ReactNode }) {
 						Slutspel
 					</>
 				}
+				fourthBadge={<SupportButton />}
 			/>
 			{children}
 		</StyledWorldCupPageShell>

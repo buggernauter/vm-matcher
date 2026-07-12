@@ -30,7 +30,7 @@ export const StyledBadgeWrapper = styled.div`
 		flex-wrap: wrap;
 	}
 `;
-export const StyledHeroBadge = styled(Link)<{ $active: boolean }>`
+const heroBadgeStyles = css<{ $active?: boolean }>`
 	display: flex;
 	flex: 1 1 0;
 	min-width: 0;
@@ -78,4 +78,12 @@ export const StyledHeroBadge = styled(Link)<{ $active: boolean }>`
 	}
 
 	${focusRing}
+`;
+
+export const StyledHeroBadge = styled(Link)<{ $active: boolean }>`
+	${heroBadgeStyles}
+`;
+
+export const StyledHeroActionBadge = styled.a`
+	${heroBadgeStyles}
 `;
