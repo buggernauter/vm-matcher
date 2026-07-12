@@ -10,7 +10,7 @@ export const SupportButton = () => {
 			rel="noopener noreferrer"
 			aria-label="Support vmmatcher.se"
 		>
-			⚽ Support
+			⚽ Support this site
 		</StyledSupportLink>
 	);
 };
