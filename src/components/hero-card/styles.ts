@@ -30,7 +30,7 @@ export const StyledBadgeWrapper = styled.div`
 		flex-wrap: wrap;
 	}
 `;
-const heroBadgeStyles = css<{ $active?: boolean }>`
+const heroBadgeStyles = css`
 	display: flex;
 	flex: 1 1 0;
 	min-width: 0;
@@ -40,10 +40,8 @@ const heroBadgeStyles = css<{ $active?: boolean }>`
 	gap: 0.3rem;
 	padding: 0.65rem 0.4rem;
 	border-radius: 999rem;
-	color: ${({ $active, theme }) =>
-		$active ? theme.palette.textPrimary : theme.palette.textSecondary};
-	background: ${({ $active, theme }) =>
-		$active ? theme.palette.stepperButtonGradient : theme.palette.fieldSurfaceGradient};
+	color: ${({ theme }) => theme.palette.textSecondary};
+	background: ${({ theme }) => theme.palette.fieldSurfaceGradient};
 	box-shadow: ${({ theme }) => theme.palette.fieldSurfaceShadow};
 	font-size: 0.63rem;
 	font-weight: 700;
@@ -51,6 +49,11 @@ const heroBadgeStyles = css<{ $active?: boolean }>`
 	line-height: 1.15;
 	text-align: center;
 	text-decoration: none;
+
+	&[aria-current='page'] {
+		color: ${({ theme }) => theme.palette.textPrimary};
+		background: ${({ theme }) => theme.palette.stepperButtonGradient};
+	}
 
 	svg {
 		flex: 0 0 auto;
@@ -80,7 +83,7 @@ const heroBadgeStyles = css<{ $active?: boolean }>`
 	${focusRing}
 `;
 
-export const StyledHeroBadge = styled(Link)<{ $active: boolean }>`
+export const StyledHeroBadge = styled(Link)`
 	${heroBadgeStyles}
 `;
 

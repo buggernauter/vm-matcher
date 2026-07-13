@@ -25,19 +25,19 @@ export const HeroCard = ({ firstBadge, secondBadge, thirdBadge, fourthBadge }: P
 			<StyledBadgeWrapper>
 				<StyledHeroBadge
 					href={WORLD_CUP_SCHEDULE_PATH}
-					$active={pathname === WORLD_CUP_SCHEDULE_PATH}
+					aria-current={pathname === WORLD_CUP_SCHEDULE_PATH ? 'page' : undefined}
 				>
 					{firstBadge}
 				</StyledHeroBadge>
 				<StyledHeroBadge
 					href={WORLD_CUP_TEAMS_PATH}
-					$active={pathname.startsWith(WORLD_CUP_TEAMS_PATH)}
+					aria-current={pathname.startsWith(WORLD_CUP_TEAMS_PATH) ? 'page' : undefined}
 				>
 					{secondBadge}
 				</StyledHeroBadge>
 				<StyledHeroBadge
 					href={WORLD_CUP_PLAYOFF_PATH}
-					$active={pathname === WORLD_CUP_PLAYOFF_PATH}
+					aria-current={pathname === WORLD_CUP_PLAYOFF_PATH ? 'page' : undefined}
 				>
 					{thirdBadge}
 				</StyledHeroBadge>
