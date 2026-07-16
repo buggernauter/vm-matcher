@@ -1778,7 +1778,12 @@
 				"broadcaster": "SVT och SVT Play",
 				"venue": "Dallas",
 				"homeTeamRanking": 3,
-				"awayTeamRanking": 2
+				"awayTeamRanking": 2,
+				"result": {
+					"homeScore": 0,
+					"awayScore": 2,
+					"sourceUrl": "https://apnews.com/article/87fb7740fa552edf4bfd28d0e8727c23"
+				}
 			}
 		]
 	},
@@ -1795,7 +1800,11 @@
 				"broadcaster": "TV4 och TV4 Play",
 				"venue": "Atlanta",
 				"homeTeamRanking": 4,
-				"awayTeamRanking": 1
+				"awayTeamRanking": 1,
+				"result": {
+					"homeScore": 1,
+					"awayScore": 2
+				}
 			}
 		]
 	},
@@ -1805,12 +1814,14 @@
 		"matches": [
 			{
 				"startTime": "23.00",
-				"homeTeam": "L101",
-				"awayTeam": "L102",
+				"homeTeam": "Frankrike",
+				"awayTeam": "England",
 				"id": "2026-07-18-23.00-L101-L102-0",
 				"groupOrRound": "Match 103, bronsmatch",
 				"broadcaster": "SVT och SVT Play",
-				"venue": "Miami"
+				"venue": "Miami",
+				"homeTeamRanking": 3,
+				"awayTeamRanking": 4
 			}
 		]
 	},
@@ -1820,12 +1831,14 @@
 		"matches": [
 			{
 				"startTime": "21.00",
-				"homeTeam": "W101",
-				"awayTeam": "W102",
+				"homeTeam": "Spanien",
+				"awayTeam": "Argentina",
 				"id": "2026-07-19-21.00-W101-W102-0",
 				"groupOrRound": "Match 104, VM-final",
 				"broadcaster": "TV4 och TV4 Play",
-				"venue": "New Jersey"
+				"venue": "New Jersey",
+				"homeTeamRanking": 2,
+				"awayTeamRanking": 1
 			}
 		]
 	}
