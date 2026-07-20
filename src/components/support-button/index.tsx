@@ -14,7 +14,7 @@ export const SupportButton = () => {
 			aria-label="Support vmmatcher.se"
 		>
 			<Heart aria-hidden="true" color="gold" />
-			Support vmmtacher
+			Support vmmatcher.se
 		</StyledHeroActionBadge>
 	);
 };
