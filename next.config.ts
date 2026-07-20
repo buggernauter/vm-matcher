@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: '/', destination: '/fotbolls-vm-2026', permanent: true },
+      { source: '/', destination: '/spanien-varldsmastare', permanent: true },
     ];
   },
 };

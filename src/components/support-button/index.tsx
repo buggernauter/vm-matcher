@@ -11,10 +11,10 @@ export const SupportButton = () => {
 			href={KO_FI_URL}
 			target="_blank"
 			rel="noopener noreferrer"
-			aria-label="Support vmmatcher.se"
+			aria-label="Support vmmatcher"
 		>
 			<Heart aria-hidden="true" color="gold" />
-			Support vmmatcher.se
+			Support VM-matcher
 		</StyledHeroActionBadge>
 	);
 };

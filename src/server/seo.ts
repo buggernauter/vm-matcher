@@ -1,4 +1,9 @@
-import { WORLD_CUP_PLAYOFF_PATH, WORLD_CUP_SCHEDULE_PATH, WORLD_CUP_TEAMS_PATH } from './constants';
+import {
+	WORLD_CUP_CHAMPIONS_PATH,
+	WORLD_CUP_PLAYOFF_PATH,
+	WORLD_CUP_SCHEDULE_PATH,
+	WORLD_CUP_TEAMS_PATH,
+} from './constants';
 import { getAbsoluteUrl } from './site';
 
 export const SITE_NAME = 'VMMatcher';
@@ -35,6 +40,26 @@ export const PLAYOFF_HERO_TITLE = 'Slutspelsträd för Fotbolls-VM 2026';
 
 export const PLAYOFF_HERO_DESCRIPTION =
 	'Se vilka lag som möts i slutspelet, kommande VM-matcher och vägen till VM-guld 2026.';
+
+export const CHAMPIONS_PAGE_TITLE =
+	'Spanien vann VM-finalen 2026 mot Argentina | VM-vinnare och världsmästare';
+
+export const CHAMPIONS_PAGE_DESCRIPTION =
+	'Spanien är vinnare av Fotbolls-VM 2026 efter seger mot Argentina i VM-finalen. Läs om VM-finalen, resultatet och Spaniens VM-guld 2026.';
+
+export const CHAMPIONS_HERO_TITLE = 'Spanien vann VM-finalen 2026 mot Argentina';
+
+export const CHAMPIONS_HERO_DESCRIPTION =
+	'Spanien är VM-vinnare och världsmästare i Fotbolls-VM 2026 efter finalsegern mot Argentina den 19 juli 2026.';
+
+export const CHAMPIONS_HERO_TITLE_SV = 'Grattis Spanien till VM-guldet 2026.';
+export const CHAMPIONS_HERO_TITLE_EN = 'Congratulations to Spain on winning the 2026 World Cup.';
+export const CHAMPIONS_HERO_TITLE_CH = '恭喜西班牙赢得2026年世界杯冠军.';
+export const CHAMPIONS_HERO_TITLE_HD = 'स्पेन को 2026 विश्व कप जीतने पर बधाई।';
+export const CHAMPIONS_HERO_TITLE_SP = 'Felicidades a España por ganar la Copa del Mundo 2026.';
+export const CHAMPIONS_HERO_TITLE_AR = 'تهانينا لإسبانيا على الفوز بكأس العالم 2026.';
+
+export const getChampionsCanonicalUrl = () => getAbsoluteUrl(WORLD_CUP_CHAMPIONS_PATH);
 
 export const getScheduleCanonicalUrl = () => getAbsoluteUrl(WORLD_CUP_SCHEDULE_PATH);
 
@@ -82,4 +107,28 @@ export const buildPlayoffPageJsonLd = () => ({
 	},
 	name: PLAYOFF_PAGE_TITLE,
 	url: getPlayoffCanonicalUrl(),
+});
+
+export const buildChampionsPageJsonLd = () => ({
+	'@context': 'https://schema.org',
+	'@type': 'WebPage',
+	about: [
+		'Fotbolls-VM 2026',
+		'VM-final 2026',
+		'Spanien',
+		'Argentina',
+		'VM-vinnare',
+		'Världsmästare i fotboll',
+	],
+	description: CHAMPIONS_PAGE_DESCRIPTION,
+	inLanguage: 'sv-SE',
+	isPartOf: {
+		'@type': 'WebSite',
+		name: SITE_NAME,
+		url: getAbsoluteUrl('/'),
+	},
+	keywords:
+		'vm, fotbolls-vm, fotbolls-vm 2026, vm-final, vmfinal, spanien, argentina, vm vinnare, winner, världsmästare',
+	name: CHAMPIONS_PAGE_TITLE,
+	url: getChampionsCanonicalUrl(),
 });

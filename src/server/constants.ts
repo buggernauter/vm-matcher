@@ -8,6 +8,7 @@ export const LOSER_MATCH_PATTERN = /^(?:L|RU)(\d+)$/;
 export const LOSER_MATCH_TEXT_PATTERN = /^Förlorare match (\d+)$/;
 export const THIRD_PLACE_PATTERN = /^3(?:[A-Z](?:\/[A-Z])+|[A-Z]{2,})$/;
 export const WINNER_MATCH_PATTERN = /^W(\d+)$/;
+export const WORLD_CUP_CHAMPIONS_PATH = '/spanien-varldsmastare';
 export const WORLD_CUP_PLAYOFF_PATH = '/slutspel-vm-2026';
 export const WORLD_CUP_SCHEDULE_PATH = '/fotbolls-vm-2026';
 export const WORLD_CUP_TEAMS_PATH = '/lag-vm-2026';
