@@ -1821,7 +1821,12 @@
 				"broadcaster": "SVT och SVT Play",
 				"venue": "Miami",
 				"homeTeamRanking": 3,
-				"awayTeamRanking": 4
+				"awayTeamRanking": 4,
+				"result": {
+					"homeScore": 4,
+					"awayScore": 6,
+					"sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/france-england-report-highlights-bronze-final"
+				}
 			}
 		]
 	},
@@ -1838,7 +1843,12 @@
 				"broadcaster": "TV4 och TV4 Play",
 				"venue": "New Jersey",
 				"homeTeamRanking": 2,
-				"awayTeamRanking": 1
+				"awayTeamRanking": 1,
+				"result": {
+					"homeScore": 1,
+					"awayScore": 0,
+					"sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-argentina-final-report-highlights"
+				}
 			}
 		]
 	}
