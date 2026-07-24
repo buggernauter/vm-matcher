@@ -43,7 +43,10 @@ export const StyledBracket = styled.div`
 	padding: 0.2rem 0 0.5rem;
 `;
 
-export const StyledRoundContainer = styled.div<{ $variant?: BracketRoundLayout }>`
+export const StyledRoundContainer = styled.div<{
+	$hasSideMatch?: boolean;
+	$variant?: BracketRoundLayout;
+}>`
 	--round-card-height: var(--bracket-card-height);
 	--round-card-max-width: var(--bracket-card-max-width);
 	--round-compact-card-height: 0rem;
@@ -55,7 +58,8 @@ export const StyledRoundContainer = styled.div<{ $variant?: BracketRoundLayout }
 	flex-direction: column;
 	gap: 0.75rem;
 	position: relative;
-	width: 100%;
+	width: ${({ $hasSideMatch }) => ($hasSideMatch ? 'auto' : '100%')};
+	max-width: 100%;
 	z-index: 1;
 
 	${({ $variant }) =>

@@ -169,6 +169,11 @@ export const StyledTeamFlag = styled.span`
 		}
 	}
 `;
+export const StyledResultWrapper = styled.div`
+	display: flex;
+
+	justify-content: center;
+`;
 export const StyledScore = styled.span`
 	flex: 0 0 auto;
 	color: ${({ theme }) => theme.palette.textSecondary};
@@ -242,14 +247,11 @@ export const StyledCompactTime = styled.span`
 `;
 
 export const StyledCompactTeams = styled.div`
-	position: relative;
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	gap: 0.04rem;
-	min-height: 2.3rem;
+	justify-content: space-between;
 
 	@media (min-width: ${breakpoints.desktop}) {
 		gap: 0.08rem;
@@ -259,16 +261,6 @@ export const StyledCompactTeams = styled.div`
 
 export const StyledCompactTeamLabel = styled.span`
 	color: ${({ theme }) => theme.palette.textPrimary};
-	font-size: 0.4rem;
-	font-weight: 700;
-	line-height: 1;
-	text-align: center;
-	text-transform: uppercase;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 0.02rem;
-	max-width: 100%;
 
 	@media (min-width: ${breakpoints.desktop}) {
 		font-size: 0.62rem;
@@ -296,11 +288,9 @@ export const StyledCompactTeamFlag = styled.span`
 	}
 `;
 
-export const StyledCompactSeparator = styled.span`
-	color: ${({ theme }) => theme.palette.textDisabled};
+export const StyledCompactResul = styled.p`
+	color: ${({ theme }) => theme.palette.textPrimary};
 	font-size: 0.44rem;
-	font-weight: 700;
-	line-height: 1;
 
 	@media (min-width: ${breakpoints.desktop}) {
 		font-size: 0.68rem;

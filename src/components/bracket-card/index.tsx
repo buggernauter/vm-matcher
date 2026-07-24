@@ -7,7 +7,7 @@ import {
 	StyledCompactDayMonth,
 	StyledCompactTeamFlag,
 	StyledCompactMeta,
-	StyledCompactSeparator,
+	StyledCompactResul,
 	StyledCompactTeamLabel,
 	StyledCompactTeamLine,
 	StyledCompactTeams,
@@ -23,6 +23,7 @@ import {
 	StyledTeamRow,
 	StyledTeams,
 	StyledVenue,
+	StyledResultWrapper,
 } from './styles';
 
 const formatCompactTeamLabel = (label: string) => {
@@ -37,13 +38,7 @@ const formatCompactTeamLabel = (label: string) => {
 	);
 };
 
-const renderCompactTeamDisplay = ({
-	flagCode,
-	label,
-}: {
-	flagCode?: string;
-	label: string;
-}) => {
+const renderCompactTeamDisplay = ({ flagCode, label }: { flagCode?: string; label: string }) => {
 	if (flagCode) {
 		return (
 			<StyledCompactTeamFlag>
@@ -57,13 +52,7 @@ const renderCompactTeamDisplay = ({
 	));
 };
 
-const renderTeamDisplay = ({
-	flagCode,
-	label,
-}: {
-	flagCode?: string;
-	label: string;
-}) => {
+const renderTeamDisplay = ({ flagCode, label }: { flagCode?: string; label: string }) => {
 	if (flagCode) {
 		return (
 			<StyledTeamFlag>
@@ -111,14 +100,18 @@ export const BracketCard = ({
 							label: homeDisplayLabel,
 						})}
 					</StyledCompactTeamLabel>
-					<StyledCompactSeparator>-</StyledCompactSeparator>
+
 					<StyledCompactTeamLabel>
 						{renderCompactTeamDisplay({
 							flagCode: match.awayFlagCode,
 							label: awayDisplayLabel,
 						})}
 					</StyledCompactTeamLabel>
+					<StyledCompactResul>
+						{hasResult ? `${match.result?.homeScore}-${match.result?.awayScore}` : '-'}
+					</StyledCompactResul>
 				</StyledCompactTeams>
+
 				{typeof match.matchNumber === 'number' ? (
 					<StyledMatchNumber $compact>{`Match ${match.matchNumber}`}</StyledMatchNumber>
 				) : null}
@@ -138,7 +131,6 @@ export const BracketCard = ({
 						flagCode: match.homeFlagCode,
 						label: homeDisplayLabel,
 					})}
-					{hasResult ? <StyledScore>{match.result?.homeScore}</StyledScore> : null}
 				</StyledTeamRow>
 				<StyledDivider />
 				<StyledTeamRow>
@@ -146,8 +138,12 @@ export const BracketCard = ({
 						flagCode: match.awayFlagCode,
 						label: awayDisplayLabel,
 					})}
-					{hasResult ? <StyledScore>{match.result?.awayScore}</StyledScore> : null}
 				</StyledTeamRow>
+				<StyledResultWrapper>
+					<StyledScore>
+						{match.result?.homeScore}-{match.result?.awayScore}
+					</StyledScore>
+				</StyledResultWrapper>
 			</StyledTeams>
 			{typeof match.matchNumber === 'number' ? (
 				<StyledMatchNumber>{`Match ${match.matchNumber}`}</StyledMatchNumber>

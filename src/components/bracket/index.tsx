@@ -85,7 +85,10 @@ export const BracketTree = ({ finalMatch, rounds, thirdPlaceMatch, title }: Prop
 
 						return (
 							<StyledRoundWithSideMatch key={round.id}>
-								<StyledRoundContainer $variant={round.layout}>
+								<StyledRoundContainer
+									$hasSideMatch={playoffRound.isSemiFinalRound && Boolean(thirdPlaceMatch)}
+									$variant={round.layout}
+								>
 									<StyledRoundCards>
 										{matchGroups.map((matchGroup) =>
 											playoffRound.isColumnLayout ? (
